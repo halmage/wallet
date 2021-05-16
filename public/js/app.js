@@ -1946,10 +1946,8 @@ module.exports = {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-/* harmony import */ var bootstrap_icons_font_bootstrap_icons_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! bootstrap-icons/font/bootstrap-icons.css */ "./node_modules/bootstrap-icons/font/bootstrap-icons.css");
-/* harmony import */ var _Router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Router */ "./resources/js/Router.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
+/* harmony import */ var _Router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Router */ "./resources/js/Router.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
 /* Importando componentes */
@@ -1958,7 +1956,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 if (document.getElementById('root')) {
-  react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Router__WEBPACK_IMPORTED_MODULE_3__.default, {}), document.getElementById('root'));
+  react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Router__WEBPACK_IMPORTED_MODULE_2__.default, {}), document.getElementById('root'));
 }
 
 /***/ }),
@@ -1975,10 +1973,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
 /* harmony import */ var _pages_container_user_home_HomeContainer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./pages/container/user/home/HomeContainer */ "./resources/js/pages/container/user/home/HomeContainer.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _pages_container_user_load_wallet_LoadWalletContainer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./pages/container/user/load-wallet/LoadWalletContainer */ "./resources/js/pages/container/user/load-wallet/LoadWalletContainer.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
 /* Importando pages container de User */
@@ -1987,12 +1986,17 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 var Router = function Router() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.BrowserRouter, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Switch, {
-      children: ["//Ruta de User", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Route, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.BrowserRouter, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Switch, {
+      children: ["//Ruta de User", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, {
+        exact: true,
         path: "/home",
         component: _pages_container_user_home_HomeContainer__WEBPACK_IMPORTED_MODULE_1__.default
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, {
+        path: "/load-wallet",
+        component: _pages_container_user_load_wallet_LoadWalletContainer__WEBPACK_IMPORTED_MODULE_2__.default
       })]
     })
   });
@@ -2069,10 +2073,10 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
-/***/ "./resources/js/components/user/home/Index.js":
-/*!****************************************************!*\
-  !*** ./resources/js/components/user/home/Index.js ***!
-  \****************************************************/
+/***/ "./resources/js/components/user/home/HomeCardCheckBalance.js":
+/*!*******************************************************************!*\
+  !*** ./resources/js/components/user/home/HomeCardCheckBalance.js ***!
+  \*******************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -2087,97 +2091,191 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var Index = function Index() {
+var HomeCardCheckBalance = function HomeCardCheckBalance() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      className: "card",
+      style: {
+        width: "18rem"
+      },
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+        className: "card-body",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h5", {
+          className: "card-title",
+          children: "Consultar saldo"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("i", {
+          className: "bi bi-list-ul"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+          className: "card-text",
+          children: "Some quick example text to build on the card title and make up the bulk of the card's content."
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+          href: "#",
+          className: "btn btn-block btn-primary",
+          children: "Consultar"
+        })]
+      })
+    })
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (HomeCardCheckBalance);
+
+/***/ }),
+
+/***/ "./resources/js/components/user/home/HomeCardLoadWallet.js":
+/*!*****************************************************************!*\
+  !*** ./resources/js/components/user/home/HomeCardLoadWallet.js ***!
+  \*****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+
+var HomeCardLoadWallet = function HomeCardLoadWallet() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      className: "card",
+      style: {
+        width: "18rem"
+      },
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+        className: "card-body",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h5", {
+          className: "card-title",
+          children: "Recargar Billetera"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("i", {
+          className: "bi bi-wallet2"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+          className: "card-text",
+          children: "Some quick example text to build on the card title and make up the bulk of the card's content."
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
+          to: "/load-wallet",
+          className: "btn btn-block btn-success",
+          children: "Recargar"
+        })]
+      })
+    })
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (HomeCardLoadWallet);
+
+/***/ }),
+
+/***/ "./resources/js/components/user/home/HomeCardToPay.js":
+/*!************************************************************!*\
+  !*** ./resources/js/components/user/home/HomeCardToPay.js ***!
+  \************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+var HomeCardToPay = function HomeCardToPay() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      className: "card",
+      style: {
+        width: "18rem"
+      },
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+        className: "card-body",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h5", {
+          className: "card-title",
+          children: "Pagar"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("i", {
+          className: "bi bi-cash"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+          className: "card-text",
+          children: "Some quick example text to build on the card title and make up the bulk of the card's content."
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+          href: "#",
+          className: "btn btn-block btn-dark",
+          children: "Pagar"
+        })]
+      })
+    })
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (HomeCardToPay);
+
+/***/ }),
+
+/***/ "./resources/js/components/user/home/Index.js":
+/*!****************************************************!*\
+  !*** ./resources/js/components/user/home/Index.js ***!
+  \****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _HomeCardToPay__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./HomeCardToPay */ "./resources/js/components/user/home/HomeCardToPay.js");
+/* harmony import */ var _HomeCardLoadWallet__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./HomeCardLoadWallet */ "./resources/js/components/user/home/HomeCardLoadWallet.js");
+/* harmony import */ var _HomeCardCheckBalance__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./HomeCardCheckBalance */ "./resources/js/components/user/home/HomeCardCheckBalance.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+/* Importando modelos */
+
+
+
+
+
+
+
+
+var Index = function Index() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
       className: "container",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
         className: "row justify-content-center",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
           className: "col-md-8",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
             className: "card",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
               className: "card-header",
               children: "Benvenido"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
               className: "card-body",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
                 className: "row",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
                   className: "col-md-12 text-center offset-3",
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-                    className: "card",
-                    style: {
-                      width: "18rem"
-                    },
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-                      className: "card-body",
-                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h5", {
-                        className: "card-title",
-                        children: "Recargar Billetera"
-                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("i", {
-                        className: "bi bi-wallet2"
-                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
-                        className: "card-text",
-                        children: "Some quick example text to build on the card title and make up the bulk of the card's content."
-                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
-                        href: "#",
-                        className: "btn btn-block btn-success",
-                        children: "Recargar"
-                      })]
-                    })
-                  })
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_HomeCardLoadWallet__WEBPACK_IMPORTED_MODULE_2__.default, {})
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
                   className: "w-100 py-2"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
                   className: "col-md-6 text-center",
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-                    className: "card",
-                    style: {
-                      width: "18rem"
-                    },
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-                      className: "card-body",
-                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h5", {
-                        className: "card-title",
-                        children: "Pagar"
-                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("i", {
-                        className: "bi bi-cash"
-                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
-                        className: "card-text",
-                        children: "Some quick example text to build on the card title and make up the bulk of the card's content."
-                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
-                        href: "#",
-                        className: "btn btn-block btn-dark",
-                        children: "Pagar"
-                      })]
-                    })
-                  })
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_HomeCardToPay__WEBPACK_IMPORTED_MODULE_1__.default, {})
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
                   className: "col-md-6 text-center",
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-                    className: "card",
-                    style: {
-                      width: "18rem"
-                    },
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-                      className: "card-body",
-                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h5", {
-                        className: "card-title",
-                        children: "Consultar saldo"
-                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("i", {
-                        className: "bi bi-list-ul"
-                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
-                        className: "card-text",
-                        children: "Some quick example text to build on the card title and make up the bulk of the card's content."
-                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
-                        href: "#",
-                        className: "btn btn-block btn-primary",
-                        children: "Consultar"
-                      })]
-                    })
-                  })
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_HomeCardCheckBalance__WEBPACK_IMPORTED_MODULE_3__.default, {})
                 })]
               })
             })]
@@ -2189,6 +2287,170 @@ var Index = function Index() {
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Index);
+
+/***/ }),
+
+/***/ "./resources/js/components/user/load-wallet/Index.js":
+/*!***********************************************************!*\
+  !*** ./resources/js/components/user/load-wallet/Index.js ***!
+  \***********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _LoadWalletForm__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./LoadWalletForm */ "./resources/js/components/user/load-wallet/LoadWalletForm.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+/* Importando componentes */
+
+
+
+
+
+
+var Index = function Index(_ref) {
+  var onAddSubmit = _ref.onAddSubmit;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      className: "container",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        className: "row justify-content-center",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          className: "col-md-8",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            className: "card",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+              className: "card-header",
+              children: "Recargar billetera"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+              className: "card-body",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_LoadWalletForm__WEBPACK_IMPORTED_MODULE_1__.default, {
+                onAddSubmit: onAddSubmit
+              })
+            })]
+          })
+        })
+      })
+    })
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Index);
+
+/***/ }),
+
+/***/ "./resources/js/components/user/load-wallet/LoadWalletForm.js":
+/*!********************************************************************!*\
+  !*** ./resources/js/components/user/load-wallet/LoadWalletForm.js ***!
+  \********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var react_hook_form__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-hook-form */ "./node_modules/react-hook-form/dist/index.esm.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+
+
+
+
+var LoadWalletForm = function LoadWalletForm(_ref) {
+  var _errors$document, _errors$document2, _errors$document3, _errors$document4, _errors$telephone, _errors$telephone2, _errors$telephone3, _errors$telephone4, _errors$transition, _errors$transition2;
+
+  var onAddSubmit = _ref.onAddSubmit;
+
+  var _useForm = (0,react_hook_form__WEBPACK_IMPORTED_MODULE_1__.useForm)(),
+      register = _useForm.register,
+      errors = _useForm.formState.errors,
+      handleSubmit = _useForm.handleSubmit;
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("form", {
+      className: "col-md-8 offset-2",
+      onSubmit: handleSubmit(onAddSubmit),
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "form-group",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+          children: "Documento"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", _objectSpread({
+          type: "text",
+          className: "form-control",
+          id: "document"
+        }, register("document", {
+          required: true,
+          pattern: /^[0-9]+$/i,
+          minLength: 5,
+          maxLength: 8
+        }))), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("small", {
+          className: "form-text text-muted",
+          children: [((_errors$document = errors.document) === null || _errors$document === void 0 ? void 0 : _errors$document.type) === 'required' && "El documento es requerido", ((_errors$document2 = errors.document) === null || _errors$document2 === void 0 ? void 0 : _errors$document2.type) === 'pattern' && "El documento tiene que ser numerico", ((_errors$document3 = errors.document) === null || _errors$document3 === void 0 ? void 0 : _errors$document3.type) === 'minLength' && "El documento que tener 5 o 8 caracteres", ((_errors$document4 = errors.document) === null || _errors$document4 === void 0 ? void 0 : _errors$document4.type) === 'maxLength' && "El documento que tener 5 o 8 caracteres"]
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "form-group",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+          children: "Telefono"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", _objectSpread({
+          type: "text",
+          className: "form-control",
+          id: "telephone"
+        }, register("telephone", {
+          required: true,
+          pattern: /^[0-9]+$/i,
+          minLength: 11,
+          maxLength: 11
+        }))), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("small", {
+          className: "form-text text-muted",
+          children: [((_errors$telephone = errors.telephone) === null || _errors$telephone === void 0 ? void 0 : _errors$telephone.type) === 'required' && "El documento es requerido", ((_errors$telephone2 = errors.telephone) === null || _errors$telephone2 === void 0 ? void 0 : _errors$telephone2.type) === 'pattern' && "El telefono tiene que ser numerico", ((_errors$telephone3 = errors.telephone) === null || _errors$telephone3 === void 0 ? void 0 : _errors$telephone3.type) === 'minLength' && "El telefono que tener 11 caracteres", ((_errors$telephone4 = errors.telephone) === null || _errors$telephone4 === void 0 ? void 0 : _errors$telephone4.type) === 'maxLength' && "El telefono que tener 11 caracteres"]
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "form-group",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+          children: "Cantidad de Deseas Recargar"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", _objectSpread({
+          type: "number",
+          className: "form-control",
+          id: "transition"
+        }, register("transition", {
+          required: true,
+          pattern: /^[0-9]+$/i
+        }))), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("small", {
+          className: "form-text text-muted",
+          children: [((_errors$transition = errors.transition) === null || _errors$transition === void 0 ? void 0 : _errors$transition.type) === 'required' && "El documento es requerido", ((_errors$transition2 = errors.transition) === null || _errors$transition2 === void 0 ? void 0 : _errors$transition2.type) === 'pattern' && "El telefono tiene que ser numerico"]
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "text-center",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, {
+          to: "/home",
+          className: "btn btn-dark mx-2 col-4",
+          children: "Volver"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+          type: "submit",
+          className: "btn btn-primary col-4",
+          children: "Recargar"
+        })]
+      })]
+    })
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (LoadWalletForm);
 
 /***/ }),
 
@@ -2223,6 +2485,43 @@ var HomeContainer = function HomeContainer() {
 
 /***/ }),
 
+/***/ "./resources/js/pages/container/user/load-wallet/LoadWalletContainer.js":
+/*!******************************************************************************!*\
+  !*** ./resources/js/pages/container/user/load-wallet/LoadWalletContainer.js ***!
+  \******************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _presenter_user_load_wallet_LoadWalletPresenter__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../presenter/user/load-wallet/LoadWalletPresenter */ "./resources/js/pages/presenter/user/load-wallet/LoadWalletPresenter.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+/* Importando componentes */
+
+
+
+
+
+var LoadWalletContainer = function LoadWalletContainer() {
+  var handleAddSubmit = function handleAddSubmit(data, e) {
+    console.log(data);
+  };
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_presenter_user_load_wallet_LoadWalletPresenter__WEBPACK_IMPORTED_MODULE_1__.default, {
+      onAddSubmit: handleAddSubmit
+    })
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (LoadWalletContainer);
+
+/***/ }),
+
 /***/ "./resources/js/pages/presenter/user/home/HomePresenter.js":
 /*!*****************************************************************!*\
   !*** ./resources/js/pages/presenter/user/home/HomePresenter.js ***!
@@ -2251,6 +2550,37 @@ var HomePresenter = function HomePresenter() {
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (HomePresenter);
+
+/***/ }),
+
+/***/ "./resources/js/pages/presenter/user/load-wallet/LoadWalletPresenter.js":
+/*!******************************************************************************!*\
+  !*** ./resources/js/pages/presenter/user/load-wallet/LoadWalletPresenter.js ***!
+  \******************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _components_user_load_wallet_Index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../components/user/load-wallet/Index */ "./resources/js/components/user/load-wallet/Index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+/* Importando componentes */
+
+
+
+
+var LoadWalletPresenter = function LoadWalletPresenter(_ref) {
+  var onAddSubmit = _ref.onAddSubmit;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_user_load_wallet_Index__WEBPACK_IMPORTED_MODULE_1__.default, {
+    onAddSubmit: onAddSubmit
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (LoadWalletPresenter);
 
 /***/ }),
 
@@ -6692,189 +7022,6 @@ var HomePresenter = function HomePresenter() {
 })));
 //# sourceMappingURL=bootstrap.js.map
 
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./node_modules/bootstrap-icons/font/bootstrap-icons.css":
-/*!*************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./node_modules/bootstrap-icons/font/bootstrap-icons.css ***!
-  \*************************************************************************************************************************************************************************************************************************/
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
-/* harmony import */ var _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../css-loader/dist/runtime/getUrl.js */ "./node_modules/css-loader/dist/runtime/getUrl.js");
-/* harmony import */ var _css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _fonts_bootstrap_icons_woff2_856008caa5eb66df68595e734e59580d__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./fonts/bootstrap-icons.woff2?856008caa5eb66df68595e734e59580d */ "./node_modules/bootstrap-icons/font/fonts/bootstrap-icons.woff2?856008caa5eb66df68595e734e59580d");
-/* harmony import */ var _fonts_bootstrap_icons_woff_856008caa5eb66df68595e734e59580d__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./fonts/bootstrap-icons.woff?856008caa5eb66df68595e734e59580d */ "./node_modules/bootstrap-icons/font/fonts/bootstrap-icons.woff?856008caa5eb66df68595e734e59580d");
-// Imports
-
-
-
-
-var ___CSS_LOADER_EXPORT___ = _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
-var ___CSS_LOADER_URL_REPLACEMENT_0___ = _css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()(_fonts_bootstrap_icons_woff2_856008caa5eb66df68595e734e59580d__WEBPACK_IMPORTED_MODULE_2__.default);
-var ___CSS_LOADER_URL_REPLACEMENT_1___ = _css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()(_fonts_bootstrap_icons_woff_856008caa5eb66df68595e734e59580d__WEBPACK_IMPORTED_MODULE_3__.default);
-// Module
-___CSS_LOADER_EXPORT___.push([module.id, "@font-face {\n  font-family: \"bootstrap-icons\";\n  src: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ") format(\"woff2\"),\nurl(" + ___CSS_LOADER_URL_REPLACEMENT_1___ + ") format(\"woff\");\n}\n\n[class^=\"bi-\"]::before,\n[class*=\" bi-\"]::before {\n  display: inline-block;\n  font-family: bootstrap-icons !important;\n  font-style: normal;\n  font-weight: normal !important;\n  font-variant: normal;\n  text-transform: none;\n  line-height: 1;\n  vertical-align: -.125em;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n\n.bi-alarm-fill::before { content: \"\\f101\"; }\n.bi-alarm::before { content: \"\\f102\"; }\n.bi-align-bottom::before { content: \"\\f103\"; }\n.bi-align-center::before { content: \"\\f104\"; }\n.bi-align-end::before { content: \"\\f105\"; }\n.bi-align-middle::before { content: \"\\f106\"; }\n.bi-align-start::before { content: \"\\f107\"; }\n.bi-align-top::before { content: \"\\f108\"; }\n.bi-alt::before { content: \"\\f109\"; }\n.bi-app-indicator::before { content: \"\\f10a\"; }\n.bi-app::before { content: \"\\f10b\"; }\n.bi-archive-fill::before { content: \"\\f10c\"; }\n.bi-archive::before { content: \"\\f10d\"; }\n.bi-arrow-90deg-down::before { content: \"\\f10e\"; }\n.bi-arrow-90deg-left::before { content: \"\\f10f\"; }\n.bi-arrow-90deg-right::before { content: \"\\f110\"; }\n.bi-arrow-90deg-up::before { content: \"\\f111\"; }\n.bi-arrow-bar-down::before { content: \"\\f112\"; }\n.bi-arrow-bar-left::before { content: \"\\f113\"; }\n.bi-arrow-bar-right::before { content: \"\\f114\"; }\n.bi-arrow-bar-up::before { content: \"\\f115\"; }\n.bi-arrow-clockwise::before { content: \"\\f116\"; }\n.bi-arrow-counterclockwise::before { content: \"\\f117\"; }\n.bi-arrow-down-circle-fill::before { content: \"\\f118\"; }\n.bi-arrow-down-circle::before { content: \"\\f119\"; }\n.bi-arrow-down-left-circle-fill::before { content: \"\\f11a\"; }\n.bi-arrow-down-left-circle::before { content: \"\\f11b\"; }\n.bi-arrow-down-left-square-fill::before { content: \"\\f11c\"; }\n.bi-arrow-down-left-square::before { content: \"\\f11d\"; }\n.bi-arrow-down-left::before { content: \"\\f11e\"; }\n.bi-arrow-down-right-circle-fill::before { content: \"\\f11f\"; }\n.bi-arrow-down-right-circle::before { content: \"\\f120\"; }\n.bi-arrow-down-right-square-fill::before { content: \"\\f121\"; }\n.bi-arrow-down-right-square::before { content: \"\\f122\"; }\n.bi-arrow-down-right::before { content: \"\\f123\"; }\n.bi-arrow-down-short::before { content: \"\\f124\"; }\n.bi-arrow-down-square-fill::before { content: \"\\f125\"; }\n.bi-arrow-down-square::before { content: \"\\f126\"; }\n.bi-arrow-down-up::before { content: \"\\f127\"; }\n.bi-arrow-down::before { content: \"\\f128\"; }\n.bi-arrow-left-circle-fill::before { content: \"\\f129\"; }\n.bi-arrow-left-circle::before { content: \"\\f12a\"; }\n.bi-arrow-left-right::before { content: \"\\f12b\"; }\n.bi-arrow-left-short::before { content: \"\\f12c\"; }\n.bi-arrow-left-square-fill::before { content: \"\\f12d\"; }\n.bi-arrow-left-square::before { content: \"\\f12e\"; }\n.bi-arrow-left::before { content: \"\\f12f\"; }\n.bi-arrow-repeat::before { content: \"\\f130\"; }\n.bi-arrow-return-left::before { content: \"\\f131\"; }\n.bi-arrow-return-right::before { content: \"\\f132\"; }\n.bi-arrow-right-circle-fill::before { content: \"\\f133\"; }\n.bi-arrow-right-circle::before { content: \"\\f134\"; }\n.bi-arrow-right-short::before { content: \"\\f135\"; }\n.bi-arrow-right-square-fill::before { content: \"\\f136\"; }\n.bi-arrow-right-square::before { content: \"\\f137\"; }\n.bi-arrow-right::before { content: \"\\f138\"; }\n.bi-arrow-up-circle-fill::before { content: \"\\f139\"; }\n.bi-arrow-up-circle::before { content: \"\\f13a\"; }\n.bi-arrow-up-left-circle-fill::before { content: \"\\f13b\"; }\n.bi-arrow-up-left-circle::before { content: \"\\f13c\"; }\n.bi-arrow-up-left-square-fill::before { content: \"\\f13d\"; }\n.bi-arrow-up-left-square::before { content: \"\\f13e\"; }\n.bi-arrow-up-left::before { content: \"\\f13f\"; }\n.bi-arrow-up-right-circle-fill::before { content: \"\\f140\"; }\n.bi-arrow-up-right-circle::before { content: \"\\f141\"; }\n.bi-arrow-up-right-square-fill::before { content: \"\\f142\"; }\n.bi-arrow-up-right-square::before { content: \"\\f143\"; }\n.bi-arrow-up-right::before { content: \"\\f144\"; }\n.bi-arrow-up-short::before { content: \"\\f145\"; }\n.bi-arrow-up-square-fill::before { content: \"\\f146\"; }\n.bi-arrow-up-square::before { content: \"\\f147\"; }\n.bi-arrow-up::before { content: \"\\f148\"; }\n.bi-arrows-angle-contract::before { content: \"\\f149\"; }\n.bi-arrows-angle-expand::before { content: \"\\f14a\"; }\n.bi-arrows-collapse::before { content: \"\\f14b\"; }\n.bi-arrows-expand::before { content: \"\\f14c\"; }\n.bi-arrows-fullscreen::before { content: \"\\f14d\"; }\n.bi-arrows-move::before { content: \"\\f14e\"; }\n.bi-aspect-ratio-fill::before { content: \"\\f14f\"; }\n.bi-aspect-ratio::before { content: \"\\f150\"; }\n.bi-asterisk::before { content: \"\\f151\"; }\n.bi-at::before { content: \"\\f152\"; }\n.bi-award-fill::before { content: \"\\f153\"; }\n.bi-award::before { content: \"\\f154\"; }\n.bi-back::before { content: \"\\f155\"; }\n.bi-backspace-fill::before { content: \"\\f156\"; }\n.bi-backspace-reverse-fill::before { content: \"\\f157\"; }\n.bi-backspace-reverse::before { content: \"\\f158\"; }\n.bi-backspace::before { content: \"\\f159\"; }\n.bi-badge-3d-fill::before { content: \"\\f15a\"; }\n.bi-badge-3d::before { content: \"\\f15b\"; }\n.bi-badge-4k-fill::before { content: \"\\f15c\"; }\n.bi-badge-4k::before { content: \"\\f15d\"; }\n.bi-badge-8k-fill::before { content: \"\\f15e\"; }\n.bi-badge-8k::before { content: \"\\f15f\"; }\n.bi-badge-ad-fill::before { content: \"\\f160\"; }\n.bi-badge-ad::before { content: \"\\f161\"; }\n.bi-badge-ar-fill::before { content: \"\\f162\"; }\n.bi-badge-ar::before { content: \"\\f163\"; }\n.bi-badge-cc-fill::before { content: \"\\f164\"; }\n.bi-badge-cc::before { content: \"\\f165\"; }\n.bi-badge-hd-fill::before { content: \"\\f166\"; }\n.bi-badge-hd::before { content: \"\\f167\"; }\n.bi-badge-tm-fill::before { content: \"\\f168\"; }\n.bi-badge-tm::before { content: \"\\f169\"; }\n.bi-badge-vo-fill::before { content: \"\\f16a\"; }\n.bi-badge-vo::before { content: \"\\f16b\"; }\n.bi-badge-vr-fill::before { content: \"\\f16c\"; }\n.bi-badge-vr::before { content: \"\\f16d\"; }\n.bi-badge-wc-fill::before { content: \"\\f16e\"; }\n.bi-badge-wc::before { content: \"\\f16f\"; }\n.bi-bag-check-fill::before { content: \"\\f170\"; }\n.bi-bag-check::before { content: \"\\f171\"; }\n.bi-bag-dash-fill::before { content: \"\\f172\"; }\n.bi-bag-dash::before { content: \"\\f173\"; }\n.bi-bag-fill::before { content: \"\\f174\"; }\n.bi-bag-plus-fill::before { content: \"\\f175\"; }\n.bi-bag-plus::before { content: \"\\f176\"; }\n.bi-bag-x-fill::before { content: \"\\f177\"; }\n.bi-bag-x::before { content: \"\\f178\"; }\n.bi-bag::before { content: \"\\f179\"; }\n.bi-bar-chart-fill::before { content: \"\\f17a\"; }\n.bi-bar-chart-line-fill::before { content: \"\\f17b\"; }\n.bi-bar-chart-line::before { content: \"\\f17c\"; }\n.bi-bar-chart-steps::before { content: \"\\f17d\"; }\n.bi-bar-chart::before { content: \"\\f17e\"; }\n.bi-basket-fill::before { content: \"\\f17f\"; }\n.bi-basket::before { content: \"\\f180\"; }\n.bi-basket2-fill::before { content: \"\\f181\"; }\n.bi-basket2::before { content: \"\\f182\"; }\n.bi-basket3-fill::before { content: \"\\f183\"; }\n.bi-basket3::before { content: \"\\f184\"; }\n.bi-battery-charging::before { content: \"\\f185\"; }\n.bi-battery-full::before { content: \"\\f186\"; }\n.bi-battery-half::before { content: \"\\f187\"; }\n.bi-battery::before { content: \"\\f188\"; }\n.bi-bell-fill::before { content: \"\\f189\"; }\n.bi-bell::before { content: \"\\f18a\"; }\n.bi-bezier::before { content: \"\\f18b\"; }\n.bi-bezier2::before { content: \"\\f18c\"; }\n.bi-bicycle::before { content: \"\\f18d\"; }\n.bi-binoculars-fill::before { content: \"\\f18e\"; }\n.bi-binoculars::before { content: \"\\f18f\"; }\n.bi-blockquote-left::before { content: \"\\f190\"; }\n.bi-blockquote-right::before { content: \"\\f191\"; }\n.bi-book-fill::before { content: \"\\f192\"; }\n.bi-book-half::before { content: \"\\f193\"; }\n.bi-book::before { content: \"\\f194\"; }\n.bi-bookmark-check-fill::before { content: \"\\f195\"; }\n.bi-bookmark-check::before { content: \"\\f196\"; }\n.bi-bookmark-dash-fill::before { content: \"\\f197\"; }\n.bi-bookmark-dash::before { content: \"\\f198\"; }\n.bi-bookmark-fill::before { content: \"\\f199\"; }\n.bi-bookmark-heart-fill::before { content: \"\\f19a\"; }\n.bi-bookmark-heart::before { content: \"\\f19b\"; }\n.bi-bookmark-plus-fill::before { content: \"\\f19c\"; }\n.bi-bookmark-plus::before { content: \"\\f19d\"; }\n.bi-bookmark-star-fill::before { content: \"\\f19e\"; }\n.bi-bookmark-star::before { content: \"\\f19f\"; }\n.bi-bookmark-x-fill::before { content: \"\\f1a0\"; }\n.bi-bookmark-x::before { content: \"\\f1a1\"; }\n.bi-bookmark::before { content: \"\\f1a2\"; }\n.bi-bookmarks-fill::before { content: \"\\f1a3\"; }\n.bi-bookmarks::before { content: \"\\f1a4\"; }\n.bi-bookshelf::before { content: \"\\f1a5\"; }\n.bi-bootstrap-fill::before { content: \"\\f1a6\"; }\n.bi-bootstrap-reboot::before { content: \"\\f1a7\"; }\n.bi-bootstrap::before { content: \"\\f1a8\"; }\n.bi-border-all::before { content: \"\\f1a9\"; }\n.bi-border-bottom::before { content: \"\\f1aa\"; }\n.bi-border-center::before { content: \"\\f1ab\"; }\n.bi-border-inner::before { content: \"\\f1ac\"; }\n.bi-border-left::before { content: \"\\f1ad\"; }\n.bi-border-middle::before { content: \"\\f1ae\"; }\n.bi-border-outer::before { content: \"\\f1af\"; }\n.bi-border-right::before { content: \"\\f1b0\"; }\n.bi-border-style::before { content: \"\\f1b1\"; }\n.bi-border-top::before { content: \"\\f1b2\"; }\n.bi-border-width::before { content: \"\\f1b3\"; }\n.bi-border::before { content: \"\\f1b4\"; }\n.bi-bounding-box-circles::before { content: \"\\f1b5\"; }\n.bi-bounding-box::before { content: \"\\f1b6\"; }\n.bi-box-arrow-down-left::before { content: \"\\f1b7\"; }\n.bi-box-arrow-down-right::before { content: \"\\f1b8\"; }\n.bi-box-arrow-down::before { content: \"\\f1b9\"; }\n.bi-box-arrow-in-down-left::before { content: \"\\f1ba\"; }\n.bi-box-arrow-in-down-right::before { content: \"\\f1bb\"; }\n.bi-box-arrow-in-down::before { content: \"\\f1bc\"; }\n.bi-box-arrow-in-left::before { content: \"\\f1bd\"; }\n.bi-box-arrow-in-right::before { content: \"\\f1be\"; }\n.bi-box-arrow-in-up-left::before { content: \"\\f1bf\"; }\n.bi-box-arrow-in-up-right::before { content: \"\\f1c0\"; }\n.bi-box-arrow-in-up::before { content: \"\\f1c1\"; }\n.bi-box-arrow-left::before { content: \"\\f1c2\"; }\n.bi-box-arrow-right::before { content: \"\\f1c3\"; }\n.bi-box-arrow-up-left::before { content: \"\\f1c4\"; }\n.bi-box-arrow-up-right::before { content: \"\\f1c5\"; }\n.bi-box-arrow-up::before { content: \"\\f1c6\"; }\n.bi-box-seam::before { content: \"\\f1c7\"; }\n.bi-box::before { content: \"\\f1c8\"; }\n.bi-braces::before { content: \"\\f1c9\"; }\n.bi-bricks::before { content: \"\\f1ca\"; }\n.bi-briefcase-fill::before { content: \"\\f1cb\"; }\n.bi-briefcase::before { content: \"\\f1cc\"; }\n.bi-brightness-alt-high-fill::before { content: \"\\f1cd\"; }\n.bi-brightness-alt-high::before { content: \"\\f1ce\"; }\n.bi-brightness-alt-low-fill::before { content: \"\\f1cf\"; }\n.bi-brightness-alt-low::before { content: \"\\f1d0\"; }\n.bi-brightness-high-fill::before { content: \"\\f1d1\"; }\n.bi-brightness-high::before { content: \"\\f1d2\"; }\n.bi-brightness-low-fill::before { content: \"\\f1d3\"; }\n.bi-brightness-low::before { content: \"\\f1d4\"; }\n.bi-broadcast-pin::before { content: \"\\f1d5\"; }\n.bi-broadcast::before { content: \"\\f1d6\"; }\n.bi-brush-fill::before { content: \"\\f1d7\"; }\n.bi-brush::before { content: \"\\f1d8\"; }\n.bi-bucket-fill::before { content: \"\\f1d9\"; }\n.bi-bucket::before { content: \"\\f1da\"; }\n.bi-bug-fill::before { content: \"\\f1db\"; }\n.bi-bug::before { content: \"\\f1dc\"; }\n.bi-building::before { content: \"\\f1dd\"; }\n.bi-bullseye::before { content: \"\\f1de\"; }\n.bi-calculator-fill::before { content: \"\\f1df\"; }\n.bi-calculator::before { content: \"\\f1e0\"; }\n.bi-calendar-check-fill::before { content: \"\\f1e1\"; }\n.bi-calendar-check::before { content: \"\\f1e2\"; }\n.bi-calendar-date-fill::before { content: \"\\f1e3\"; }\n.bi-calendar-date::before { content: \"\\f1e4\"; }\n.bi-calendar-day-fill::before { content: \"\\f1e5\"; }\n.bi-calendar-day::before { content: \"\\f1e6\"; }\n.bi-calendar-event-fill::before { content: \"\\f1e7\"; }\n.bi-calendar-event::before { content: \"\\f1e8\"; }\n.bi-calendar-fill::before { content: \"\\f1e9\"; }\n.bi-calendar-minus-fill::before { content: \"\\f1ea\"; }\n.bi-calendar-minus::before { content: \"\\f1eb\"; }\n.bi-calendar-month-fill::before { content: \"\\f1ec\"; }\n.bi-calendar-month::before { content: \"\\f1ed\"; }\n.bi-calendar-plus-fill::before { content: \"\\f1ee\"; }\n.bi-calendar-plus::before { content: \"\\f1ef\"; }\n.bi-calendar-range-fill::before { content: \"\\f1f0\"; }\n.bi-calendar-range::before { content: \"\\f1f1\"; }\n.bi-calendar-week-fill::before { content: \"\\f1f2\"; }\n.bi-calendar-week::before { content: \"\\f1f3\"; }\n.bi-calendar-x-fill::before { content: \"\\f1f4\"; }\n.bi-calendar-x::before { content: \"\\f1f5\"; }\n.bi-calendar::before { content: \"\\f1f6\"; }\n.bi-calendar2-check-fill::before { content: \"\\f1f7\"; }\n.bi-calendar2-check::before { content: \"\\f1f8\"; }\n.bi-calendar2-date-fill::before { content: \"\\f1f9\"; }\n.bi-calendar2-date::before { content: \"\\f1fa\"; }\n.bi-calendar2-day-fill::before { content: \"\\f1fb\"; }\n.bi-calendar2-day::before { content: \"\\f1fc\"; }\n.bi-calendar2-event-fill::before { content: \"\\f1fd\"; }\n.bi-calendar2-event::before { content: \"\\f1fe\"; }\n.bi-calendar2-fill::before { content: \"\\f1ff\"; }\n.bi-calendar2-minus-fill::before { content: \"\\f200\"; }\n.bi-calendar2-minus::before { content: \"\\f201\"; }\n.bi-calendar2-month-fill::before { content: \"\\f202\"; }\n.bi-calendar2-month::before { content: \"\\f203\"; }\n.bi-calendar2-plus-fill::before { content: \"\\f204\"; }\n.bi-calendar2-plus::before { content: \"\\f205\"; }\n.bi-calendar2-range-fill::before { content: \"\\f206\"; }\n.bi-calendar2-range::before { content: \"\\f207\"; }\n.bi-calendar2-week-fill::before { content: \"\\f208\"; }\n.bi-calendar2-week::before { content: \"\\f209\"; }\n.bi-calendar2-x-fill::before { content: \"\\f20a\"; }\n.bi-calendar2-x::before { content: \"\\f20b\"; }\n.bi-calendar2::before { content: \"\\f20c\"; }\n.bi-calendar3-event-fill::before { content: \"\\f20d\"; }\n.bi-calendar3-event::before { content: \"\\f20e\"; }\n.bi-calendar3-fill::before { content: \"\\f20f\"; }\n.bi-calendar3-range-fill::before { content: \"\\f210\"; }\n.bi-calendar3-range::before { content: \"\\f211\"; }\n.bi-calendar3-week-fill::before { content: \"\\f212\"; }\n.bi-calendar3-week::before { content: \"\\f213\"; }\n.bi-calendar3::before { content: \"\\f214\"; }\n.bi-calendar4-event::before { content: \"\\f215\"; }\n.bi-calendar4-range::before { content: \"\\f216\"; }\n.bi-calendar4-week::before { content: \"\\f217\"; }\n.bi-calendar4::before { content: \"\\f218\"; }\n.bi-camera-fill::before { content: \"\\f219\"; }\n.bi-camera-reels-fill::before { content: \"\\f21a\"; }\n.bi-camera-reels::before { content: \"\\f21b\"; }\n.bi-camera-video-fill::before { content: \"\\f21c\"; }\n.bi-camera-video-off-fill::before { content: \"\\f21d\"; }\n.bi-camera-video-off::before { content: \"\\f21e\"; }\n.bi-camera-video::before { content: \"\\f21f\"; }\n.bi-camera::before { content: \"\\f220\"; }\n.bi-camera2::before { content: \"\\f221\"; }\n.bi-capslock-fill::before { content: \"\\f222\"; }\n.bi-capslock::before { content: \"\\f223\"; }\n.bi-card-checklist::before { content: \"\\f224\"; }\n.bi-card-heading::before { content: \"\\f225\"; }\n.bi-card-image::before { content: \"\\f226\"; }\n.bi-card-list::before { content: \"\\f227\"; }\n.bi-card-text::before { content: \"\\f228\"; }\n.bi-caret-down-fill::before { content: \"\\f229\"; }\n.bi-caret-down-square-fill::before { content: \"\\f22a\"; }\n.bi-caret-down-square::before { content: \"\\f22b\"; }\n.bi-caret-down::before { content: \"\\f22c\"; }\n.bi-caret-left-fill::before { content: \"\\f22d\"; }\n.bi-caret-left-square-fill::before { content: \"\\f22e\"; }\n.bi-caret-left-square::before { content: \"\\f22f\"; }\n.bi-caret-left::before { content: \"\\f230\"; }\n.bi-caret-right-fill::before { content: \"\\f231\"; }\n.bi-caret-right-square-fill::before { content: \"\\f232\"; }\n.bi-caret-right-square::before { content: \"\\f233\"; }\n.bi-caret-right::before { content: \"\\f234\"; }\n.bi-caret-up-fill::before { content: \"\\f235\"; }\n.bi-caret-up-square-fill::before { content: \"\\f236\"; }\n.bi-caret-up-square::before { content: \"\\f237\"; }\n.bi-caret-up::before { content: \"\\f238\"; }\n.bi-cart-check-fill::before { content: \"\\f239\"; }\n.bi-cart-check::before { content: \"\\f23a\"; }\n.bi-cart-dash-fill::before { content: \"\\f23b\"; }\n.bi-cart-dash::before { content: \"\\f23c\"; }\n.bi-cart-fill::before { content: \"\\f23d\"; }\n.bi-cart-plus-fill::before { content: \"\\f23e\"; }\n.bi-cart-plus::before { content: \"\\f23f\"; }\n.bi-cart-x-fill::before { content: \"\\f240\"; }\n.bi-cart-x::before { content: \"\\f241\"; }\n.bi-cart::before { content: \"\\f242\"; }\n.bi-cart2::before { content: \"\\f243\"; }\n.bi-cart3::before { content: \"\\f244\"; }\n.bi-cart4::before { content: \"\\f245\"; }\n.bi-cash-stack::before { content: \"\\f246\"; }\n.bi-cash::before { content: \"\\f247\"; }\n.bi-cast::before { content: \"\\f248\"; }\n.bi-chat-dots-fill::before { content: \"\\f249\"; }\n.bi-chat-dots::before { content: \"\\f24a\"; }\n.bi-chat-fill::before { content: \"\\f24b\"; }\n.bi-chat-left-dots-fill::before { content: \"\\f24c\"; }\n.bi-chat-left-dots::before { content: \"\\f24d\"; }\n.bi-chat-left-fill::before { content: \"\\f24e\"; }\n.bi-chat-left-quote-fill::before { content: \"\\f24f\"; }\n.bi-chat-left-quote::before { content: \"\\f250\"; }\n.bi-chat-left-text-fill::before { content: \"\\f251\"; }\n.bi-chat-left-text::before { content: \"\\f252\"; }\n.bi-chat-left::before { content: \"\\f253\"; }\n.bi-chat-quote-fill::before { content: \"\\f254\"; }\n.bi-chat-quote::before { content: \"\\f255\"; }\n.bi-chat-right-dots-fill::before { content: \"\\f256\"; }\n.bi-chat-right-dots::before { content: \"\\f257\"; }\n.bi-chat-right-fill::before { content: \"\\f258\"; }\n.bi-chat-right-quote-fill::before { content: \"\\f259\"; }\n.bi-chat-right-quote::before { content: \"\\f25a\"; }\n.bi-chat-right-text-fill::before { content: \"\\f25b\"; }\n.bi-chat-right-text::before { content: \"\\f25c\"; }\n.bi-chat-right::before { content: \"\\f25d\"; }\n.bi-chat-square-dots-fill::before { content: \"\\f25e\"; }\n.bi-chat-square-dots::before { content: \"\\f25f\"; }\n.bi-chat-square-fill::before { content: \"\\f260\"; }\n.bi-chat-square-quote-fill::before { content: \"\\f261\"; }\n.bi-chat-square-quote::before { content: \"\\f262\"; }\n.bi-chat-square-text-fill::before { content: \"\\f263\"; }\n.bi-chat-square-text::before { content: \"\\f264\"; }\n.bi-chat-square::before { content: \"\\f265\"; }\n.bi-chat-text-fill::before { content: \"\\f266\"; }\n.bi-chat-text::before { content: \"\\f267\"; }\n.bi-chat::before { content: \"\\f268\"; }\n.bi-check-all::before { content: \"\\f269\"; }\n.bi-check-circle-fill::before { content: \"\\f26a\"; }\n.bi-check-circle::before { content: \"\\f26b\"; }\n.bi-check-square-fill::before { content: \"\\f26c\"; }\n.bi-check-square::before { content: \"\\f26d\"; }\n.bi-check::before { content: \"\\f26e\"; }\n.bi-check2-all::before { content: \"\\f26f\"; }\n.bi-check2-circle::before { content: \"\\f270\"; }\n.bi-check2-square::before { content: \"\\f271\"; }\n.bi-check2::before { content: \"\\f272\"; }\n.bi-chevron-bar-contract::before { content: \"\\f273\"; }\n.bi-chevron-bar-down::before { content: \"\\f274\"; }\n.bi-chevron-bar-expand::before { content: \"\\f275\"; }\n.bi-chevron-bar-left::before { content: \"\\f276\"; }\n.bi-chevron-bar-right::before { content: \"\\f277\"; }\n.bi-chevron-bar-up::before { content: \"\\f278\"; }\n.bi-chevron-compact-down::before { content: \"\\f279\"; }\n.bi-chevron-compact-left::before { content: \"\\f27a\"; }\n.bi-chevron-compact-right::before { content: \"\\f27b\"; }\n.bi-chevron-compact-up::before { content: \"\\f27c\"; }\n.bi-chevron-contract::before { content: \"\\f27d\"; }\n.bi-chevron-double-down::before { content: \"\\f27e\"; }\n.bi-chevron-double-left::before { content: \"\\f27f\"; }\n.bi-chevron-double-right::before { content: \"\\f280\"; }\n.bi-chevron-double-up::before { content: \"\\f281\"; }\n.bi-chevron-down::before { content: \"\\f282\"; }\n.bi-chevron-expand::before { content: \"\\f283\"; }\n.bi-chevron-left::before { content: \"\\f284\"; }\n.bi-chevron-right::before { content: \"\\f285\"; }\n.bi-chevron-up::before { content: \"\\f286\"; }\n.bi-circle-fill::before { content: \"\\f287\"; }\n.bi-circle-half::before { content: \"\\f288\"; }\n.bi-circle-square::before { content: \"\\f289\"; }\n.bi-circle::before { content: \"\\f28a\"; }\n.bi-clipboard-check::before { content: \"\\f28b\"; }\n.bi-clipboard-data::before { content: \"\\f28c\"; }\n.bi-clipboard-minus::before { content: \"\\f28d\"; }\n.bi-clipboard-plus::before { content: \"\\f28e\"; }\n.bi-clipboard-x::before { content: \"\\f28f\"; }\n.bi-clipboard::before { content: \"\\f290\"; }\n.bi-clock-fill::before { content: \"\\f291\"; }\n.bi-clock-history::before { content: \"\\f292\"; }\n.bi-clock::before { content: \"\\f293\"; }\n.bi-cloud-arrow-down-fill::before { content: \"\\f294\"; }\n.bi-cloud-arrow-down::before { content: \"\\f295\"; }\n.bi-cloud-arrow-up-fill::before { content: \"\\f296\"; }\n.bi-cloud-arrow-up::before { content: \"\\f297\"; }\n.bi-cloud-check-fill::before { content: \"\\f298\"; }\n.bi-cloud-check::before { content: \"\\f299\"; }\n.bi-cloud-download-fill::before { content: \"\\f29a\"; }\n.bi-cloud-download::before { content: \"\\f29b\"; }\n.bi-cloud-drizzle-fill::before { content: \"\\f29c\"; }\n.bi-cloud-drizzle::before { content: \"\\f29d\"; }\n.bi-cloud-fill::before { content: \"\\f29e\"; }\n.bi-cloud-fog-fill::before { content: \"\\f29f\"; }\n.bi-cloud-fog::before { content: \"\\f2a0\"; }\n.bi-cloud-fog2-fill::before { content: \"\\f2a1\"; }\n.bi-cloud-fog2::before { content: \"\\f2a2\"; }\n.bi-cloud-hail-fill::before { content: \"\\f2a3\"; }\n.bi-cloud-hail::before { content: \"\\f2a4\"; }\n.bi-cloud-haze-1::before { content: \"\\f2a5\"; }\n.bi-cloud-haze-fill::before { content: \"\\f2a6\"; }\n.bi-cloud-haze::before { content: \"\\f2a7\"; }\n.bi-cloud-haze2-fill::before { content: \"\\f2a8\"; }\n.bi-cloud-lightning-fill::before { content: \"\\f2a9\"; }\n.bi-cloud-lightning-rain-fill::before { content: \"\\f2aa\"; }\n.bi-cloud-lightning-rain::before { content: \"\\f2ab\"; }\n.bi-cloud-lightning::before { content: \"\\f2ac\"; }\n.bi-cloud-minus-fill::before { content: \"\\f2ad\"; }\n.bi-cloud-minus::before { content: \"\\f2ae\"; }\n.bi-cloud-moon-fill::before { content: \"\\f2af\"; }\n.bi-cloud-moon::before { content: \"\\f2b0\"; }\n.bi-cloud-plus-fill::before { content: \"\\f2b1\"; }\n.bi-cloud-plus::before { content: \"\\f2b2\"; }\n.bi-cloud-rain-fill::before { content: \"\\f2b3\"; }\n.bi-cloud-rain-heavy-fill::before { content: \"\\f2b4\"; }\n.bi-cloud-rain-heavy::before { content: \"\\f2b5\"; }\n.bi-cloud-rain::before { content: \"\\f2b6\"; }\n.bi-cloud-slash-fill::before { content: \"\\f2b7\"; }\n.bi-cloud-slash::before { content: \"\\f2b8\"; }\n.bi-cloud-sleet-fill::before { content: \"\\f2b9\"; }\n.bi-cloud-sleet::before { content: \"\\f2ba\"; }\n.bi-cloud-snow-fill::before { content: \"\\f2bb\"; }\n.bi-cloud-snow::before { content: \"\\f2bc\"; }\n.bi-cloud-sun-fill::before { content: \"\\f2bd\"; }\n.bi-cloud-sun::before { content: \"\\f2be\"; }\n.bi-cloud-upload-fill::before { content: \"\\f2bf\"; }\n.bi-cloud-upload::before { content: \"\\f2c0\"; }\n.bi-cloud::before { content: \"\\f2c1\"; }\n.bi-clouds-fill::before { content: \"\\f2c2\"; }\n.bi-clouds::before { content: \"\\f2c3\"; }\n.bi-cloudy-fill::before { content: \"\\f2c4\"; }\n.bi-cloudy::before { content: \"\\f2c5\"; }\n.bi-code-slash::before { content: \"\\f2c6\"; }\n.bi-code-square::before { content: \"\\f2c7\"; }\n.bi-code::before { content: \"\\f2c8\"; }\n.bi-collection-fill::before { content: \"\\f2c9\"; }\n.bi-collection-play-fill::before { content: \"\\f2ca\"; }\n.bi-collection-play::before { content: \"\\f2cb\"; }\n.bi-collection::before { content: \"\\f2cc\"; }\n.bi-columns-gap::before { content: \"\\f2cd\"; }\n.bi-columns::before { content: \"\\f2ce\"; }\n.bi-command::before { content: \"\\f2cf\"; }\n.bi-compass-fill::before { content: \"\\f2d0\"; }\n.bi-compass::before { content: \"\\f2d1\"; }\n.bi-cone-striped::before { content: \"\\f2d2\"; }\n.bi-cone::before { content: \"\\f2d3\"; }\n.bi-controller::before { content: \"\\f2d4\"; }\n.bi-cpu-fill::before { content: \"\\f2d5\"; }\n.bi-cpu::before { content: \"\\f2d6\"; }\n.bi-credit-card-2-back-fill::before { content: \"\\f2d7\"; }\n.bi-credit-card-2-back::before { content: \"\\f2d8\"; }\n.bi-credit-card-2-front-fill::before { content: \"\\f2d9\"; }\n.bi-credit-card-2-front::before { content: \"\\f2da\"; }\n.bi-credit-card-fill::before { content: \"\\f2db\"; }\n.bi-credit-card::before { content: \"\\f2dc\"; }\n.bi-crop::before { content: \"\\f2dd\"; }\n.bi-cup-fill::before { content: \"\\f2de\"; }\n.bi-cup-straw::before { content: \"\\f2df\"; }\n.bi-cup::before { content: \"\\f2e0\"; }\n.bi-cursor-fill::before { content: \"\\f2e1\"; }\n.bi-cursor-text::before { content: \"\\f2e2\"; }\n.bi-cursor::before { content: \"\\f2e3\"; }\n.bi-dash-circle-dotted::before { content: \"\\f2e4\"; }\n.bi-dash-circle-fill::before { content: \"\\f2e5\"; }\n.bi-dash-circle::before { content: \"\\f2e6\"; }\n.bi-dash-square-dotted::before { content: \"\\f2e7\"; }\n.bi-dash-square-fill::before { content: \"\\f2e8\"; }\n.bi-dash-square::before { content: \"\\f2e9\"; }\n.bi-dash::before { content: \"\\f2ea\"; }\n.bi-diagram-2-fill::before { content: \"\\f2eb\"; }\n.bi-diagram-2::before { content: \"\\f2ec\"; }\n.bi-diagram-3-fill::before { content: \"\\f2ed\"; }\n.bi-diagram-3::before { content: \"\\f2ee\"; }\n.bi-diamond-fill::before { content: \"\\f2ef\"; }\n.bi-diamond-half::before { content: \"\\f2f0\"; }\n.bi-diamond::before { content: \"\\f2f1\"; }\n.bi-dice-1-fill::before { content: \"\\f2f2\"; }\n.bi-dice-1::before { content: \"\\f2f3\"; }\n.bi-dice-2-fill::before { content: \"\\f2f4\"; }\n.bi-dice-2::before { content: \"\\f2f5\"; }\n.bi-dice-3-fill::before { content: \"\\f2f6\"; }\n.bi-dice-3::before { content: \"\\f2f7\"; }\n.bi-dice-4-fill::before { content: \"\\f2f8\"; }\n.bi-dice-4::before { content: \"\\f2f9\"; }\n.bi-dice-5-fill::before { content: \"\\f2fa\"; }\n.bi-dice-5::before { content: \"\\f2fb\"; }\n.bi-dice-6-fill::before { content: \"\\f2fc\"; }\n.bi-dice-6::before { content: \"\\f2fd\"; }\n.bi-disc-fill::before { content: \"\\f2fe\"; }\n.bi-disc::before { content: \"\\f2ff\"; }\n.bi-discord::before { content: \"\\f300\"; }\n.bi-display-fill::before { content: \"\\f301\"; }\n.bi-display::before { content: \"\\f302\"; }\n.bi-distribute-horizontal::before { content: \"\\f303\"; }\n.bi-distribute-vertical::before { content: \"\\f304\"; }\n.bi-door-closed-fill::before { content: \"\\f305\"; }\n.bi-door-closed::before { content: \"\\f306\"; }\n.bi-door-open-fill::before { content: \"\\f307\"; }\n.bi-door-open::before { content: \"\\f308\"; }\n.bi-dot::before { content: \"\\f309\"; }\n.bi-download::before { content: \"\\f30a\"; }\n.bi-droplet-fill::before { content: \"\\f30b\"; }\n.bi-droplet-half::before { content: \"\\f30c\"; }\n.bi-droplet::before { content: \"\\f30d\"; }\n.bi-earbuds::before { content: \"\\f30e\"; }\n.bi-easel-fill::before { content: \"\\f30f\"; }\n.bi-easel::before { content: \"\\f310\"; }\n.bi-egg-fill::before { content: \"\\f311\"; }\n.bi-egg-fried::before { content: \"\\f312\"; }\n.bi-egg::before { content: \"\\f313\"; }\n.bi-eject-fill::before { content: \"\\f314\"; }\n.bi-eject::before { content: \"\\f315\"; }\n.bi-emoji-angry-fill::before { content: \"\\f316\"; }\n.bi-emoji-angry::before { content: \"\\f317\"; }\n.bi-emoji-dizzy-fill::before { content: \"\\f318\"; }\n.bi-emoji-dizzy::before { content: \"\\f319\"; }\n.bi-emoji-expressionless-fill::before { content: \"\\f31a\"; }\n.bi-emoji-expressionless::before { content: \"\\f31b\"; }\n.bi-emoji-frown-fill::before { content: \"\\f31c\"; }\n.bi-emoji-frown::before { content: \"\\f31d\"; }\n.bi-emoji-heart-eyes-fill::before { content: \"\\f31e\"; }\n.bi-emoji-heart-eyes::before { content: \"\\f31f\"; }\n.bi-emoji-laughing-fill::before { content: \"\\f320\"; }\n.bi-emoji-laughing::before { content: \"\\f321\"; }\n.bi-emoji-neutral-fill::before { content: \"\\f322\"; }\n.bi-emoji-neutral::before { content: \"\\f323\"; }\n.bi-emoji-smile-fill::before { content: \"\\f324\"; }\n.bi-emoji-smile-upside-down-fill::before { content: \"\\f325\"; }\n.bi-emoji-smile-upside-down::before { content: \"\\f326\"; }\n.bi-emoji-smile::before { content: \"\\f327\"; }\n.bi-emoji-sunglasses-fill::before { content: \"\\f328\"; }\n.bi-emoji-sunglasses::before { content: \"\\f329\"; }\n.bi-emoji-wink-fill::before { content: \"\\f32a\"; }\n.bi-emoji-wink::before { content: \"\\f32b\"; }\n.bi-envelope-fill::before { content: \"\\f32c\"; }\n.bi-envelope-open-fill::before { content: \"\\f32d\"; }\n.bi-envelope-open::before { content: \"\\f32e\"; }\n.bi-envelope::before { content: \"\\f32f\"; }\n.bi-eraser-fill::before { content: \"\\f330\"; }\n.bi-eraser::before { content: \"\\f331\"; }\n.bi-exclamation-circle-fill::before { content: \"\\f332\"; }\n.bi-exclamation-circle::before { content: \"\\f333\"; }\n.bi-exclamation-diamond-fill::before { content: \"\\f334\"; }\n.bi-exclamation-diamond::before { content: \"\\f335\"; }\n.bi-exclamation-octagon-fill::before { content: \"\\f336\"; }\n.bi-exclamation-octagon::before { content: \"\\f337\"; }\n.bi-exclamation-square-fill::before { content: \"\\f338\"; }\n.bi-exclamation-square::before { content: \"\\f339\"; }\n.bi-exclamation-triangle-fill::before { content: \"\\f33a\"; }\n.bi-exclamation-triangle::before { content: \"\\f33b\"; }\n.bi-exclamation::before { content: \"\\f33c\"; }\n.bi-exclude::before { content: \"\\f33d\"; }\n.bi-eye-fill::before { content: \"\\f33e\"; }\n.bi-eye-slash-fill::before { content: \"\\f33f\"; }\n.bi-eye-slash::before { content: \"\\f340\"; }\n.bi-eye::before { content: \"\\f341\"; }\n.bi-eyedropper::before { content: \"\\f342\"; }\n.bi-eyeglasses::before { content: \"\\f343\"; }\n.bi-facebook::before { content: \"\\f344\"; }\n.bi-file-arrow-down-fill::before { content: \"\\f345\"; }\n.bi-file-arrow-down::before { content: \"\\f346\"; }\n.bi-file-arrow-up-fill::before { content: \"\\f347\"; }\n.bi-file-arrow-up::before { content: \"\\f348\"; }\n.bi-file-bar-graph-fill::before { content: \"\\f349\"; }\n.bi-file-bar-graph::before { content: \"\\f34a\"; }\n.bi-file-binary-fill::before { content: \"\\f34b\"; }\n.bi-file-binary::before { content: \"\\f34c\"; }\n.bi-file-break-fill::before { content: \"\\f34d\"; }\n.bi-file-break::before { content: \"\\f34e\"; }\n.bi-file-check-fill::before { content: \"\\f34f\"; }\n.bi-file-check::before { content: \"\\f350\"; }\n.bi-file-code-fill::before { content: \"\\f351\"; }\n.bi-file-code::before { content: \"\\f352\"; }\n.bi-file-diff-fill::before { content: \"\\f353\"; }\n.bi-file-diff::before { content: \"\\f354\"; }\n.bi-file-earmark-arrow-down-fill::before { content: \"\\f355\"; }\n.bi-file-earmark-arrow-down::before { content: \"\\f356\"; }\n.bi-file-earmark-arrow-up-fill::before { content: \"\\f357\"; }\n.bi-file-earmark-arrow-up::before { content: \"\\f358\"; }\n.bi-file-earmark-bar-graph-fill::before { content: \"\\f359\"; }\n.bi-file-earmark-bar-graph::before { content: \"\\f35a\"; }\n.bi-file-earmark-binary-fill::before { content: \"\\f35b\"; }\n.bi-file-earmark-binary::before { content: \"\\f35c\"; }\n.bi-file-earmark-break-fill::before { content: \"\\f35d\"; }\n.bi-file-earmark-break::before { content: \"\\f35e\"; }\n.bi-file-earmark-check-fill::before { content: \"\\f35f\"; }\n.bi-file-earmark-check::before { content: \"\\f360\"; }\n.bi-file-earmark-code-fill::before { content: \"\\f361\"; }\n.bi-file-earmark-code::before { content: \"\\f362\"; }\n.bi-file-earmark-diff-fill::before { content: \"\\f363\"; }\n.bi-file-earmark-diff::before { content: \"\\f364\"; }\n.bi-file-earmark-easel-fill::before { content: \"\\f365\"; }\n.bi-file-earmark-easel::before { content: \"\\f366\"; }\n.bi-file-earmark-excel-fill::before { content: \"\\f367\"; }\n.bi-file-earmark-excel::before { content: \"\\f368\"; }\n.bi-file-earmark-fill::before { content: \"\\f369\"; }\n.bi-file-earmark-font-fill::before { content: \"\\f36a\"; }\n.bi-file-earmark-font::before { content: \"\\f36b\"; }\n.bi-file-earmark-image-fill::before { content: \"\\f36c\"; }\n.bi-file-earmark-image::before { content: \"\\f36d\"; }\n.bi-file-earmark-lock-fill::before { content: \"\\f36e\"; }\n.bi-file-earmark-lock::before { content: \"\\f36f\"; }\n.bi-file-earmark-lock2-fill::before { content: \"\\f370\"; }\n.bi-file-earmark-lock2::before { content: \"\\f371\"; }\n.bi-file-earmark-medical-fill::before { content: \"\\f372\"; }\n.bi-file-earmark-medical::before { content: \"\\f373\"; }\n.bi-file-earmark-minus-fill::before { content: \"\\f374\"; }\n.bi-file-earmark-minus::before { content: \"\\f375\"; }\n.bi-file-earmark-music-fill::before { content: \"\\f376\"; }\n.bi-file-earmark-music::before { content: \"\\f377\"; }\n.bi-file-earmark-person-fill::before { content: \"\\f378\"; }\n.bi-file-earmark-person::before { content: \"\\f379\"; }\n.bi-file-earmark-play-fill::before { content: \"\\f37a\"; }\n.bi-file-earmark-play::before { content: \"\\f37b\"; }\n.bi-file-earmark-plus-fill::before { content: \"\\f37c\"; }\n.bi-file-earmark-plus::before { content: \"\\f37d\"; }\n.bi-file-earmark-post-fill::before { content: \"\\f37e\"; }\n.bi-file-earmark-post::before { content: \"\\f37f\"; }\n.bi-file-earmark-ppt-fill::before { content: \"\\f380\"; }\n.bi-file-earmark-ppt::before { content: \"\\f381\"; }\n.bi-file-earmark-richtext-fill::before { content: \"\\f382\"; }\n.bi-file-earmark-richtext::before { content: \"\\f383\"; }\n.bi-file-earmark-ruled-fill::before { content: \"\\f384\"; }\n.bi-file-earmark-ruled::before { content: \"\\f385\"; }\n.bi-file-earmark-slides-fill::before { content: \"\\f386\"; }\n.bi-file-earmark-slides::before { content: \"\\f387\"; }\n.bi-file-earmark-spreadsheet-fill::before { content: \"\\f388\"; }\n.bi-file-earmark-spreadsheet::before { content: \"\\f389\"; }\n.bi-file-earmark-text-fill::before { content: \"\\f38a\"; }\n.bi-file-earmark-text::before { content: \"\\f38b\"; }\n.bi-file-earmark-word-fill::before { content: \"\\f38c\"; }\n.bi-file-earmark-word::before { content: \"\\f38d\"; }\n.bi-file-earmark-x-fill::before { content: \"\\f38e\"; }\n.bi-file-earmark-x::before { content: \"\\f38f\"; }\n.bi-file-earmark-zip-fill::before { content: \"\\f390\"; }\n.bi-file-earmark-zip::before { content: \"\\f391\"; }\n.bi-file-earmark::before { content: \"\\f392\"; }\n.bi-file-easel-fill::before { content: \"\\f393\"; }\n.bi-file-easel::before { content: \"\\f394\"; }\n.bi-file-excel-fill::before { content: \"\\f395\"; }\n.bi-file-excel::before { content: \"\\f396\"; }\n.bi-file-fill::before { content: \"\\f397\"; }\n.bi-file-font-fill::before { content: \"\\f398\"; }\n.bi-file-font::before { content: \"\\f399\"; }\n.bi-file-image-fill::before { content: \"\\f39a\"; }\n.bi-file-image::before { content: \"\\f39b\"; }\n.bi-file-lock-fill::before { content: \"\\f39c\"; }\n.bi-file-lock::before { content: \"\\f39d\"; }\n.bi-file-lock2-fill::before { content: \"\\f39e\"; }\n.bi-file-lock2::before { content: \"\\f39f\"; }\n.bi-file-medical-fill::before { content: \"\\f3a0\"; }\n.bi-file-medical::before { content: \"\\f3a1\"; }\n.bi-file-minus-fill::before { content: \"\\f3a2\"; }\n.bi-file-minus::before { content: \"\\f3a3\"; }\n.bi-file-music-fill::before { content: \"\\f3a4\"; }\n.bi-file-music::before { content: \"\\f3a5\"; }\n.bi-file-person-fill::before { content: \"\\f3a6\"; }\n.bi-file-person::before { content: \"\\f3a7\"; }\n.bi-file-play-fill::before { content: \"\\f3a8\"; }\n.bi-file-play::before { content: \"\\f3a9\"; }\n.bi-file-plus-fill::before { content: \"\\f3aa\"; }\n.bi-file-plus::before { content: \"\\f3ab\"; }\n.bi-file-post-fill::before { content: \"\\f3ac\"; }\n.bi-file-post::before { content: \"\\f3ad\"; }\n.bi-file-ppt-fill::before { content: \"\\f3ae\"; }\n.bi-file-ppt::before { content: \"\\f3af\"; }\n.bi-file-richtext-fill::before { content: \"\\f3b0\"; }\n.bi-file-richtext::before { content: \"\\f3b1\"; }\n.bi-file-ruled-fill::before { content: \"\\f3b2\"; }\n.bi-file-ruled::before { content: \"\\f3b3\"; }\n.bi-file-slides-fill::before { content: \"\\f3b4\"; }\n.bi-file-slides::before { content: \"\\f3b5\"; }\n.bi-file-spreadsheet-fill::before { content: \"\\f3b6\"; }\n.bi-file-spreadsheet::before { content: \"\\f3b7\"; }\n.bi-file-text-fill::before { content: \"\\f3b8\"; }\n.bi-file-text::before { content: \"\\f3b9\"; }\n.bi-file-word-fill::before { content: \"\\f3ba\"; }\n.bi-file-word::before { content: \"\\f3bb\"; }\n.bi-file-x-fill::before { content: \"\\f3bc\"; }\n.bi-file-x::before { content: \"\\f3bd\"; }\n.bi-file-zip-fill::before { content: \"\\f3be\"; }\n.bi-file-zip::before { content: \"\\f3bf\"; }\n.bi-file::before { content: \"\\f3c0\"; }\n.bi-files-alt::before { content: \"\\f3c1\"; }\n.bi-files::before { content: \"\\f3c2\"; }\n.bi-film::before { content: \"\\f3c3\"; }\n.bi-filter-circle-fill::before { content: \"\\f3c4\"; }\n.bi-filter-circle::before { content: \"\\f3c5\"; }\n.bi-filter-left::before { content: \"\\f3c6\"; }\n.bi-filter-right::before { content: \"\\f3c7\"; }\n.bi-filter-square-fill::before { content: \"\\f3c8\"; }\n.bi-filter-square::before { content: \"\\f3c9\"; }\n.bi-filter::before { content: \"\\f3ca\"; }\n.bi-flag-fill::before { content: \"\\f3cb\"; }\n.bi-flag::before { content: \"\\f3cc\"; }\n.bi-flower1::before { content: \"\\f3cd\"; }\n.bi-flower2::before { content: \"\\f3ce\"; }\n.bi-flower3::before { content: \"\\f3cf\"; }\n.bi-folder-check::before { content: \"\\f3d0\"; }\n.bi-folder-fill::before { content: \"\\f3d1\"; }\n.bi-folder-minus::before { content: \"\\f3d2\"; }\n.bi-folder-plus::before { content: \"\\f3d3\"; }\n.bi-folder-symlink-fill::before { content: \"\\f3d4\"; }\n.bi-folder-symlink::before { content: \"\\f3d5\"; }\n.bi-folder-x::before { content: \"\\f3d6\"; }\n.bi-folder::before { content: \"\\f3d7\"; }\n.bi-folder2-open::before { content: \"\\f3d8\"; }\n.bi-folder2::before { content: \"\\f3d9\"; }\n.bi-fonts::before { content: \"\\f3da\"; }\n.bi-forward-fill::before { content: \"\\f3db\"; }\n.bi-forward::before { content: \"\\f3dc\"; }\n.bi-front::before { content: \"\\f3dd\"; }\n.bi-fullscreen-exit::before { content: \"\\f3de\"; }\n.bi-fullscreen::before { content: \"\\f3df\"; }\n.bi-funnel-fill::before { content: \"\\f3e0\"; }\n.bi-funnel::before { content: \"\\f3e1\"; }\n.bi-gear-fill::before { content: \"\\f3e2\"; }\n.bi-gear-wide-connected::before { content: \"\\f3e3\"; }\n.bi-gear-wide::before { content: \"\\f3e4\"; }\n.bi-gear::before { content: \"\\f3e5\"; }\n.bi-gem::before { content: \"\\f3e6\"; }\n.bi-geo-alt-fill::before { content: \"\\f3e7\"; }\n.bi-geo-alt::before { content: \"\\f3e8\"; }\n.bi-geo-fill::before { content: \"\\f3e9\"; }\n.bi-geo::before { content: \"\\f3ea\"; }\n.bi-gift-fill::before { content: \"\\f3eb\"; }\n.bi-gift::before { content: \"\\f3ec\"; }\n.bi-github::before { content: \"\\f3ed\"; }\n.bi-globe::before { content: \"\\f3ee\"; }\n.bi-globe2::before { content: \"\\f3ef\"; }\n.bi-google::before { content: \"\\f3f0\"; }\n.bi-graph-down::before { content: \"\\f3f1\"; }\n.bi-graph-up::before { content: \"\\f3f2\"; }\n.bi-grid-1x2-fill::before { content: \"\\f3f3\"; }\n.bi-grid-1x2::before { content: \"\\f3f4\"; }\n.bi-grid-3x2-gap-fill::before { content: \"\\f3f5\"; }\n.bi-grid-3x2-gap::before { content: \"\\f3f6\"; }\n.bi-grid-3x2::before { content: \"\\f3f7\"; }\n.bi-grid-3x3-gap-fill::before { content: \"\\f3f8\"; }\n.bi-grid-3x3-gap::before { content: \"\\f3f9\"; }\n.bi-grid-3x3::before { content: \"\\f3fa\"; }\n.bi-grid-fill::before { content: \"\\f3fb\"; }\n.bi-grid::before { content: \"\\f3fc\"; }\n.bi-grip-horizontal::before { content: \"\\f3fd\"; }\n.bi-grip-vertical::before { content: \"\\f3fe\"; }\n.bi-hammer::before { content: \"\\f3ff\"; }\n.bi-hand-index-fill::before { content: \"\\f400\"; }\n.bi-hand-index-thumb-fill::before { content: \"\\f401\"; }\n.bi-hand-index-thumb::before { content: \"\\f402\"; }\n.bi-hand-index::before { content: \"\\f403\"; }\n.bi-hand-thumbs-down-fill::before { content: \"\\f404\"; }\n.bi-hand-thumbs-down::before { content: \"\\f405\"; }\n.bi-hand-thumbs-up-fill::before { content: \"\\f406\"; }\n.bi-hand-thumbs-up::before { content: \"\\f407\"; }\n.bi-handbag-fill::before { content: \"\\f408\"; }\n.bi-handbag::before { content: \"\\f409\"; }\n.bi-hash::before { content: \"\\f40a\"; }\n.bi-hdd-fill::before { content: \"\\f40b\"; }\n.bi-hdd-network-fill::before { content: \"\\f40c\"; }\n.bi-hdd-network::before { content: \"\\f40d\"; }\n.bi-hdd-rack-fill::before { content: \"\\f40e\"; }\n.bi-hdd-rack::before { content: \"\\f40f\"; }\n.bi-hdd-stack-fill::before { content: \"\\f410\"; }\n.bi-hdd-stack::before { content: \"\\f411\"; }\n.bi-hdd::before { content: \"\\f412\"; }\n.bi-headphones::before { content: \"\\f413\"; }\n.bi-headset::before { content: \"\\f414\"; }\n.bi-heart-fill::before { content: \"\\f415\"; }\n.bi-heart-half::before { content: \"\\f416\"; }\n.bi-heart::before { content: \"\\f417\"; }\n.bi-heptagon-fill::before { content: \"\\f418\"; }\n.bi-heptagon-half::before { content: \"\\f419\"; }\n.bi-heptagon::before { content: \"\\f41a\"; }\n.bi-hexagon-fill::before { content: \"\\f41b\"; }\n.bi-hexagon-half::before { content: \"\\f41c\"; }\n.bi-hexagon::before { content: \"\\f41d\"; }\n.bi-hourglass-bottom::before { content: \"\\f41e\"; }\n.bi-hourglass-split::before { content: \"\\f41f\"; }\n.bi-hourglass-top::before { content: \"\\f420\"; }\n.bi-hourglass::before { content: \"\\f421\"; }\n.bi-house-door-fill::before { content: \"\\f422\"; }\n.bi-house-door::before { content: \"\\f423\"; }\n.bi-house-fill::before { content: \"\\f424\"; }\n.bi-house::before { content: \"\\f425\"; }\n.bi-hr::before { content: \"\\f426\"; }\n.bi-hurricane::before { content: \"\\f427\"; }\n.bi-image-alt::before { content: \"\\f428\"; }\n.bi-image-fill::before { content: \"\\f429\"; }\n.bi-image::before { content: \"\\f42a\"; }\n.bi-images::before { content: \"\\f42b\"; }\n.bi-inbox-fill::before { content: \"\\f42c\"; }\n.bi-inbox::before { content: \"\\f42d\"; }\n.bi-inboxes-fill::before { content: \"\\f42e\"; }\n.bi-inboxes::before { content: \"\\f42f\"; }\n.bi-info-circle-fill::before { content: \"\\f430\"; }\n.bi-info-circle::before { content: \"\\f431\"; }\n.bi-info-square-fill::before { content: \"\\f432\"; }\n.bi-info-square::before { content: \"\\f433\"; }\n.bi-info::before { content: \"\\f434\"; }\n.bi-input-cursor-text::before { content: \"\\f435\"; }\n.bi-input-cursor::before { content: \"\\f436\"; }\n.bi-instagram::before { content: \"\\f437\"; }\n.bi-intersect::before { content: \"\\f438\"; }\n.bi-journal-album::before { content: \"\\f439\"; }\n.bi-journal-arrow-down::before { content: \"\\f43a\"; }\n.bi-journal-arrow-up::before { content: \"\\f43b\"; }\n.bi-journal-bookmark-fill::before { content: \"\\f43c\"; }\n.bi-journal-bookmark::before { content: \"\\f43d\"; }\n.bi-journal-check::before { content: \"\\f43e\"; }\n.bi-journal-code::before { content: \"\\f43f\"; }\n.bi-journal-medical::before { content: \"\\f440\"; }\n.bi-journal-minus::before { content: \"\\f441\"; }\n.bi-journal-plus::before { content: \"\\f442\"; }\n.bi-journal-richtext::before { content: \"\\f443\"; }\n.bi-journal-text::before { content: \"\\f444\"; }\n.bi-journal-x::before { content: \"\\f445\"; }\n.bi-journal::before { content: \"\\f446\"; }\n.bi-journals::before { content: \"\\f447\"; }\n.bi-joystick::before { content: \"\\f448\"; }\n.bi-justify-left::before { content: \"\\f449\"; }\n.bi-justify-right::before { content: \"\\f44a\"; }\n.bi-justify::before { content: \"\\f44b\"; }\n.bi-kanban-fill::before { content: \"\\f44c\"; }\n.bi-kanban::before { content: \"\\f44d\"; }\n.bi-key-fill::before { content: \"\\f44e\"; }\n.bi-key::before { content: \"\\f44f\"; }\n.bi-keyboard-fill::before { content: \"\\f450\"; }\n.bi-keyboard::before { content: \"\\f451\"; }\n.bi-ladder::before { content: \"\\f452\"; }\n.bi-lamp-fill::before { content: \"\\f453\"; }\n.bi-lamp::before { content: \"\\f454\"; }\n.bi-laptop-fill::before { content: \"\\f455\"; }\n.bi-laptop::before { content: \"\\f456\"; }\n.bi-layer-backward::before { content: \"\\f457\"; }\n.bi-layer-forward::before { content: \"\\f458\"; }\n.bi-layers-fill::before { content: \"\\f459\"; }\n.bi-layers-half::before { content: \"\\f45a\"; }\n.bi-layers::before { content: \"\\f45b\"; }\n.bi-layout-sidebar-inset-reverse::before { content: \"\\f45c\"; }\n.bi-layout-sidebar-inset::before { content: \"\\f45d\"; }\n.bi-layout-sidebar-reverse::before { content: \"\\f45e\"; }\n.bi-layout-sidebar::before { content: \"\\f45f\"; }\n.bi-layout-split::before { content: \"\\f460\"; }\n.bi-layout-text-sidebar-reverse::before { content: \"\\f461\"; }\n.bi-layout-text-sidebar::before { content: \"\\f462\"; }\n.bi-layout-text-window-reverse::before { content: \"\\f463\"; }\n.bi-layout-text-window::before { content: \"\\f464\"; }\n.bi-layout-three-columns::before { content: \"\\f465\"; }\n.bi-layout-wtf::before { content: \"\\f466\"; }\n.bi-life-preserver::before { content: \"\\f467\"; }\n.bi-lightbulb-fill::before { content: \"\\f468\"; }\n.bi-lightbulb-off-fill::before { content: \"\\f469\"; }\n.bi-lightbulb-off::before { content: \"\\f46a\"; }\n.bi-lightbulb::before { content: \"\\f46b\"; }\n.bi-lightning-charge-fill::before { content: \"\\f46c\"; }\n.bi-lightning-charge::before { content: \"\\f46d\"; }\n.bi-lightning-fill::before { content: \"\\f46e\"; }\n.bi-lightning::before { content: \"\\f46f\"; }\n.bi-link-45deg::before { content: \"\\f470\"; }\n.bi-link::before { content: \"\\f471\"; }\n.bi-linkedin::before { content: \"\\f472\"; }\n.bi-list-check::before { content: \"\\f473\"; }\n.bi-list-nested::before { content: \"\\f474\"; }\n.bi-list-ol::before { content: \"\\f475\"; }\n.bi-list-stars::before { content: \"\\f476\"; }\n.bi-list-task::before { content: \"\\f477\"; }\n.bi-list-ul::before { content: \"\\f478\"; }\n.bi-list::before { content: \"\\f479\"; }\n.bi-lock-fill::before { content: \"\\f47a\"; }\n.bi-lock::before { content: \"\\f47b\"; }\n.bi-mailbox::before { content: \"\\f47c\"; }\n.bi-mailbox2::before { content: \"\\f47d\"; }\n.bi-map-fill::before { content: \"\\f47e\"; }\n.bi-map::before { content: \"\\f47f\"; }\n.bi-markdown-fill::before { content: \"\\f480\"; }\n.bi-markdown::before { content: \"\\f481\"; }\n.bi-mask::before { content: \"\\f482\"; }\n.bi-megaphone-fill::before { content: \"\\f483\"; }\n.bi-megaphone::before { content: \"\\f484\"; }\n.bi-menu-app-fill::before { content: \"\\f485\"; }\n.bi-menu-app::before { content: \"\\f486\"; }\n.bi-menu-button-fill::before { content: \"\\f487\"; }\n.bi-menu-button-wide-fill::before { content: \"\\f488\"; }\n.bi-menu-button-wide::before { content: \"\\f489\"; }\n.bi-menu-button::before { content: \"\\f48a\"; }\n.bi-menu-down::before { content: \"\\f48b\"; }\n.bi-menu-up::before { content: \"\\f48c\"; }\n.bi-mic-fill::before { content: \"\\f48d\"; }\n.bi-mic-mute-fill::before { content: \"\\f48e\"; }\n.bi-mic-mute::before { content: \"\\f48f\"; }\n.bi-mic::before { content: \"\\f490\"; }\n.bi-minecart-loaded::before { content: \"\\f491\"; }\n.bi-minecart::before { content: \"\\f492\"; }\n.bi-moisture::before { content: \"\\f493\"; }\n.bi-moon-fill::before { content: \"\\f494\"; }\n.bi-moon-stars-fill::before { content: \"\\f495\"; }\n.bi-moon-stars::before { content: \"\\f496\"; }\n.bi-moon::before { content: \"\\f497\"; }\n.bi-mouse-fill::before { content: \"\\f498\"; }\n.bi-mouse::before { content: \"\\f499\"; }\n.bi-mouse2-fill::before { content: \"\\f49a\"; }\n.bi-mouse2::before { content: \"\\f49b\"; }\n.bi-mouse3-fill::before { content: \"\\f49c\"; }\n.bi-mouse3::before { content: \"\\f49d\"; }\n.bi-music-note-beamed::before { content: \"\\f49e\"; }\n.bi-music-note-list::before { content: \"\\f49f\"; }\n.bi-music-note::before { content: \"\\f4a0\"; }\n.bi-music-player-fill::before { content: \"\\f4a1\"; }\n.bi-music-player::before { content: \"\\f4a2\"; }\n.bi-newspaper::before { content: \"\\f4a3\"; }\n.bi-node-minus-fill::before { content: \"\\f4a4\"; }\n.bi-node-minus::before { content: \"\\f4a5\"; }\n.bi-node-plus-fill::before { content: \"\\f4a6\"; }\n.bi-node-plus::before { content: \"\\f4a7\"; }\n.bi-nut-fill::before { content: \"\\f4a8\"; }\n.bi-nut::before { content: \"\\f4a9\"; }\n.bi-octagon-fill::before { content: \"\\f4aa\"; }\n.bi-octagon-half::before { content: \"\\f4ab\"; }\n.bi-octagon::before { content: \"\\f4ac\"; }\n.bi-option::before { content: \"\\f4ad\"; }\n.bi-outlet::before { content: \"\\f4ae\"; }\n.bi-paint-bucket::before { content: \"\\f4af\"; }\n.bi-palette-fill::before { content: \"\\f4b0\"; }\n.bi-palette::before { content: \"\\f4b1\"; }\n.bi-palette2::before { content: \"\\f4b2\"; }\n.bi-paperclip::before { content: \"\\f4b3\"; }\n.bi-paragraph::before { content: \"\\f4b4\"; }\n.bi-patch-check-fill::before { content: \"\\f4b5\"; }\n.bi-patch-check::before { content: \"\\f4b6\"; }\n.bi-patch-exclamation-fill::before { content: \"\\f4b7\"; }\n.bi-patch-exclamation::before { content: \"\\f4b8\"; }\n.bi-patch-minus-fill::before { content: \"\\f4b9\"; }\n.bi-patch-minus::before { content: \"\\f4ba\"; }\n.bi-patch-plus-fill::before { content: \"\\f4bb\"; }\n.bi-patch-plus::before { content: \"\\f4bc\"; }\n.bi-patch-question-fill::before { content: \"\\f4bd\"; }\n.bi-patch-question::before { content: \"\\f4be\"; }\n.bi-pause-btn-fill::before { content: \"\\f4bf\"; }\n.bi-pause-btn::before { content: \"\\f4c0\"; }\n.bi-pause-circle-fill::before { content: \"\\f4c1\"; }\n.bi-pause-circle::before { content: \"\\f4c2\"; }\n.bi-pause-fill::before { content: \"\\f4c3\"; }\n.bi-pause::before { content: \"\\f4c4\"; }\n.bi-peace-fill::before { content: \"\\f4c5\"; }\n.bi-peace::before { content: \"\\f4c6\"; }\n.bi-pen-fill::before { content: \"\\f4c7\"; }\n.bi-pen::before { content: \"\\f4c8\"; }\n.bi-pencil-fill::before { content: \"\\f4c9\"; }\n.bi-pencil-square::before { content: \"\\f4ca\"; }\n.bi-pencil::before { content: \"\\f4cb\"; }\n.bi-pentagon-fill::before { content: \"\\f4cc\"; }\n.bi-pentagon-half::before { content: \"\\f4cd\"; }\n.bi-pentagon::before { content: \"\\f4ce\"; }\n.bi-people-fill::before { content: \"\\f4cf\"; }\n.bi-people::before { content: \"\\f4d0\"; }\n.bi-percent::before { content: \"\\f4d1\"; }\n.bi-person-badge-fill::before { content: \"\\f4d2\"; }\n.bi-person-badge::before { content: \"\\f4d3\"; }\n.bi-person-bounding-box::before { content: \"\\f4d4\"; }\n.bi-person-check-fill::before { content: \"\\f4d5\"; }\n.bi-person-check::before { content: \"\\f4d6\"; }\n.bi-person-circle::before { content: \"\\f4d7\"; }\n.bi-person-dash-fill::before { content: \"\\f4d8\"; }\n.bi-person-dash::before { content: \"\\f4d9\"; }\n.bi-person-fill::before { content: \"\\f4da\"; }\n.bi-person-lines-fill::before { content: \"\\f4db\"; }\n.bi-person-plus-fill::before { content: \"\\f4dc\"; }\n.bi-person-plus::before { content: \"\\f4dd\"; }\n.bi-person-square::before { content: \"\\f4de\"; }\n.bi-person-x-fill::before { content: \"\\f4df\"; }\n.bi-person-x::before { content: \"\\f4e0\"; }\n.bi-person::before { content: \"\\f4e1\"; }\n.bi-phone-fill::before { content: \"\\f4e2\"; }\n.bi-phone-landscape-fill::before { content: \"\\f4e3\"; }\n.bi-phone-landscape::before { content: \"\\f4e4\"; }\n.bi-phone-vibrate-fill::before { content: \"\\f4e5\"; }\n.bi-phone-vibrate::before { content: \"\\f4e6\"; }\n.bi-phone::before { content: \"\\f4e7\"; }\n.bi-pie-chart-fill::before { content: \"\\f4e8\"; }\n.bi-pie-chart::before { content: \"\\f4e9\"; }\n.bi-pin-angle-fill::before { content: \"\\f4ea\"; }\n.bi-pin-angle::before { content: \"\\f4eb\"; }\n.bi-pin-fill::before { content: \"\\f4ec\"; }\n.bi-pin::before { content: \"\\f4ed\"; }\n.bi-pip-fill::before { content: \"\\f4ee\"; }\n.bi-pip::before { content: \"\\f4ef\"; }\n.bi-play-btn-fill::before { content: \"\\f4f0\"; }\n.bi-play-btn::before { content: \"\\f4f1\"; }\n.bi-play-circle-fill::before { content: \"\\f4f2\"; }\n.bi-play-circle::before { content: \"\\f4f3\"; }\n.bi-play-fill::before { content: \"\\f4f4\"; }\n.bi-play::before { content: \"\\f4f5\"; }\n.bi-plug-fill::before { content: \"\\f4f6\"; }\n.bi-plug::before { content: \"\\f4f7\"; }\n.bi-plus-circle-dotted::before { content: \"\\f4f8\"; }\n.bi-plus-circle-fill::before { content: \"\\f4f9\"; }\n.bi-plus-circle::before { content: \"\\f4fa\"; }\n.bi-plus-square-dotted::before { content: \"\\f4fb\"; }\n.bi-plus-square-fill::before { content: \"\\f4fc\"; }\n.bi-plus-square::before { content: \"\\f4fd\"; }\n.bi-plus::before { content: \"\\f4fe\"; }\n.bi-power::before { content: \"\\f4ff\"; }\n.bi-printer-fill::before { content: \"\\f500\"; }\n.bi-printer::before { content: \"\\f501\"; }\n.bi-puzzle-fill::before { content: \"\\f502\"; }\n.bi-puzzle::before { content: \"\\f503\"; }\n.bi-question-circle-fill::before { content: \"\\f504\"; }\n.bi-question-circle::before { content: \"\\f505\"; }\n.bi-question-diamond-fill::before { content: \"\\f506\"; }\n.bi-question-diamond::before { content: \"\\f507\"; }\n.bi-question-octagon-fill::before { content: \"\\f508\"; }\n.bi-question-octagon::before { content: \"\\f509\"; }\n.bi-question-square-fill::before { content: \"\\f50a\"; }\n.bi-question-square::before { content: \"\\f50b\"; }\n.bi-question::before { content: \"\\f50c\"; }\n.bi-rainbow::before { content: \"\\f50d\"; }\n.bi-receipt-cutoff::before { content: \"\\f50e\"; }\n.bi-receipt::before { content: \"\\f50f\"; }\n.bi-reception-0::before { content: \"\\f510\"; }\n.bi-reception-1::before { content: \"\\f511\"; }\n.bi-reception-2::before { content: \"\\f512\"; }\n.bi-reception-3::before { content: \"\\f513\"; }\n.bi-reception-4::before { content: \"\\f514\"; }\n.bi-record-btn-fill::before { content: \"\\f515\"; }\n.bi-record-btn::before { content: \"\\f516\"; }\n.bi-record-circle-fill::before { content: \"\\f517\"; }\n.bi-record-circle::before { content: \"\\f518\"; }\n.bi-record-fill::before { content: \"\\f519\"; }\n.bi-record::before { content: \"\\f51a\"; }\n.bi-record2-fill::before { content: \"\\f51b\"; }\n.bi-record2::before { content: \"\\f51c\"; }\n.bi-reply-all-fill::before { content: \"\\f51d\"; }\n.bi-reply-all::before { content: \"\\f51e\"; }\n.bi-reply-fill::before { content: \"\\f51f\"; }\n.bi-reply::before { content: \"\\f520\"; }\n.bi-rss-fill::before { content: \"\\f521\"; }\n.bi-rss::before { content: \"\\f522\"; }\n.bi-rulers::before { content: \"\\f523\"; }\n.bi-save-fill::before { content: \"\\f524\"; }\n.bi-save::before { content: \"\\f525\"; }\n.bi-save2-fill::before { content: \"\\f526\"; }\n.bi-save2::before { content: \"\\f527\"; }\n.bi-scissors::before { content: \"\\f528\"; }\n.bi-screwdriver::before { content: \"\\f529\"; }\n.bi-search::before { content: \"\\f52a\"; }\n.bi-segmented-nav::before { content: \"\\f52b\"; }\n.bi-server::before { content: \"\\f52c\"; }\n.bi-share-fill::before { content: \"\\f52d\"; }\n.bi-share::before { content: \"\\f52e\"; }\n.bi-shield-check::before { content: \"\\f52f\"; }\n.bi-shield-exclamation::before { content: \"\\f530\"; }\n.bi-shield-fill-check::before { content: \"\\f531\"; }\n.bi-shield-fill-exclamation::before { content: \"\\f532\"; }\n.bi-shield-fill-minus::before { content: \"\\f533\"; }\n.bi-shield-fill-plus::before { content: \"\\f534\"; }\n.bi-shield-fill-x::before { content: \"\\f535\"; }\n.bi-shield-fill::before { content: \"\\f536\"; }\n.bi-shield-lock-fill::before { content: \"\\f537\"; }\n.bi-shield-lock::before { content: \"\\f538\"; }\n.bi-shield-minus::before { content: \"\\f539\"; }\n.bi-shield-plus::before { content: \"\\f53a\"; }\n.bi-shield-shaded::before { content: \"\\f53b\"; }\n.bi-shield-slash-fill::before { content: \"\\f53c\"; }\n.bi-shield-slash::before { content: \"\\f53d\"; }\n.bi-shield-x::before { content: \"\\f53e\"; }\n.bi-shield::before { content: \"\\f53f\"; }\n.bi-shift-fill::before { content: \"\\f540\"; }\n.bi-shift::before { content: \"\\f541\"; }\n.bi-shop-window::before { content: \"\\f542\"; }\n.bi-shop::before { content: \"\\f543\"; }\n.bi-shuffle::before { content: \"\\f544\"; }\n.bi-signpost-2-fill::before { content: \"\\f545\"; }\n.bi-signpost-2::before { content: \"\\f546\"; }\n.bi-signpost-fill::before { content: \"\\f547\"; }\n.bi-signpost-split-fill::before { content: \"\\f548\"; }\n.bi-signpost-split::before { content: \"\\f549\"; }\n.bi-signpost::before { content: \"\\f54a\"; }\n.bi-sim-fill::before { content: \"\\f54b\"; }\n.bi-sim::before { content: \"\\f54c\"; }\n.bi-skip-backward-btn-fill::before { content: \"\\f54d\"; }\n.bi-skip-backward-btn::before { content: \"\\f54e\"; }\n.bi-skip-backward-circle-fill::before { content: \"\\f54f\"; }\n.bi-skip-backward-circle::before { content: \"\\f550\"; }\n.bi-skip-backward-fill::before { content: \"\\f551\"; }\n.bi-skip-backward::before { content: \"\\f552\"; }\n.bi-skip-end-btn-fill::before { content: \"\\f553\"; }\n.bi-skip-end-btn::before { content: \"\\f554\"; }\n.bi-skip-end-circle-fill::before { content: \"\\f555\"; }\n.bi-skip-end-circle::before { content: \"\\f556\"; }\n.bi-skip-end-fill::before { content: \"\\f557\"; }\n.bi-skip-end::before { content: \"\\f558\"; }\n.bi-skip-forward-btn-fill::before { content: \"\\f559\"; }\n.bi-skip-forward-btn::before { content: \"\\f55a\"; }\n.bi-skip-forward-circle-fill::before { content: \"\\f55b\"; }\n.bi-skip-forward-circle::before { content: \"\\f55c\"; }\n.bi-skip-forward-fill::before { content: \"\\f55d\"; }\n.bi-skip-forward::before { content: \"\\f55e\"; }\n.bi-skip-start-btn-fill::before { content: \"\\f55f\"; }\n.bi-skip-start-btn::before { content: \"\\f560\"; }\n.bi-skip-start-circle-fill::before { content: \"\\f561\"; }\n.bi-skip-start-circle::before { content: \"\\f562\"; }\n.bi-skip-start-fill::before { content: \"\\f563\"; }\n.bi-skip-start::before { content: \"\\f564\"; }\n.bi-slack::before { content: \"\\f565\"; }\n.bi-slash-circle-fill::before { content: \"\\f566\"; }\n.bi-slash-circle::before { content: \"\\f567\"; }\n.bi-slash-square-fill::before { content: \"\\f568\"; }\n.bi-slash-square::before { content: \"\\f569\"; }\n.bi-slash::before { content: \"\\f56a\"; }\n.bi-sliders::before { content: \"\\f56b\"; }\n.bi-smartwatch::before { content: \"\\f56c\"; }\n.bi-snow::before { content: \"\\f56d\"; }\n.bi-snow2::before { content: \"\\f56e\"; }\n.bi-snow3::before { content: \"\\f56f\"; }\n.bi-sort-alpha-down-alt::before { content: \"\\f570\"; }\n.bi-sort-alpha-down::before { content: \"\\f571\"; }\n.bi-sort-alpha-up-alt::before { content: \"\\f572\"; }\n.bi-sort-alpha-up::before { content: \"\\f573\"; }\n.bi-sort-down-alt::before { content: \"\\f574\"; }\n.bi-sort-down::before { content: \"\\f575\"; }\n.bi-sort-numeric-down-alt::before { content: \"\\f576\"; }\n.bi-sort-numeric-down::before { content: \"\\f577\"; }\n.bi-sort-numeric-up-alt::before { content: \"\\f578\"; }\n.bi-sort-numeric-up::before { content: \"\\f579\"; }\n.bi-sort-up-alt::before { content: \"\\f57a\"; }\n.bi-sort-up::before { content: \"\\f57b\"; }\n.bi-soundwave::before { content: \"\\f57c\"; }\n.bi-speaker-fill::before { content: \"\\f57d\"; }\n.bi-speaker::before { content: \"\\f57e\"; }\n.bi-speedometer::before { content: \"\\f57f\"; }\n.bi-speedometer2::before { content: \"\\f580\"; }\n.bi-spellcheck::before { content: \"\\f581\"; }\n.bi-square-fill::before { content: \"\\f582\"; }\n.bi-square-half::before { content: \"\\f583\"; }\n.bi-square::before { content: \"\\f584\"; }\n.bi-stack::before { content: \"\\f585\"; }\n.bi-star-fill::before { content: \"\\f586\"; }\n.bi-star-half::before { content: \"\\f587\"; }\n.bi-star::before { content: \"\\f588\"; }\n.bi-stars::before { content: \"\\f589\"; }\n.bi-stickies-fill::before { content: \"\\f58a\"; }\n.bi-stickies::before { content: \"\\f58b\"; }\n.bi-sticky-fill::before { content: \"\\f58c\"; }\n.bi-sticky::before { content: \"\\f58d\"; }\n.bi-stop-btn-fill::before { content: \"\\f58e\"; }\n.bi-stop-btn::before { content: \"\\f58f\"; }\n.bi-stop-circle-fill::before { content: \"\\f590\"; }\n.bi-stop-circle::before { content: \"\\f591\"; }\n.bi-stop-fill::before { content: \"\\f592\"; }\n.bi-stop::before { content: \"\\f593\"; }\n.bi-stoplights-fill::before { content: \"\\f594\"; }\n.bi-stoplights::before { content: \"\\f595\"; }\n.bi-stopwatch-fill::before { content: \"\\f596\"; }\n.bi-stopwatch::before { content: \"\\f597\"; }\n.bi-subtract::before { content: \"\\f598\"; }\n.bi-suit-club-fill::before { content: \"\\f599\"; }\n.bi-suit-club::before { content: \"\\f59a\"; }\n.bi-suit-diamond-fill::before { content: \"\\f59b\"; }\n.bi-suit-diamond::before { content: \"\\f59c\"; }\n.bi-suit-heart-fill::before { content: \"\\f59d\"; }\n.bi-suit-heart::before { content: \"\\f59e\"; }\n.bi-suit-spade-fill::before { content: \"\\f59f\"; }\n.bi-suit-spade::before { content: \"\\f5a0\"; }\n.bi-sun-fill::before { content: \"\\f5a1\"; }\n.bi-sun::before { content: \"\\f5a2\"; }\n.bi-sunglasses::before { content: \"\\f5a3\"; }\n.bi-sunrise-fill::before { content: \"\\f5a4\"; }\n.bi-sunrise::before { content: \"\\f5a5\"; }\n.bi-sunset-fill::before { content: \"\\f5a6\"; }\n.bi-sunset::before { content: \"\\f5a7\"; }\n.bi-symmetry-horizontal::before { content: \"\\f5a8\"; }\n.bi-symmetry-vertical::before { content: \"\\f5a9\"; }\n.bi-table::before { content: \"\\f5aa\"; }\n.bi-tablet-fill::before { content: \"\\f5ab\"; }\n.bi-tablet-landscape-fill::before { content: \"\\f5ac\"; }\n.bi-tablet-landscape::before { content: \"\\f5ad\"; }\n.bi-tablet::before { content: \"\\f5ae\"; }\n.bi-tag-fill::before { content: \"\\f5af\"; }\n.bi-tag::before { content: \"\\f5b0\"; }\n.bi-tags-fill::before { content: \"\\f5b1\"; }\n.bi-tags::before { content: \"\\f5b2\"; }\n.bi-telegram::before { content: \"\\f5b3\"; }\n.bi-telephone-fill::before { content: \"\\f5b4\"; }\n.bi-telephone-forward-fill::before { content: \"\\f5b5\"; }\n.bi-telephone-forward::before { content: \"\\f5b6\"; }\n.bi-telephone-inbound-fill::before { content: \"\\f5b7\"; }\n.bi-telephone-inbound::before { content: \"\\f5b8\"; }\n.bi-telephone-minus-fill::before { content: \"\\f5b9\"; }\n.bi-telephone-minus::before { content: \"\\f5ba\"; }\n.bi-telephone-outbound-fill::before { content: \"\\f5bb\"; }\n.bi-telephone-outbound::before { content: \"\\f5bc\"; }\n.bi-telephone-plus-fill::before { content: \"\\f5bd\"; }\n.bi-telephone-plus::before { content: \"\\f5be\"; }\n.bi-telephone-x-fill::before { content: \"\\f5bf\"; }\n.bi-telephone-x::before { content: \"\\f5c0\"; }\n.bi-telephone::before { content: \"\\f5c1\"; }\n.bi-terminal-fill::before { content: \"\\f5c2\"; }\n.bi-terminal::before { content: \"\\f5c3\"; }\n.bi-text-center::before { content: \"\\f5c4\"; }\n.bi-text-indent-left::before { content: \"\\f5c5\"; }\n.bi-text-indent-right::before { content: \"\\f5c6\"; }\n.bi-text-left::before { content: \"\\f5c7\"; }\n.bi-text-paragraph::before { content: \"\\f5c8\"; }\n.bi-text-right::before { content: \"\\f5c9\"; }\n.bi-textarea-resize::before { content: \"\\f5ca\"; }\n.bi-textarea-t::before { content: \"\\f5cb\"; }\n.bi-textarea::before { content: \"\\f5cc\"; }\n.bi-thermometer-half::before { content: \"\\f5cd\"; }\n.bi-thermometer-high::before { content: \"\\f5ce\"; }\n.bi-thermometer-low::before { content: \"\\f5cf\"; }\n.bi-thermometer-snow::before { content: \"\\f5d0\"; }\n.bi-thermometer-sun::before { content: \"\\f5d1\"; }\n.bi-thermometer::before { content: \"\\f5d2\"; }\n.bi-three-dots-vertical::before { content: \"\\f5d3\"; }\n.bi-three-dots::before { content: \"\\f5d4\"; }\n.bi-toggle-off::before { content: \"\\f5d5\"; }\n.bi-toggle-on::before { content: \"\\f5d6\"; }\n.bi-toggle2-off::before { content: \"\\f5d7\"; }\n.bi-toggle2-on::before { content: \"\\f5d8\"; }\n.bi-toggles::before { content: \"\\f5d9\"; }\n.bi-toggles2::before { content: \"\\f5da\"; }\n.bi-tools::before { content: \"\\f5db\"; }\n.bi-tornado::before { content: \"\\f5dc\"; }\n.bi-trash-fill::before { content: \"\\f5dd\"; }\n.bi-trash::before { content: \"\\f5de\"; }\n.bi-trash2-fill::before { content: \"\\f5df\"; }\n.bi-trash2::before { content: \"\\f5e0\"; }\n.bi-tree-fill::before { content: \"\\f5e1\"; }\n.bi-tree::before { content: \"\\f5e2\"; }\n.bi-triangle-fill::before { content: \"\\f5e3\"; }\n.bi-triangle-half::before { content: \"\\f5e4\"; }\n.bi-triangle::before { content: \"\\f5e5\"; }\n.bi-trophy-fill::before { content: \"\\f5e6\"; }\n.bi-trophy::before { content: \"\\f5e7\"; }\n.bi-tropical-storm::before { content: \"\\f5e8\"; }\n.bi-truck-flatbed::before { content: \"\\f5e9\"; }\n.bi-truck::before { content: \"\\f5ea\"; }\n.bi-tsunami::before { content: \"\\f5eb\"; }\n.bi-tv-fill::before { content: \"\\f5ec\"; }\n.bi-tv::before { content: \"\\f5ed\"; }\n.bi-twitch::before { content: \"\\f5ee\"; }\n.bi-twitter::before { content: \"\\f5ef\"; }\n.bi-type-bold::before { content: \"\\f5f0\"; }\n.bi-type-h1::before { content: \"\\f5f1\"; }\n.bi-type-h2::before { content: \"\\f5f2\"; }\n.bi-type-h3::before { content: \"\\f5f3\"; }\n.bi-type-italic::before { content: \"\\f5f4\"; }\n.bi-type-strikethrough::before { content: \"\\f5f5\"; }\n.bi-type-underline::before { content: \"\\f5f6\"; }\n.bi-type::before { content: \"\\f5f7\"; }\n.bi-ui-checks-grid::before { content: \"\\f5f8\"; }\n.bi-ui-checks::before { content: \"\\f5f9\"; }\n.bi-ui-radios-grid::before { content: \"\\f5fa\"; }\n.bi-ui-radios::before { content: \"\\f5fb\"; }\n.bi-umbrella-fill::before { content: \"\\f5fc\"; }\n.bi-umbrella::before { content: \"\\f5fd\"; }\n.bi-union::before { content: \"\\f5fe\"; }\n.bi-unlock-fill::before { content: \"\\f5ff\"; }\n.bi-unlock::before { content: \"\\f600\"; }\n.bi-upc-scan::before { content: \"\\f601\"; }\n.bi-upc::before { content: \"\\f602\"; }\n.bi-upload::before { content: \"\\f603\"; }\n.bi-vector-pen::before { content: \"\\f604\"; }\n.bi-view-list::before { content: \"\\f605\"; }\n.bi-view-stacked::before { content: \"\\f606\"; }\n.bi-vinyl-fill::before { content: \"\\f607\"; }\n.bi-vinyl::before { content: \"\\f608\"; }\n.bi-voicemail::before { content: \"\\f609\"; }\n.bi-volume-down-fill::before { content: \"\\f60a\"; }\n.bi-volume-down::before { content: \"\\f60b\"; }\n.bi-volume-mute-fill::before { content: \"\\f60c\"; }\n.bi-volume-mute::before { content: \"\\f60d\"; }\n.bi-volume-off-fill::before { content: \"\\f60e\"; }\n.bi-volume-off::before { content: \"\\f60f\"; }\n.bi-volume-up-fill::before { content: \"\\f610\"; }\n.bi-volume-up::before { content: \"\\f611\"; }\n.bi-vr::before { content: \"\\f612\"; }\n.bi-wallet-fill::before { content: \"\\f613\"; }\n.bi-wallet::before { content: \"\\f614\"; }\n.bi-wallet2::before { content: \"\\f615\"; }\n.bi-watch::before { content: \"\\f616\"; }\n.bi-water::before { content: \"\\f617\"; }\n.bi-whatsapp::before { content: \"\\f618\"; }\n.bi-wifi-1::before { content: \"\\f619\"; }\n.bi-wifi-2::before { content: \"\\f61a\"; }\n.bi-wifi-off::before { content: \"\\f61b\"; }\n.bi-wifi::before { content: \"\\f61c\"; }\n.bi-wind::before { content: \"\\f61d\"; }\n.bi-window-dock::before { content: \"\\f61e\"; }\n.bi-window-sidebar::before { content: \"\\f61f\"; }\n.bi-window::before { content: \"\\f620\"; }\n.bi-wrench::before { content: \"\\f621\"; }\n.bi-x-circle-fill::before { content: \"\\f622\"; }\n.bi-x-circle::before { content: \"\\f623\"; }\n.bi-x-diamond-fill::before { content: \"\\f624\"; }\n.bi-x-diamond::before { content: \"\\f625\"; }\n.bi-x-octagon-fill::before { content: \"\\f626\"; }\n.bi-x-octagon::before { content: \"\\f627\"; }\n.bi-x-square-fill::before { content: \"\\f628\"; }\n.bi-x-square::before { content: \"\\f629\"; }\n.bi-x::before { content: \"\\f62a\"; }\n.bi-youtube::before { content: \"\\f62b\"; }\n.bi-zoom-in::before { content: \"\\f62c\"; }\n.bi-zoom-out::before { content: \"\\f62d\"; }\n.bi-bank::before { content: \"\\f62e\"; }\n.bi-bank2::before { content: \"\\f62f\"; }\n.bi-bell-slash-fill::before { content: \"\\f630\"; }\n.bi-bell-slash::before { content: \"\\f631\"; }\n.bi-cash-coin::before { content: \"\\f632\"; }\n.bi-check-lg::before { content: \"\\f633\"; }\n.bi-coin::before { content: \"\\f634\"; }\n.bi-currency-bitcoin::before { content: \"\\f635\"; }\n.bi-currency-dollar::before { content: \"\\f636\"; }\n.bi-currency-euro::before { content: \"\\f637\"; }\n.bi-currency-exchange::before { content: \"\\f638\"; }\n.bi-currency-pound::before { content: \"\\f639\"; }\n.bi-currency-yen::before { content: \"\\f63a\"; }\n.bi-dash-lg::before { content: \"\\f63b\"; }\n.bi-exclamation-lg::before { content: \"\\f63c\"; }\n.bi-file-earmark-pdf-fill::before { content: \"\\f63d\"; }\n.bi-file-earmark-pdf::before { content: \"\\f63e\"; }\n.bi-file-pdf-fill::before { content: \"\\f63f\"; }\n.bi-file-pdf::before { content: \"\\f640\"; }\n.bi-gender-ambiguous::before { content: \"\\f641\"; }\n.bi-gender-female::before { content: \"\\f642\"; }\n.bi-gender-male::before { content: \"\\f643\"; }\n.bi-gender-trans::before { content: \"\\f644\"; }\n.bi-headset-vr::before { content: \"\\f645\"; }\n.bi-info-lg::before { content: \"\\f646\"; }\n.bi-mastodon::before { content: \"\\f647\"; }\n.bi-messenger::before { content: \"\\f648\"; }\n.bi-piggy-bank-fill::before { content: \"\\f649\"; }\n.bi-piggy-bank::before { content: \"\\f64a\"; }\n.bi-pin-map-fill::before { content: \"\\f64b\"; }\n.bi-pin-map::before { content: \"\\f64c\"; }\n.bi-plus-lg::before { content: \"\\f64d\"; }\n.bi-question-lg::before { content: \"\\f64e\"; }\n.bi-recycle::before { content: \"\\f64f\"; }\n.bi-reddit::before { content: \"\\f650\"; }\n.bi-safe-fill::before { content: \"\\f651\"; }\n.bi-safe2-fill::before { content: \"\\f652\"; }\n.bi-safe2::before { content: \"\\f653\"; }\n.bi-sd-card-fill::before { content: \"\\f654\"; }\n.bi-sd-card::before { content: \"\\f655\"; }\n.bi-skype::before { content: \"\\f656\"; }\n.bi-slash-lg::before { content: \"\\f657\"; }\n.bi-translate::before { content: \"\\f658\"; }\n.bi-x-lg::before { content: \"\\f659\"; }\n.bi-safe::before { content: \"\\f65a\"; }\n", ""]);
-// Exports
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
-
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/dist/runtime/api.js":
-/*!*****************************************************!*\
-  !*** ./node_modules/css-loader/dist/runtime/api.js ***!
-  \*****************************************************/
-/***/ ((module) => {
-
-"use strict";
-
-
-/*
-  MIT License http://www.opensource.org/licenses/mit-license.php
-  Author Tobias Koppers @sokra
-*/
-// css base code, injected by the css-loader
-// eslint-disable-next-line func-names
-module.exports = function (cssWithMappingToString) {
-  var list = []; // return the list of modules as css string
-
-  list.toString = function toString() {
-    return this.map(function (item) {
-      var content = cssWithMappingToString(item);
-
-      if (item[2]) {
-        return "@media ".concat(item[2], " {").concat(content, "}");
-      }
-
-      return content;
-    }).join("");
-  }; // import a list of modules into the list
-  // eslint-disable-next-line func-names
-
-
-  list.i = function (modules, mediaQuery, dedupe) {
-    if (typeof modules === "string") {
-      // eslint-disable-next-line no-param-reassign
-      modules = [[null, modules, ""]];
-    }
-
-    var alreadyImportedModules = {};
-
-    if (dedupe) {
-      for (var i = 0; i < this.length; i++) {
-        // eslint-disable-next-line prefer-destructuring
-        var id = this[i][0];
-
-        if (id != null) {
-          alreadyImportedModules[id] = true;
-        }
-      }
-    }
-
-    for (var _i = 0; _i < modules.length; _i++) {
-      var item = [].concat(modules[_i]);
-
-      if (dedupe && alreadyImportedModules[item[0]]) {
-        // eslint-disable-next-line no-continue
-        continue;
-      }
-
-      if (mediaQuery) {
-        if (!item[2]) {
-          item[2] = mediaQuery;
-        } else {
-          item[2] = "".concat(mediaQuery, " and ").concat(item[2]);
-        }
-      }
-
-      list.push(item);
-    }
-  };
-
-  return list;
-};
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/dist/runtime/getUrl.js":
-/*!********************************************************!*\
-  !*** ./node_modules/css-loader/dist/runtime/getUrl.js ***!
-  \********************************************************/
-/***/ ((module) => {
-
-"use strict";
-
-
-module.exports = function (url, options) {
-  if (!options) {
-    // eslint-disable-next-line no-param-reassign
-    options = {};
-  } // eslint-disable-next-line no-underscore-dangle, no-param-reassign
-
-
-  url = url && url.__esModule ? url.default : url;
-
-  if (typeof url !== "string") {
-    return url;
-  } // If url is already wrapped in quotes, remove them
-
-
-  if (/^['"].*['"]$/.test(url)) {
-    // eslint-disable-next-line no-param-reassign
-    url = url.slice(1, -1);
-  }
-
-  if (options.hash) {
-    // eslint-disable-next-line no-param-reassign
-    url += options.hash;
-  } // Should url be wrapped?
-  // See https://drafts.csswg.org/css-values-3/#urls
-
-
-  if (/["'() \t\n]/.test(url) || options.needQuotes) {
-    return "\"".concat(url.replace(/"/g, '\\"').replace(/\n/g, "\\n"), "\"");
-  }
-
-  return url;
-};
-
-/***/ }),
-
-/***/ "./node_modules/bootstrap-icons/font/fonts/bootstrap-icons.woff2?856008caa5eb66df68595e734e59580d":
-/*!********************************************************************************************************!*\
-  !*** ./node_modules/bootstrap-icons/font/fonts/bootstrap-icons.woff2?856008caa5eb66df68595e734e59580d ***!
-  \********************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/fonts/vendor/bootstrap-icons/bootstrap-icons.woff2?dfd0ea122577eb61795f178e0347fa2c");
-
-/***/ }),
-
-/***/ "./node_modules/bootstrap-icons/font/fonts/bootstrap-icons.woff?856008caa5eb66df68595e734e59580d":
-/*!*******************************************************************************************************!*\
-  !*** ./node_modules/bootstrap-icons/font/fonts/bootstrap-icons.woff?856008caa5eb66df68595e734e59580d ***!
-  \*******************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/fonts/vendor/bootstrap-icons/bootstrap-icons.woff?94eeade15e6b7fbed95b18ff32f0c112");
 
 /***/ }),
 
@@ -66700,6 +66847,1772 @@ if (false) {} else {
 
 /***/ }),
 
+/***/ "./node_modules/react-hook-form/dist/index.esm.js":
+/*!********************************************************!*\
+  !*** ./node_modules/react-hook-form/dist/index.esm.js ***!
+  \********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Controller": () => (/* binding */ Controller),
+/* harmony export */   "FormProvider": () => (/* binding */ FormProvider),
+/* harmony export */   "appendErrors": () => (/* binding */ appendErrors),
+/* harmony export */   "get": () => (/* binding */ get),
+/* harmony export */   "set": () => (/* binding */ set),
+/* harmony export */   "useController": () => (/* binding */ useController),
+/* harmony export */   "useFieldArray": () => (/* binding */ useFieldArray),
+/* harmony export */   "useForm": () => (/* binding */ useForm),
+/* harmony export */   "useFormContext": () => (/* binding */ useFormContext),
+/* harmony export */   "useFormState": () => (/* binding */ useFormState),
+/* harmony export */   "useWatch": () => (/* binding */ useWatch)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+
+var isCheckBoxInput = (element) => element.type === 'checkbox';
+
+var isNullOrUndefined = (value) => value == null;
+
+const isObjectType = (value) => typeof value === 'object';
+var isObject = (value) => !isNullOrUndefined(value) &&
+    !Array.isArray(value) &&
+    isObjectType(value) &&
+    !(value instanceof Date);
+
+var getControllerValue = (event) => isObject(event) && event.target
+    ? isCheckBoxInput(event.target)
+        ? event.target.checked
+        : event.target.value
+    : event;
+
+var getNodeParentName = (name) => name.substring(0, name.search(/.\d/)) || name;
+
+var isNameInFieldArray = (names, name) => [...names].some((current) => getNodeParentName(name) === current);
+
+var compact = (value) => value.filter(Boolean);
+
+var isUndefined = (val) => val === undefined;
+
+var get = (obj = {}, path, defaultValue) => {
+    const result = compact(path.split(/[,[\].]+?/)).reduce((result, key) => (isNullOrUndefined(result) ? result : result[key]), obj);
+    return isUndefined(result) || result === obj
+        ? isUndefined(obj[path])
+            ? defaultValue
+            : obj[path]
+        : result;
+};
+
+const EVENTS = {
+    BLUR: 'blur',
+    CHANGE: 'change',
+};
+const VALIDATION_MODE = {
+    onBlur: 'onBlur',
+    onChange: 'onChange',
+    onSubmit: 'onSubmit',
+    onTouched: 'onTouched',
+    all: 'all',
+};
+const SELECT = 'select';
+const UNDEFINED = 'undefined';
+const INPUT_VALIDATION_RULES = {
+    max: 'max',
+    min: 'min',
+    maxLength: 'maxLength',
+    minLength: 'minLength',
+    pattern: 'pattern',
+    required: 'required',
+    validate: 'validate',
+};
+
+var omit = (source, key) => {
+    const copy = Object.assign({}, source);
+    delete copy[key];
+    return copy;
+};
+
+const FormContext = react__WEBPACK_IMPORTED_MODULE_0__.createContext(null);
+FormContext.displayName = 'RHFContext';
+const useFormContext = () => react__WEBPACK_IMPORTED_MODULE_0__.useContext(FormContext);
+const FormProvider = (props) => (react__WEBPACK_IMPORTED_MODULE_0__.createElement(FormContext.Provider, { value: omit(props, 'children') }, props.children));
+
+var getProxyFormState = (isProxyEnabled, formState, readFormStateRef, localReadFormStateRef, isRoot = true) => isProxyEnabled
+    ? new Proxy(formState, {
+        get: (obj, prop) => {
+            if (prop in obj) {
+                if (readFormStateRef.current[prop] !== VALIDATION_MODE.all) {
+                    readFormStateRef.current[prop] = isRoot
+                        ? VALIDATION_MODE.all
+                        : true;
+                }
+                localReadFormStateRef &&
+                    (localReadFormStateRef.current[prop] = true);
+                return obj[prop];
+            }
+            return undefined;
+        },
+    })
+    : formState;
+
+var isEmptyObject = (value) => isObject(value) && !Object.keys(value).length;
+
+var shouldRenderFormState = (formStateData, readFormStateRef, isRoot) => {
+    const formState = omit(formStateData, 'name');
+    return (isEmptyObject(formState) ||
+        Object.keys(formState).length >= Object.keys(readFormStateRef).length ||
+        Object.keys(formState).find((key) => readFormStateRef[key] ===
+            (isRoot ? VALIDATION_MODE.all : true)));
+};
+
+var convertToArrayPayload = (value) => Array.isArray(value) ? value : [value];
+
+var isWeb = typeof window !== UNDEFINED &&
+    typeof window.HTMLElement !== UNDEFINED &&
+    typeof document !== UNDEFINED;
+
+const isProxyEnabled = isWeb ? 'Proxy' in window : typeof Proxy !== UNDEFINED;
+
+function useFormState(props) {
+    const { control, name } = props || {};
+    const methods = useFormContext();
+    const { formStateRef, formStateSubjectRef, readFormStateRef } = control || methods.control;
+    const nameRef = react__WEBPACK_IMPORTED_MODULE_0__.useRef(name);
+    nameRef.current = name;
+    const [formState, updateFormState] = react__WEBPACK_IMPORTED_MODULE_0__.useState(formStateRef.current);
+    const readFormState = react__WEBPACK_IMPORTED_MODULE_0__.useRef({
+        isDirty: false,
+        dirtyFields: false,
+        touchedFields: false,
+        isValidating: false,
+        isValid: false,
+        errors: false,
+    });
+    react__WEBPACK_IMPORTED_MODULE_0__.useEffect(() => {
+        const formStateSubscription = formStateSubjectRef.current.subscribe({
+            next: (formState) => (!nameRef.current ||
+                !formState.name ||
+                convertToArrayPayload(nameRef.current).includes(formState.name)) &&
+                shouldRenderFormState(formState, readFormState.current) &&
+                updateFormState(Object.assign(Object.assign({}, formStateRef.current), formState)),
+        });
+        return () => formStateSubscription.unsubscribe();
+    }, []);
+    return getProxyFormState(isProxyEnabled, formState, readFormStateRef, readFormState, false);
+}
+
+function useController({ name, rules, defaultValue, control, shouldUnregister, }) {
+    const methods = useFormContext();
+    const { defaultValuesRef, register, fieldsRef, unregister, fieldArrayNamesRef, controllerSubjectRef, shouldUnmount, inFieldArrayActionRef, } = control || methods.control;
+    const { onChange, onBlur, ref } = register(name, rules);
+    const isFieldArray = isNameInFieldArray(fieldArrayNamesRef.current, name);
+    const [value, setInputStateValue] = react__WEBPACK_IMPORTED_MODULE_0__.useState(isUndefined(get(fieldsRef.current, name)._f.value) || isFieldArray
+        ? isUndefined(defaultValue)
+            ? get(defaultValuesRef.current, name)
+            : defaultValue
+        : get(fieldsRef.current, name)._f.value);
+    const formState = useFormState({
+        control: control || methods.control,
+        name,
+    });
+    get(fieldsRef.current, name)._f.value = value;
+    react__WEBPACK_IMPORTED_MODULE_0__.useEffect(() => {
+        const controllerSubscription = controllerSubjectRef.current.subscribe({
+            next: (data) => (!data.name || name === data.name) &&
+                setInputStateValue(get(data.values, name)),
+        });
+        return () => {
+            controllerSubscription.unsubscribe();
+            const shouldUnmountField = shouldUnmount || shouldUnregister;
+            if (isFieldArray
+                ? shouldUnmountField && !inFieldArrayActionRef.current
+                : shouldUnmountField) {
+                unregister(name);
+            }
+            else if (get(fieldsRef.current, name)) {
+                get(fieldsRef.current, name)._f.mount = false;
+            }
+        };
+    }, [name]);
+    return {
+        field: {
+            onChange: (event) => {
+                const value = getControllerValue(event);
+                setInputStateValue(value);
+                onChange({
+                    target: {
+                        value,
+                        name: name,
+                    },
+                    type: EVENTS.CHANGE,
+                });
+            },
+            onBlur: () => {
+                onBlur({
+                    target: {
+                        name: name,
+                    },
+                    type: EVENTS.BLUR,
+                });
+            },
+            name,
+            value,
+            ref: (elm) => elm && ref(elm),
+        },
+        formState,
+        fieldState: Object.defineProperties({}, {
+            invalid: {
+                get() {
+                    return !!get(formState.errors, name);
+                },
+            },
+            isDirty: {
+                get() {
+                    return !!get(formState.dirtyFields, name);
+                },
+            },
+            isTouched: {
+                get() {
+                    return !!get(formState.touchedFields, name);
+                },
+            },
+            error: {
+                get() {
+                    return get(formState.errors, name);
+                },
+            },
+        }),
+    };
+}
+
+const Controller = (props) => props.render(useController(props));
+
+var appendErrors = (name, validateAllFieldCriteria, errors, type, message) => validateAllFieldCriteria
+    ? Object.assign(Object.assign({}, errors[name]), { types: Object.assign(Object.assign({}, (errors[name] && errors[name].types ? errors[name].types : {})), { [type]: message || true }) }) : {};
+
+var isKey = (value) => /^\w*$/.test(value);
+
+var stringToPath = (input) => compact(input.replace(/["|']|\]/g, '').split(/\.|\[/));
+
+function set(object, path, value) {
+    let index = -1;
+    const tempPath = isKey(path) ? [path] : stringToPath(path);
+    const length = tempPath.length;
+    const lastIndex = length - 1;
+    while (++index < length) {
+        const key = tempPath[index];
+        let newValue = value;
+        if (index !== lastIndex) {
+            const objValue = object[key];
+            newValue =
+                isObject(objValue) || Array.isArray(objValue)
+                    ? objValue
+                    : !isNaN(+tempPath[index + 1])
+                        ? []
+                        : {};
+        }
+        object[key] = newValue;
+        object = object[key];
+    }
+    return object;
+}
+
+const focusFieldBy = (fields, callback, fieldsNames) => {
+    for (const key of fieldsNames || Object.keys(fields)) {
+        const field = get(fields, key);
+        if (field) {
+            const _f = field._f;
+            const current = omit(field, '_f');
+            if (_f && callback(_f.name)) {
+                if (_f.ref.focus && isUndefined(_f.ref.focus())) {
+                    break;
+                }
+                else if (_f.refs) {
+                    _f.refs[0].focus();
+                    break;
+                }
+            }
+            else if (isObject(current)) {
+                focusFieldBy(current, callback);
+            }
+        }
+    }
+};
+
+const getFieldsValues = (fieldsRef, defaultValuesRef, output = {}) => {
+    for (const name in fieldsRef.current) {
+        const field = fieldsRef.current[name];
+        if (field) {
+            const _f = field._f;
+            const current = omit(field, '_f');
+            set(output, name, _f && _f.ref
+                ? _f.ref.disabled || (_f.refs && _f.refs.every((ref) => ref.disabled))
+                    ? undefined
+                    : _f.value
+                : Array.isArray(field)
+                    ? []
+                    : {});
+            current &&
+                getFieldsValues({
+                    current,
+                }, defaultValuesRef, output[name]);
+        }
+    }
+    return output;
+};
+
+var generateId = () => {
+    const d = typeof performance === UNDEFINED ? Date.now() : performance.now() * 1000;
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
+        const r = (Math.random() * 16 + d) % 16 | 0;
+        return (c == 'x' ? r : (r & 0x3) | 0x8).toString(16);
+    });
+};
+
+var mapIds = (values = [], keyName) => values.map((value) => (Object.assign({ [keyName]: (value && value[keyName]) || generateId() }, value)));
+
+var isPrimitive = (value) => isNullOrUndefined(value) || !isObjectType(value);
+
+function deepEqual(object1, object2, isErrorObject) {
+    if (isPrimitive(object1) ||
+        isPrimitive(object2) ||
+        object1 instanceof Date ||
+        object2 instanceof Date) {
+        return object1 === object2;
+    }
+    if (!react__WEBPACK_IMPORTED_MODULE_0__.isValidElement(object1)) {
+        const keys1 = Object.keys(object1);
+        const keys2 = Object.keys(object2);
+        if (keys1.length !== keys2.length) {
+            return false;
+        }
+        for (const key of keys1) {
+            const val1 = object1[key];
+            if (!(isErrorObject && key === 'ref')) {
+                const val2 = object2[key];
+                if ((isObject(val1) || Array.isArray(val1)) &&
+                    (isObject(val2) || Array.isArray(val2))
+                    ? !deepEqual(val1, val2, isErrorObject)
+                    : val1 !== val2) {
+                    return false;
+                }
+            }
+        }
+    }
+    return true;
+}
+
+function deepMerge(target, source) {
+    if (isPrimitive(target) || isPrimitive(source)) {
+        return source;
+    }
+    for (const key in source) {
+        const targetValue = target[key];
+        const sourceValue = source[key];
+        try {
+            target[key] =
+                (isObject(targetValue) && isObject(sourceValue)) ||
+                    (Array.isArray(targetValue) && Array.isArray(sourceValue))
+                    ? deepMerge(targetValue, sourceValue)
+                    : sourceValue;
+        }
+        catch (_a) { }
+    }
+    return target;
+}
+
+function setDirtyFields(values, defaultValues, dirtyFields, parentNode, parentName) {
+    let index = -1;
+    while (++index < values.length) {
+        for (const key in values[index]) {
+            if (Array.isArray(values[index][key])) {
+                !dirtyFields[index] && (dirtyFields[index] = {});
+                dirtyFields[index][key] = [];
+                setDirtyFields(values[index][key], get(defaultValues[index] || {}, key, []), dirtyFields[index][key], dirtyFields[index], key);
+            }
+            else {
+                deepEqual(get(defaultValues[index] || {}, key), values[index][key])
+                    ? set(dirtyFields[index] || {}, key)
+                    : (dirtyFields[index] = Object.assign(Object.assign({}, dirtyFields[index]), { [key]: true }));
+            }
+        }
+        parentNode &&
+            !dirtyFields.length &&
+            delete parentNode[parentName];
+    }
+    return dirtyFields;
+}
+var setFieldArrayDirtyFields = (values, defaultValues, dirtyFields) => deepMerge(setDirtyFields(values, defaultValues, dirtyFields.slice(0, values.length)), setDirtyFields(defaultValues, values, dirtyFields.slice(0, values.length)));
+
+function append(data, value) {
+    return [...data, ...convertToArrayPayload(value)];
+}
+
+var fillEmptyArray = (value) => Array.isArray(value) ? Array(value.length).fill(undefined) : undefined;
+
+function insert(data, index, value) {
+    return [
+        ...data.slice(0, index),
+        ...convertToArrayPayload(value),
+        ...data.slice(index),
+    ];
+}
+
+var isString = (value) => typeof value === 'string';
+
+var moveArrayAt = (data, from, to) => {
+    if (Array.isArray(data)) {
+        if (isUndefined(data[to])) {
+            data[to] = undefined;
+        }
+        data.splice(to, 0, data.splice(from, 1)[0]);
+        return data;
+    }
+    return [];
+};
+
+function prepend(data, value) {
+    return [...convertToArrayPayload(value), ...data];
+}
+
+function removeAtIndexes(data, indexes) {
+    let i = 0;
+    const temp = [...data];
+    for (const index of indexes) {
+        temp.splice(index - i, 1);
+        i++;
+    }
+    return compact(temp).length ? temp : [];
+}
+var removeArrayAt = (data, index) => isUndefined(index)
+    ? []
+    : removeAtIndexes(data, convertToArrayPayload(index).sort((a, b) => a - b));
+
+var swapArrayAt = (data, indexA, indexB) => {
+    data[indexA] = [data[indexB], (data[indexB] = data[indexA])][0];
+};
+
+var isBoolean = (value) => typeof value === 'boolean';
+
+function baseGet(object, updatePath) {
+    const length = updatePath.slice(0, -1).length;
+    let index = 0;
+    while (index < length) {
+        object = isUndefined(object) ? index++ : object[updatePath[index++]];
+    }
+    return object;
+}
+function unset(object, path) {
+    const updatePath = isKey(path) ? [path] : stringToPath(path);
+    const childObject = updatePath.length == 1 ? object : baseGet(object, updatePath);
+    const key = updatePath[updatePath.length - 1];
+    let previousObjRef;
+    if (childObject) {
+        delete childObject[key];
+    }
+    for (let k = 0; k < updatePath.slice(0, -1).length; k++) {
+        let index = -1;
+        let objectRef;
+        const currentPaths = updatePath.slice(0, -(k + 1));
+        const currentPathsLength = currentPaths.length - 1;
+        if (k > 0) {
+            previousObjRef = object;
+        }
+        while (++index < currentPaths.length) {
+            const item = currentPaths[index];
+            objectRef = objectRef ? objectRef[item] : object[item];
+            if (currentPathsLength === index &&
+                ((isObject(objectRef) && isEmptyObject(objectRef)) ||
+                    (Array.isArray(objectRef) &&
+                        !objectRef.filter((data) => (isObject(data) && !isEmptyObject(data)) || isBoolean(data)).length))) {
+                previousObjRef ? delete previousObjRef[item] : delete object[item];
+            }
+            previousObjRef = objectRef;
+        }
+    }
+    return object;
+}
+
+const useFieldArray = ({ control, name, keyName = 'id', shouldUnregister, }) => {
+    const methods = useFormContext();
+    const focusNameRef = react__WEBPACK_IMPORTED_MODULE_0__.useRef('');
+    const { isWatchAllRef, watchFieldsRef, getIsDirty, watchSubjectRef, fieldArraySubjectRef, fieldArrayNamesRef, fieldsRef, defaultValuesRef, formStateRef, formStateSubjectRef, readFormStateRef, validFieldsRef, fieldsWithValidationRef, fieldArrayDefaultValuesRef, unregister, shouldUnmount, inFieldArrayActionRef, } = control || methods.control;
+    const [fields, setFields] = react__WEBPACK_IMPORTED_MODULE_0__.useState(mapIds(get(fieldsRef.current, name)
+        ? get(getFieldsValues(fieldsRef), name)
+        : get(fieldArrayDefaultValuesRef.current, getNodeParentName(name))
+            ? get(fieldArrayDefaultValuesRef.current, name, [])
+            : get(defaultValuesRef.current, name, []), keyName));
+    set(fieldArrayDefaultValuesRef.current, name, [...fields]);
+    fieldArrayNamesRef.current.add(name);
+    const omitKey = (fields) => fields.map((field) => omit((field || {}), keyName));
+    const getCurrentFieldsValues = () => {
+        const values = get(getFieldsValues(fieldsRef), name, []);
+        return mapIds(get(fieldArrayDefaultValuesRef.current, name, []).map((item, index) => (Object.assign(Object.assign({}, item), values[index]))), keyName);
+    };
+    const getFocusDetail = (index, options) => options
+        ? !isUndefined(options.focusIndex)
+            ? `${name}.${options.focusIndex}`
+            : options.focusName
+                ? options.focusName
+                : !options.shouldFocus
+                    ? ''
+                    : `${name}.${index}`
+        : `${name}.${index}`;
+    const resetFields = (index) => convertToArrayPayload(index).forEach((currentIndex) => set(fieldsRef.current, `${name}${isUndefined(currentIndex) ? '' : `.${currentIndex}`}`, isUndefined(currentIndex) ? [] : undefined));
+    const setFieldsAndNotify = (fieldsValues = []) => setFields(mapIds(fieldsValues, keyName));
+    const cleanup = (ref) => !compact(get(ref, name, [])).length && unset(ref, name);
+    const updateDirtyFieldsWithDefaultValues = (updatedFieldArrayValues) => updatedFieldArrayValues &&
+        set(formStateRef.current.dirtyFields, name, setFieldArrayDirtyFields(omitKey(updatedFieldArrayValues), get(defaultValuesRef.current, name, []), get(formStateRef.current.dirtyFields, name, [])));
+    const batchStateUpdate = (method, args, updatedFieldArrayValues = [], shouldSet = true) => {
+        inFieldArrayActionRef.current = true;
+        if (get(fieldsRef.current, name)) {
+            const output = method(get(fieldsRef.current, name), args.argA, args.argB);
+            shouldSet && set(fieldsRef.current, name, output);
+        }
+        if (Array.isArray(get(formStateRef.current.errors, name))) {
+            const output = method(get(formStateRef.current.errors, name), args.argA, args.argB);
+            shouldSet && set(formStateRef.current.errors, name, output);
+            cleanup(formStateRef.current.errors);
+        }
+        if (readFormStateRef.current.touchedFields &&
+            get(formStateRef.current.touchedFields, name)) {
+            const output = method(get(formStateRef.current.touchedFields, name), args.argA, args.argB);
+            shouldSet && set(formStateRef.current.touchedFields, name, output);
+            cleanup(formStateRef.current.touchedFields);
+        }
+        if (readFormStateRef.current.dirtyFields ||
+            readFormStateRef.current.isDirty) {
+            set(formStateRef.current.dirtyFields, name, setFieldArrayDirtyFields(omitKey(updatedFieldArrayValues), get(defaultValuesRef.current, name, []), get(formStateRef.current.dirtyFields, name, [])));
+            updateDirtyFieldsWithDefaultValues(updatedFieldArrayValues);
+            cleanup(formStateRef.current.dirtyFields);
+        }
+        if (readFormStateRef.current.isValid) {
+            set(validFieldsRef.current, name, method(get(validFieldsRef.current, name, []), args.argA));
+            cleanup(validFieldsRef.current);
+            set(fieldsWithValidationRef.current, name, method(get(fieldsWithValidationRef.current, name, []), args.argA));
+            cleanup(fieldsWithValidationRef.current);
+        }
+        formStateSubjectRef.current.next({
+            isDirty: getIsDirty(name, omitKey(updatedFieldArrayValues)),
+            errors: formStateRef.current.errors,
+            isValid: formStateRef.current.isValid,
+        });
+    };
+    const registerFieldArray = (values, index = 0, parentName = '') => values.forEach((appendValueItem, valueIndex) => !isPrimitive(appendValueItem) &&
+        Object.entries(appendValueItem).forEach(([key, value]) => {
+            const inputName = `${parentName || name}.${parentName ? valueIndex : index + valueIndex}.${key}`;
+            Array.isArray(value)
+                ? registerFieldArray(value, valueIndex, inputName)
+                : set(fieldsRef.current, inputName, {
+                    _f: {
+                        ref: {
+                            name: inputName,
+                        },
+                        name: inputName,
+                        value,
+                    },
+                });
+        }));
+    const append$1 = (value, options) => {
+        const appendValue = convertToArrayPayload(value);
+        const updatedFieldArrayValues = append(getCurrentFieldsValues(), appendValue);
+        const currentIndex = updatedFieldArrayValues.length - appendValue.length;
+        setFieldsAndNotify(updatedFieldArrayValues);
+        batchStateUpdate(append, {
+            argA: fillEmptyArray(value),
+        }, updatedFieldArrayValues, false);
+        registerFieldArray(appendValue, currentIndex);
+        focusNameRef.current = getFocusDetail(currentIndex, options);
+    };
+    const prepend$1 = (value, options) => {
+        const prependValue = convertToArrayPayload(value);
+        const updatedFieldArrayValues = prepend(getCurrentFieldsValues(), prependValue);
+        setFieldsAndNotify(updatedFieldArrayValues);
+        batchStateUpdate(prepend, {
+            argA: fillEmptyArray(value),
+        }, updatedFieldArrayValues);
+        registerFieldArray(prependValue);
+        focusNameRef.current = getFocusDetail(0, options);
+    };
+    const remove = (index) => {
+        const updatedFieldArrayValues = removeArrayAt(getCurrentFieldsValues(), index);
+        resetFields(index);
+        setFieldsAndNotify(updatedFieldArrayValues);
+        batchStateUpdate(removeArrayAt, {
+            argA: index,
+        }, updatedFieldArrayValues);
+    };
+    const insert$1 = (index, value, options) => {
+        const insertValue = convertToArrayPayload(value);
+        const updatedFieldArrayValues = insert(getCurrentFieldsValues(), index, insertValue);
+        setFieldsAndNotify(updatedFieldArrayValues);
+        batchStateUpdate(insert, {
+            argA: index,
+            argB: fillEmptyArray(value),
+        }, updatedFieldArrayValues);
+        registerFieldArray(insertValue, index);
+        focusNameRef.current = getFocusDetail(index, options);
+    };
+    const swap = (indexA, indexB) => {
+        const fieldValues = getCurrentFieldsValues();
+        swapArrayAt(fieldValues, indexA, indexB);
+        batchStateUpdate(swapArrayAt, {
+            argA: indexA,
+            argB: indexB,
+        }, fieldValues, false);
+        setFieldsAndNotify(fieldValues);
+    };
+    const move = (from, to) => {
+        const fieldValues = getCurrentFieldsValues();
+        moveArrayAt(fieldValues, from, to);
+        setFieldsAndNotify(fieldValues);
+        batchStateUpdate(moveArrayAt, {
+            argA: from,
+            argB: to,
+        }, fieldValues, false);
+    };
+    react__WEBPACK_IMPORTED_MODULE_0__.useEffect(() => {
+        inFieldArrayActionRef.current = false;
+        if (isWatchAllRef.current) {
+            formStateSubjectRef.current.next({});
+        }
+        else {
+            for (const watchField of watchFieldsRef.current) {
+                if (name.startsWith(watchField)) {
+                    formStateSubjectRef.current.next({});
+                    break;
+                }
+            }
+        }
+        watchSubjectRef.current.next({
+            name,
+            value: get(getFieldsValues(fieldsRef), name, []),
+        });
+        focusNameRef.current &&
+            focusFieldBy(fieldsRef.current, (key) => isString(key) && key.startsWith(focusNameRef.current));
+        focusNameRef.current = '';
+        fieldArraySubjectRef.current.next({
+            name,
+            fields: omitKey([...fields]),
+        });
+    }, [fields, name]);
+    react__WEBPACK_IMPORTED_MODULE_0__.useEffect(() => {
+        const fieldArraySubscription = fieldArraySubjectRef.current.subscribe({
+            next({ name: inputFieldArrayName, fields, isReset }) {
+                if (isReset) {
+                    unset(fieldsRef.current, inputFieldArrayName || name);
+                    inputFieldArrayName
+                        ? set(fieldArrayDefaultValuesRef.current, inputFieldArrayName, fields)
+                        : (fieldArrayDefaultValuesRef.current = fields);
+                    setFieldsAndNotify(get(fieldArrayDefaultValuesRef.current, name));
+                }
+            },
+        });
+        !get(fieldsRef.current, name) && set(fieldsRef.current, name, []);
+        return () => {
+            fieldArraySubscription.unsubscribe();
+            (shouldUnmount || shouldUnregister) && unregister(name);
+        };
+    }, []);
+    return {
+        swap: react__WEBPACK_IMPORTED_MODULE_0__.useCallback(swap, [name]),
+        move: react__WEBPACK_IMPORTED_MODULE_0__.useCallback(move, [name]),
+        prepend: react__WEBPACK_IMPORTED_MODULE_0__.useCallback(prepend$1, [name]),
+        append: react__WEBPACK_IMPORTED_MODULE_0__.useCallback(append$1, [name]),
+        remove: react__WEBPACK_IMPORTED_MODULE_0__.useCallback(remove, [name]),
+        insert: react__WEBPACK_IMPORTED_MODULE_0__.useCallback(insert$1, [name]),
+        fields: fields,
+    };
+};
+
+function getFields(fieldsNames, fieldsRefs) {
+    const currentFields = {};
+    for (const name of fieldsNames) {
+        const field = get(fieldsRefs, name);
+        if (field) {
+            !isKey(name)
+                ? set(currentFields, name, field._f)
+                : (currentFields[name] = field._f);
+        }
+    }
+    return currentFields;
+}
+
+var isFileInput = (element) => element.type === 'file';
+
+var isMultipleSelect = (element) => element.type === `${SELECT}-multiple`;
+
+var isRadioInput = (element) => element.type === 'radio';
+
+const defaultResult = {
+    value: false,
+    isValid: false,
+};
+const validResult = { value: true, isValid: true };
+var getCheckboxValue = (options) => {
+    if (Array.isArray(options)) {
+        if (options.length > 1) {
+            const values = options
+                .filter((option) => option && option.checked && !option.disabled)
+                .map((option) => option.value);
+            return { value: values, isValid: !!values.length };
+        }
+        return options[0].checked && !options[0].disabled
+            ? // @ts-expect-error expected to work in the browser
+                options[0].attributes && !isUndefined(options[0].attributes.value)
+                    ? isUndefined(options[0].value) || options[0].value === ''
+                        ? validResult
+                        : { value: options[0].value, isValid: true }
+                    : validResult
+            : defaultResult;
+    }
+    return defaultResult;
+};
+
+var getFieldValueAs = (value, { valueAsNumber, valueAsDate, setValueAs }) => valueAsNumber
+    ? value === ''
+        ? NaN
+        : +value
+    : valueAsDate
+        ? new Date(value)
+        : setValueAs
+            ? setValueAs(value)
+            : value;
+
+var getMultipleSelectValue = (options) => [...options]
+    .filter(({ selected }) => selected)
+    .map(({ value }) => value);
+
+const defaultReturn = {
+    isValid: false,
+    value: null,
+};
+var getRadioValue = (options) => Array.isArray(options)
+    ? options.reduce((previous, option) => option && option.checked && !option.disabled
+        ? {
+            isValid: true,
+            value: option.value,
+        }
+        : previous, defaultReturn)
+    : defaultReturn;
+
+function getFieldValue(field) {
+    if (field && field._f) {
+        const ref = field._f.ref;
+        if (ref.disabled) {
+            return;
+        }
+        if (isFileInput(ref)) {
+            return ref.files;
+        }
+        if (isRadioInput(ref)) {
+            return getRadioValue(field._f.refs).value;
+        }
+        if (isMultipleSelect(ref)) {
+            return getMultipleSelectValue(ref.options);
+        }
+        if (isCheckBoxInput(ref)) {
+            return getCheckboxValue(field._f.refs).value;
+        }
+        return getFieldValueAs(isUndefined(ref.value) ? field._f.ref.value : ref.value, field._f);
+    }
+}
+
+var hasValidation = (options, mounted) => options &&
+    mounted &&
+    (options.required ||
+        options.min ||
+        options.max ||
+        options.maxLength ||
+        options.minLength ||
+        options.pattern ||
+        options.validate);
+
+var skipValidation = ({ isOnBlur, isOnChange, isOnTouch, isTouched, isReValidateOnBlur, isReValidateOnChange, isBlurEvent, isSubmitted, isOnAll, }) => {
+    if (isOnAll) {
+        return false;
+    }
+    else if (!isSubmitted && isOnTouch) {
+        return !(isTouched || isBlurEvent);
+    }
+    else if (isSubmitted ? isReValidateOnBlur : isOnBlur) {
+        return !isBlurEvent;
+    }
+    else if (isSubmitted ? isReValidateOnChange : isOnChange) {
+        return isBlurEvent;
+    }
+    return true;
+};
+
+var isFunction = (value) => typeof value === 'function';
+
+var isMessage = (value) => isString(value) || react__WEBPACK_IMPORTED_MODULE_0__.isValidElement(value);
+
+var isRegex = (value) => value instanceof RegExp;
+
+function getValidateError(result, ref, type = 'validate') {
+    if (isMessage(result) ||
+        (Array.isArray(result) && result.every(isMessage)) ||
+        (isBoolean(result) && !result)) {
+        return {
+            type,
+            message: isMessage(result) ? result : '',
+            ref,
+        };
+    }
+}
+
+var getValueAndMessage = (validationData) => isObject(validationData) && !isRegex(validationData)
+    ? validationData
+    : {
+        value: validationData,
+        message: '',
+    };
+
+var validateField = async ({ _f: { ref, refs, required, maxLength, minLength, min, max, pattern, validate, name, value: inputValue, valueAsNumber, mount, }, }, validateAllFieldCriteria) => {
+    if (!mount) {
+        return {};
+    }
+    const error = {};
+    const isRadio = isRadioInput(ref);
+    const isCheckBox = isCheckBoxInput(ref);
+    const isRadioOrCheckbox = isRadio || isCheckBox;
+    const isEmpty = ((valueAsNumber || isFileInput(ref)) && !ref.value) ||
+        inputValue === '' ||
+        (Array.isArray(inputValue) && !inputValue.length);
+    const appendErrorsCurry = appendErrors.bind(null, name, validateAllFieldCriteria, error);
+    const getMinMaxMessage = (exceedMax, maxLengthMessage, minLengthMessage, maxType = INPUT_VALIDATION_RULES.maxLength, minType = INPUT_VALIDATION_RULES.minLength) => {
+        const message = exceedMax ? maxLengthMessage : minLengthMessage;
+        error[name] = Object.assign({ type: exceedMax ? maxType : minType, message,
+            ref }, appendErrorsCurry(exceedMax ? maxType : minType, message));
+    };
+    if (required &&
+        ((!isRadio && !isCheckBox && (isEmpty || isNullOrUndefined(inputValue))) ||
+            (isBoolean(inputValue) && !inputValue) ||
+            (isCheckBox && !getCheckboxValue(refs).isValid) ||
+            (isRadio && !getRadioValue(refs).isValid))) {
+        const { value, message } = isMessage(required)
+            ? { value: !!required, message: required }
+            : getValueAndMessage(required);
+        if (value) {
+            error[name] = Object.assign({ type: INPUT_VALIDATION_RULES.required, message, ref: isRadioOrCheckbox ? (refs || [])[0] || {} : ref }, appendErrorsCurry(INPUT_VALIDATION_RULES.required, message));
+            if (!validateAllFieldCriteria) {
+                return error;
+            }
+        }
+    }
+    if ((!isNullOrUndefined(min) || !isNullOrUndefined(max)) &&
+        inputValue !== '') {
+        let exceedMax;
+        let exceedMin;
+        const maxOutput = getValueAndMessage(max);
+        const minOutput = getValueAndMessage(min);
+        if (!isNaN(inputValue)) {
+            const valueNumber = ref.valueAsNumber || parseFloat(inputValue);
+            if (!isNullOrUndefined(maxOutput.value)) {
+                exceedMax = valueNumber > maxOutput.value;
+            }
+            if (!isNullOrUndefined(minOutput.value)) {
+                exceedMin = valueNumber < minOutput.value;
+            }
+        }
+        else {
+            const valueDate = ref.valueAsDate || new Date(inputValue);
+            if (isString(maxOutput.value)) {
+                exceedMax = valueDate > new Date(maxOutput.value);
+            }
+            if (isString(minOutput.value)) {
+                exceedMin = valueDate < new Date(minOutput.value);
+            }
+        }
+        if (exceedMax || exceedMin) {
+            getMinMaxMessage(!!exceedMax, maxOutput.message, minOutput.message, INPUT_VALIDATION_RULES.max, INPUT_VALIDATION_RULES.min);
+            if (!validateAllFieldCriteria) {
+                return error;
+            }
+        }
+    }
+    if (isString(inputValue) && !isEmpty && (maxLength || minLength)) {
+        const maxLengthOutput = getValueAndMessage(maxLength);
+        const minLengthOutput = getValueAndMessage(minLength);
+        const exceedMax = !isNullOrUndefined(maxLengthOutput.value) &&
+            inputValue.length > maxLengthOutput.value;
+        const exceedMin = !isNullOrUndefined(minLengthOutput.value) &&
+            inputValue.length < minLengthOutput.value;
+        if (exceedMax || exceedMin) {
+            getMinMaxMessage(exceedMax, maxLengthOutput.message, minLengthOutput.message);
+            if (!validateAllFieldCriteria) {
+                return error;
+            }
+        }
+    }
+    if (isString(inputValue) && pattern && !isEmpty) {
+        const { value: patternValue, message } = getValueAndMessage(pattern);
+        if (isRegex(patternValue) && !inputValue.match(patternValue)) {
+            error[name] = Object.assign({ type: INPUT_VALIDATION_RULES.pattern, message,
+                ref }, appendErrorsCurry(INPUT_VALIDATION_RULES.pattern, message));
+            if (!validateAllFieldCriteria) {
+                return error;
+            }
+        }
+    }
+    if (validate) {
+        const validateRef = isRadioOrCheckbox && refs ? refs[0] : ref;
+        if (isFunction(validate)) {
+            const result = await validate(inputValue);
+            const validateError = getValidateError(result, validateRef);
+            if (validateError) {
+                error[name] = Object.assign(Object.assign({}, validateError), appendErrorsCurry(INPUT_VALIDATION_RULES.validate, validateError.message));
+                if (!validateAllFieldCriteria) {
+                    return error;
+                }
+            }
+        }
+        else if (isObject(validate)) {
+            let validationResult = {};
+            for (const [key, validateFunction] of Object.entries(validate)) {
+                if (!isEmptyObject(validationResult) && !validateAllFieldCriteria) {
+                    break;
+                }
+                const validateResult = await validateFunction(inputValue);
+                const validateError = getValidateError(validateResult, validateRef, key);
+                if (validateError) {
+                    validationResult = Object.assign(Object.assign({}, validateError), appendErrorsCurry(key, validateError.message));
+                    if (validateAllFieldCriteria) {
+                        error[name] = validationResult;
+                    }
+                }
+            }
+            if (!isEmptyObject(validationResult)) {
+                error[name] = Object.assign({ ref: validateRef }, validationResult);
+                if (!validateAllFieldCriteria) {
+                    return error;
+                }
+            }
+        }
+    }
+    return error;
+};
+
+var getValidationModes = (mode) => ({
+    isOnSubmit: !mode || mode === VALIDATION_MODE.onSubmit,
+    isOnBlur: mode === VALIDATION_MODE.onBlur,
+    isOnChange: mode === VALIDATION_MODE.onChange,
+    isOnAll: mode === VALIDATION_MODE.all,
+    isOnTouch: mode === VALIDATION_MODE.onTouched,
+});
+
+var isHTMLElement = (value) => value instanceof HTMLElement;
+
+var isRadioOrCheckboxFunction = (ref) => isRadioInput(ref) || isCheckBoxInput(ref);
+
+class Subscription {
+    constructor() {
+        this.tearDowns = [];
+    }
+    add(tearDown) {
+        this.tearDowns.push(tearDown);
+    }
+    unsubscribe() {
+        for (const teardown of this.tearDowns) {
+            teardown();
+        }
+        this.tearDowns = [];
+    }
+}
+class Subscriber {
+    constructor(observer, subscription) {
+        this.observer = observer;
+        this.closed = false;
+        subscription.add(() => (this.closed = true));
+    }
+    next(value) {
+        if (!this.closed) {
+            this.observer.next(value);
+        }
+    }
+}
+class Subject {
+    constructor() {
+        this.observers = [];
+    }
+    next(value) {
+        for (const observer of this.observers) {
+            observer.next(value);
+        }
+    }
+    subscribe(observer) {
+        const subscription = new Subscription();
+        const subscriber = new Subscriber(observer, subscription);
+        this.observers.push(subscriber);
+        return subscription;
+    }
+    unsubscribe() {
+        this.observers = [];
+    }
+}
+
+const isWindowUndefined = typeof window === UNDEFINED;
+function useForm({ mode = VALIDATION_MODE.onSubmit, reValidateMode = VALIDATION_MODE.onChange, resolver, context, defaultValues = {}, shouldFocusError = true, shouldUnregister, criteriaMode, } = {}) {
+    const fieldsRef = react__WEBPACK_IMPORTED_MODULE_0__.useRef({});
+    const fieldsNamesRef = react__WEBPACK_IMPORTED_MODULE_0__.useRef(new Set());
+    const formStateSubjectRef = react__WEBPACK_IMPORTED_MODULE_0__.useRef(new Subject());
+    const unregisterFieldsNamesRef = react__WEBPACK_IMPORTED_MODULE_0__.useRef(new Set());
+    const watchSubjectRef = react__WEBPACK_IMPORTED_MODULE_0__.useRef(new Subject());
+    const controllerSubjectRef = react__WEBPACK_IMPORTED_MODULE_0__.useRef(new Subject());
+    const fieldArraySubjectRef = react__WEBPACK_IMPORTED_MODULE_0__.useRef(new Subject());
+    const fieldArrayDefaultValuesRef = react__WEBPACK_IMPORTED_MODULE_0__.useRef({});
+    const inFieldArrayActionRef = react__WEBPACK_IMPORTED_MODULE_0__.useRef(false);
+    const watchFieldsRef = react__WEBPACK_IMPORTED_MODULE_0__.useRef(new Set());
+    const isMountedRef = react__WEBPACK_IMPORTED_MODULE_0__.useRef(false);
+    const fieldsWithValidationRef = react__WEBPACK_IMPORTED_MODULE_0__.useRef({});
+    const validFieldsRef = react__WEBPACK_IMPORTED_MODULE_0__.useRef({});
+    const defaultValuesRef = react__WEBPACK_IMPORTED_MODULE_0__.useRef(defaultValues);
+    const isWatchAllRef = react__WEBPACK_IMPORTED_MODULE_0__.useRef(false);
+    const contextRef = react__WEBPACK_IMPORTED_MODULE_0__.useRef(context);
+    const resolverRef = react__WEBPACK_IMPORTED_MODULE_0__.useRef(resolver);
+    const fieldArrayNamesRef = react__WEBPACK_IMPORTED_MODULE_0__.useRef(new Set());
+    const validationMode = getValidationModes(mode);
+    const isValidateAllFieldCriteria = criteriaMode === VALIDATION_MODE.all;
+    const [formState, updateFormState] = react__WEBPACK_IMPORTED_MODULE_0__.useState({
+        isDirty: false,
+        isValidating: false,
+        dirtyFields: {},
+        isSubmitted: false,
+        submitCount: 0,
+        touchedFields: {},
+        isSubmitting: false,
+        isSubmitSuccessful: false,
+        isValid: !validationMode.isOnSubmit,
+        errors: {},
+    });
+    const readFormStateRef = react__WEBPACK_IMPORTED_MODULE_0__.useRef({
+        isDirty: !isProxyEnabled,
+        dirtyFields: !isProxyEnabled,
+        touchedFields: !isProxyEnabled,
+        isValidating: !isProxyEnabled,
+        isValid: !isProxyEnabled,
+        errors: !isProxyEnabled,
+    });
+    const formStateRef = react__WEBPACK_IMPORTED_MODULE_0__.useRef(formState);
+    contextRef.current = context;
+    resolverRef.current = resolver;
+    const getIsValid = () => (formStateRef.current.isValid =
+        deepEqual(validFieldsRef.current, fieldsWithValidationRef.current) &&
+            isEmptyObject(formStateRef.current.errors));
+    const shouldRenderBaseOnError = react__WEBPACK_IMPORTED_MODULE_0__.useCallback((name, error, shouldRender = false, state = {}, isValid, isWatched) => {
+        const previousError = get(formStateRef.current.errors, name);
+        let shouldReRender = shouldRender ||
+            !deepEqual(previousError, error, true) ||
+            (readFormStateRef.current.isValid &&
+                isUndefined(error) &&
+                get(fieldsWithValidationRef.current, name) &&
+                !get(validFieldsRef.current, name));
+        if (error) {
+            unset(validFieldsRef.current, name);
+            shouldReRender =
+                shouldReRender ||
+                    !previousError ||
+                    !deepEqual(previousError, error, true);
+            set(formStateRef.current.errors, name, error);
+        }
+        else {
+            if (get(fieldsWithValidationRef.current, name) || resolverRef.current) {
+                set(validFieldsRef.current, name, true);
+                shouldReRender = shouldReRender || previousError;
+            }
+            unset(formStateRef.current.errors, name);
+        }
+        if ((shouldReRender && !isNullOrUndefined(shouldRender)) ||
+            !isEmptyObject(state) ||
+            isWatched) {
+            const updatedFormState = Object.assign(Object.assign({}, state), { isValid: resolverRef.current ? !!isValid : getIsValid(), errors: formStateRef.current.errors, name });
+            formStateRef.current = Object.assign(Object.assign({}, formStateRef.current), updatedFormState);
+            formStateSubjectRef.current.next(isWatched ? { name } : updatedFormState);
+        }
+        formStateSubjectRef.current.next({
+            isValidating: false,
+        });
+    }, []);
+    const setFieldValue = react__WEBPACK_IMPORTED_MODULE_0__.useCallback((name, rawValue, options = {}, shouldRender, shouldRegister) => {
+        shouldRegister && register(name);
+        const _f = get(fieldsRef.current, name, {})._f;
+        if (_f) {
+            const value = isWeb && isHTMLElement(_f.ref) && isNullOrUndefined(rawValue)
+                ? ''
+                : rawValue;
+            _f.value = getFieldValueAs(rawValue, _f);
+            if (isRadioInput(_f.ref)) {
+                (_f.refs || []).forEach((radioRef) => (radioRef.checked = radioRef.value === value));
+            }
+            else if (isFileInput(_f.ref) && !isString(value)) {
+                _f.ref.files = value;
+            }
+            else if (isMultipleSelect(_f.ref)) {
+                [..._f.ref.options].forEach((selectRef) => (selectRef.selected = value.includes(selectRef.value)));
+            }
+            else if (isCheckBoxInput(_f.ref) && _f.refs) {
+                _f.refs.length > 1
+                    ? _f.refs.forEach((checkboxRef) => (checkboxRef.checked = Array.isArray(value)
+                        ? !!value.find((data) => data === checkboxRef.value)
+                        : value === checkboxRef.value))
+                    : (_f.refs[0].checked = !!value);
+            }
+            else {
+                _f.ref.value = value;
+            }
+            if (shouldRender) {
+                const values = getFieldsValues(fieldsRef);
+                set(values, name, rawValue);
+                controllerSubjectRef.current.next({
+                    values: Object.assign(Object.assign({}, defaultValuesRef.current), values),
+                    name,
+                });
+            }
+            options.shouldDirty && updateAndGetDirtyState(name, value);
+            options.shouldValidate && trigger(name);
+        }
+    }, []);
+    const getIsDirty = react__WEBPACK_IMPORTED_MODULE_0__.useCallback((name, data) => {
+        const formValues = getFieldsValues(fieldsRef);
+        name && data && set(formValues, name, data);
+        return !deepEqual(formValues, defaultValuesRef.current);
+    }, []);
+    const updateAndGetDirtyState = react__WEBPACK_IMPORTED_MODULE_0__.useCallback((name, inputValue, shouldRender = true) => {
+        if (readFormStateRef.current.isDirty ||
+            readFormStateRef.current.dirtyFields) {
+            const isFieldDirty = !deepEqual(get(defaultValuesRef.current, name), inputValue);
+            const isDirtyFieldExist = get(formStateRef.current.dirtyFields, name);
+            const previousIsDirty = formStateRef.current.isDirty;
+            isFieldDirty
+                ? set(formStateRef.current.dirtyFields, name, true)
+                : unset(formStateRef.current.dirtyFields, name);
+            formStateRef.current.isDirty = getIsDirty();
+            const state = {
+                isDirty: formStateRef.current.isDirty,
+                dirtyFields: formStateRef.current.dirtyFields,
+                name,
+            };
+            const isChanged = (readFormStateRef.current.isDirty &&
+                previousIsDirty !== state.isDirty) ||
+                (readFormStateRef.current.dirtyFields &&
+                    isDirtyFieldExist !== get(formStateRef.current.dirtyFields, name));
+            isChanged && shouldRender && formStateSubjectRef.current.next(state);
+            return isChanged ? state : {};
+        }
+        return {};
+    }, []);
+    const executeValidation = react__WEBPACK_IMPORTED_MODULE_0__.useCallback(async (name, skipReRender) => {
+        const error = (await validateField(get(fieldsRef.current, name), isValidateAllFieldCriteria))[name];
+        shouldRenderBaseOnError(name, error, skipReRender);
+        return isUndefined(error);
+    }, [isValidateAllFieldCriteria]);
+    const executeSchemaOrResolverValidation = react__WEBPACK_IMPORTED_MODULE_0__.useCallback(async (names, currentNames = []) => {
+        const { errors } = await resolverRef.current(getFieldsValues(fieldsRef), contextRef.current, {
+            criteriaMode,
+            names: currentNames,
+            fields: getFields(fieldsNamesRef.current, fieldsRef.current),
+        });
+        for (const name of names) {
+            const error = get(errors, name);
+            error
+                ? set(formStateRef.current.errors, name, error)
+                : unset(formStateRef.current.errors, name);
+        }
+        return errors;
+    }, [criteriaMode]);
+    const validateForm = async (fieldsRef) => {
+        let isValid = true;
+        for (const name in fieldsRef) {
+            const field = fieldsRef[name];
+            if (field) {
+                const _f = field._f;
+                const current = omit(field, '_f');
+                if (_f) {
+                    const fieldError = await validateField(field, isValidateAllFieldCriteria);
+                    if (fieldError[_f.name]) {
+                        isValid = false;
+                        set(formStateRef.current.errors, _f.name, fieldError[_f.name]);
+                        unset(validFieldsRef.current, _f.name);
+                    }
+                    else if (get(fieldsWithValidationRef.current, _f.name)) {
+                        set(validFieldsRef.current, _f.name, true);
+                        unset(formStateRef.current.errors, _f.name);
+                    }
+                }
+                current && (await validateForm(current));
+            }
+        }
+        return isValid;
+    };
+    const trigger = react__WEBPACK_IMPORTED_MODULE_0__.useCallback(async (name) => {
+        const fields = isUndefined(name)
+            ? Object.keys(fieldsRef.current)
+            : convertToArrayPayload(name);
+        let isValid;
+        let schemaResult = {};
+        formStateSubjectRef.current.next({
+            isValidating: true,
+        });
+        if (resolverRef.current) {
+            schemaResult = await executeSchemaOrResolverValidation(fields, isUndefined(name) ? undefined : fields);
+            isValid = fields.every((name) => !get(schemaResult, name));
+        }
+        else {
+            isValid = isUndefined(name)
+                ? await validateForm(fieldsRef.current)
+                : (await Promise.all(fields
+                    .filter((fieldName) => get(fieldsRef.current, fieldName))
+                    .map(async (fieldName) => await executeValidation(fieldName, null)))).every(Boolean);
+        }
+        formStateSubjectRef.current.next(Object.assign(Object.assign({}, (isString(name) ? { name } : {})), { errors: formStateRef.current.errors, isValidating: false, isValid: resolverRef.current
+                ? isEmptyObject(schemaResult)
+                : getIsValid() }));
+        return isValid;
+    }, [executeSchemaOrResolverValidation, executeValidation]);
+    const setInternalValues = react__WEBPACK_IMPORTED_MODULE_0__.useCallback((name, value, options) => Object.entries(value).forEach(([inputKey, inputValue]) => {
+        const fieldName = `${name}.${inputKey}`;
+        const field = get(fieldsRef.current, fieldName);
+        const isFieldArray = fieldArrayNamesRef.current.has(name);
+        isFieldArray || (field && !field._f)
+            ? setInternalValues(fieldName, inputValue, options)
+            : setFieldValue(fieldName, inputValue, options, true, !field);
+    }), [trigger]);
+    const isFieldWatched = (name) => isWatchAllRef.current ||
+        watchFieldsRef.current.has(name) ||
+        watchFieldsRef.current.has((name.match(/\w+/) || [])[0]);
+    const updateValidAndValue = (name, options, ref, isWithinRefCallback) => {
+        const field = get(fieldsRef.current, name);
+        const defaultValue = isUndefined(field._f.value)
+            ? get(defaultValuesRef.current, name)
+            : field._f.value;
+        if (field && !isUndefined(defaultValue)) {
+            if (ref && ref.defaultChecked) {
+                field._f.value = getFieldValue(field);
+            }
+            else if (!isNameInFieldArray(fieldArrayNamesRef.current, name)) {
+                setFieldValue(name, defaultValue);
+            }
+            else {
+                field._f.value = defaultValue;
+            }
+        }
+        if ((!isUndefined(defaultValue) || isWithinRefCallback) &&
+            hasValidation(options, field._f.mount) &&
+            !validationMode.isOnSubmit &&
+            field &&
+            readFormStateRef.current.isValid) {
+            validateField(field, isValidateAllFieldCriteria).then((error) => {
+                isEmptyObject(error)
+                    ? set(validFieldsRef.current, name, true)
+                    : unset(validFieldsRef.current, name);
+                formStateRef.current.isValid !== getIsValid() &&
+                    updateFormState(Object.assign(Object.assign({}, formStateRef.current), { isValid: getIsValid() }));
+            });
+        }
+        return defaultValue;
+    };
+    const setValue = (name, value, options = {}) => {
+        const field = get(fieldsRef.current, name);
+        const isFieldArray = fieldArrayNamesRef.current.has(name);
+        if (isFieldArray) {
+            fieldArraySubjectRef.current.next({
+                fields: value,
+                name,
+                isReset: true,
+            });
+            if ((readFormStateRef.current.isDirty ||
+                readFormStateRef.current.dirtyFields) &&
+                options.shouldDirty) {
+                set(formStateRef.current.dirtyFields, name, setFieldArrayDirtyFields(value, get(defaultValuesRef.current, name, []), get(formStateRef.current.dirtyFields, name, [])));
+                formStateSubjectRef.current.next({
+                    name,
+                    dirtyFields: formStateRef.current.dirtyFields,
+                    isDirty: getIsDirty(name, value),
+                });
+            }
+            !value.length &&
+                set(fieldsRef.current, name, []) &&
+                set(fieldArrayDefaultValuesRef.current, name, []);
+        }
+        (field && !field._f) || isFieldArray
+            ? setInternalValues(name, value, isFieldArray ? {} : options)
+            : setFieldValue(name, value, options, true, !field);
+        isFieldWatched(name) && formStateSubjectRef.current.next({});
+        watchSubjectRef.current.next({ name, value });
+    };
+    const handleChange = react__WEBPACK_IMPORTED_MODULE_0__.useCallback(async ({ type, target, target: { value, type: inputType } }) => {
+        let name = target.name;
+        let error;
+        let isValid;
+        const field = get(fieldsRef.current, name);
+        if (field) {
+            let inputValue = inputType ? getFieldValue(field) : undefined;
+            inputValue = isUndefined(inputValue) ? value : inputValue;
+            const isBlurEvent = type === EVENTS.BLUR;
+            const { isOnBlur: isReValidateOnBlur, isOnChange: isReValidateOnChange, } = getValidationModes(reValidateMode);
+            const shouldSkipValidation = (!hasValidation(field._f, field._f.mount) &&
+                !resolverRef.current &&
+                !get(formStateRef.current.errors, name)) ||
+                skipValidation(Object.assign({ isBlurEvent, isTouched: !!get(formStateRef.current.touchedFields, name), isSubmitted: formStateRef.current.isSubmitted, isReValidateOnBlur,
+                    isReValidateOnChange }, validationMode));
+            const isWatched = !isBlurEvent && isFieldWatched(name);
+            if (!isUndefined(inputValue)) {
+                field._f.value = inputValue;
+            }
+            const state = updateAndGetDirtyState(name, field._f.value, false);
+            if (isBlurEvent && !get(formStateRef.current.touchedFields, name)) {
+                set(formStateRef.current.touchedFields, name, true);
+                readFormStateRef.current.touchedFields &&
+                    (state.touchedFields = formStateRef.current.touchedFields);
+            }
+            let shouldRender = !isEmptyObject(state) || isWatched;
+            if (shouldSkipValidation) {
+                !isBlurEvent &&
+                    watchSubjectRef.current.next({
+                        name,
+                        type,
+                        value: inputValue,
+                    });
+                return (shouldRender &&
+                    formStateSubjectRef.current.next(isWatched ? { name } : Object.assign(Object.assign({}, state), { name })));
+            }
+            formStateSubjectRef.current.next({
+                isValidating: true,
+            });
+            if (resolverRef.current) {
+                const { errors } = await resolverRef.current(getFieldsValues(fieldsRef), contextRef.current, {
+                    criteriaMode,
+                    fields: getFields([name], fieldsRef.current),
+                    names: [name],
+                });
+                const previousFormIsValid = formStateRef.current.isValid;
+                error = get(errors, name);
+                if (isCheckBoxInput(target) && !error) {
+                    const parentNodeName = getNodeParentName(name);
+                    const currentError = get(errors, parentNodeName, {});
+                    currentError.type && currentError.message && (error = currentError);
+                    if (currentError ||
+                        get(formStateRef.current.errors, parentNodeName)) {
+                        name = parentNodeName;
+                    }
+                }
+                isValid = isEmptyObject(errors);
+                previousFormIsValid !== isValid && (shouldRender = true);
+            }
+            else {
+                error = (await validateField(field, isValidateAllFieldCriteria))[name];
+            }
+            !isBlurEvent &&
+                watchSubjectRef.current.next({
+                    name,
+                    type,
+                    value: inputValue,
+                });
+            shouldRenderBaseOnError(name, error, shouldRender, state, isValid, isWatched);
+        }
+    }, []);
+    const getValues = (fieldNames) => {
+        const values = Object.assign(Object.assign({}, defaultValuesRef.current), getFieldsValues(fieldsRef));
+        return isUndefined(fieldNames)
+            ? values
+            : isString(fieldNames)
+                ? get(values, fieldNames)
+                : fieldNames.map((name) => get(values, name));
+    };
+    const updateIsValid = react__WEBPACK_IMPORTED_MODULE_0__.useCallback(async (values = {}) => {
+        const previousIsValid = formStateRef.current.isValid;
+        if (resolver) {
+            const { errors } = await resolverRef.current(Object.assign(Object.assign({}, getFieldsValues(fieldsRef)), values), contextRef.current, {
+                criteriaMode,
+                fields: getFields(fieldsNamesRef.current, fieldsRef.current),
+            });
+            formStateRef.current.isValid = isEmptyObject(errors);
+        }
+        else {
+            getIsValid();
+        }
+        previousIsValid !== formStateRef.current.isValid &&
+            formStateSubjectRef.current.next({
+                isValid: formStateRef.current.isValid,
+            });
+    }, [criteriaMode]);
+    const clearErrors = (name) => {
+        name
+            ? convertToArrayPayload(name).forEach((inputName) => unset(formStateRef.current.errors, inputName))
+            : (formStateRef.current.errors = {});
+        formStateSubjectRef.current.next({
+            errors: formStateRef.current.errors,
+        });
+    };
+    const setError = (name, error, options) => {
+        const ref = ((get(fieldsRef.current, name) || { _f: {} })._f || {}).ref;
+        set(formStateRef.current.errors, name, Object.assign(Object.assign({}, error), { ref }));
+        formStateSubjectRef.current.next({
+            name,
+            errors: formStateRef.current.errors,
+            isValid: false,
+        });
+        options && options.shouldFocus && ref && ref.focus && ref.focus();
+    };
+    const watchInternal = react__WEBPACK_IMPORTED_MODULE_0__.useCallback((fieldNames, defaultValue, isGlobal) => {
+        const isArrayNames = Array.isArray(fieldNames);
+        const fieldValues = isMountedRef.current
+            ? Object.assign(Object.assign({}, defaultValuesRef.current), getFieldsValues(fieldsRef)) : isUndefined(defaultValue)
+            ? defaultValuesRef.current
+            : isArrayNames
+                ? defaultValue || {}
+                : { [fieldNames]: defaultValue };
+        if (isUndefined(fieldNames)) {
+            isGlobal && (isWatchAllRef.current = true);
+            return fieldValues;
+        }
+        const result = [];
+        for (const fieldName of convertToArrayPayload(fieldNames)) {
+            isGlobal && watchFieldsRef.current.add(fieldName);
+            result.push(get(fieldValues, fieldName));
+        }
+        return isArrayNames ? result : result[0];
+    }, []);
+    const watch = (fieldName, defaultValue) => isFunction(fieldName)
+        ? watchSubjectRef.current.subscribe({
+            next: (info) => fieldName(watchInternal(undefined, defaultValue), info),
+        })
+        : watchInternal(fieldName, defaultValue, true);
+    const unregister = (name, options = {}) => {
+        for (const inputName of name
+            ? convertToArrayPayload(name)
+            : Object.keys(fieldsNamesRef.current)) {
+            fieldsNamesRef.current.delete(inputName);
+            fieldArrayNamesRef.current.delete(inputName);
+            if (get(fieldsRef.current, inputName)) {
+                if (!options.keepIsValid) {
+                    unset(fieldsWithValidationRef.current, inputName);
+                    unset(validFieldsRef.current, inputName);
+                }
+                !options.keepError && unset(formStateRef.current.errors, inputName);
+                !options.keepValue && unset(fieldsRef.current, inputName);
+                !options.keepDirty &&
+                    unset(formStateRef.current.dirtyFields, inputName);
+                !options.keepTouched &&
+                    unset(formStateRef.current.touchedFields, inputName);
+                !shouldUnregister &&
+                    !options.keepDefaultValue &&
+                    unset(defaultValuesRef.current, inputName);
+                watchSubjectRef.current.next({
+                    name: inputName,
+                });
+            }
+        }
+        formStateSubjectRef.current.next(Object.assign(Object.assign(Object.assign({}, formStateRef.current), (!options.keepDirty ? {} : { isDirty: getIsDirty() })), (resolverRef.current ? {} : { isValid: getIsValid() })));
+        !options.keepIsValid && updateIsValid();
+    };
+    const registerFieldRef = (name, ref, options) => {
+        register(name, options);
+        let field = get(fieldsRef.current, name);
+        const isRadioOrCheckbox = isRadioOrCheckboxFunction(ref);
+        if (ref === field._f.ref ||
+            (isWeb && isHTMLElement(field._f.ref) && !isHTMLElement(ref)) ||
+            (isRadioOrCheckbox &&
+                Array.isArray(field._f.refs) &&
+                compact(field._f.refs).find((option) => option === ref))) {
+            return;
+        }
+        field = {
+            _f: isRadioOrCheckbox
+                ? Object.assign(Object.assign({}, field._f), { refs: [
+                        ...compact(field._f.refs || []).filter((ref) => isHTMLElement(ref) && document.contains(ref)),
+                        ref,
+                    ], ref: { type: ref.type, name } }) : Object.assign(Object.assign({}, field._f), { ref }),
+        };
+        set(fieldsRef.current, name, field);
+        const defaultValue = updateValidAndValue(name, options, ref, true);
+        if (isRadioOrCheckbox && Array.isArray(defaultValue)
+            ? !deepEqual(get(fieldsRef.current, name)._f.value, defaultValue)
+            : isUndefined(get(fieldsRef.current, name)._f.value)) {
+            get(fieldsRef.current, name)._f.value = getFieldValue(get(fieldsRef.current, name));
+        }
+    };
+    const register = react__WEBPACK_IMPORTED_MODULE_0__.useCallback((name, options) => {
+        const isInitialRegister = !get(fieldsRef.current, name);
+        set(fieldsRef.current, name, {
+            _f: Object.assign(Object.assign(Object.assign({}, (isInitialRegister
+                ? { ref: { name } }
+                : Object.assign({ ref: (get(fieldsRef.current, name)._f || {}).ref }, get(fieldsRef.current, name)._f))), { name, mount: true }), options),
+        });
+        hasValidation(options, true) &&
+            set(fieldsWithValidationRef.current, name, true);
+        fieldsNamesRef.current.add(name);
+        isInitialRegister && updateValidAndValue(name, options);
+        return isWindowUndefined
+            ? { name: name }
+            : {
+                name,
+                onChange: handleChange,
+                onBlur: handleChange,
+                ref: (ref) => {
+                    if (ref) {
+                        registerFieldRef(name, ref, options);
+                    }
+                    else {
+                        const field = get(fieldsRef.current, name);
+                        const shouldUnmount = shouldUnregister || (options && options.shouldUnregister);
+                        field && (field._f.mount = false);
+                        if (isWeb &&
+                            (isNameInFieldArray(fieldArrayNamesRef.current, name)
+                                ? shouldUnmount && !inFieldArrayActionRef.current
+                                : shouldUnmount)) {
+                            unregisterFieldsNamesRef.current.add(name);
+                        }
+                    }
+                },
+            };
+    }, [defaultValuesRef.current]);
+    const handleSubmit = react__WEBPACK_IMPORTED_MODULE_0__.useCallback((onValid, onInvalid) => async (e) => {
+        if (e) {
+            e.preventDefault && e.preventDefault();
+            e.persist && e.persist();
+        }
+        let hasNoPromiseError = true;
+        let fieldValues = getFieldsValues(fieldsRef);
+        formStateSubjectRef.current.next({
+            isSubmitting: true,
+        });
+        try {
+            if (resolverRef.current) {
+                const { errors, values } = await resolverRef.current(fieldValues, contextRef.current, {
+                    criteriaMode,
+                    fields: getFields(fieldsNamesRef.current, fieldsRef.current),
+                });
+                formStateRef.current.errors = errors;
+                fieldValues = values;
+            }
+            else {
+                await validateForm(fieldsRef.current);
+            }
+            if (isEmptyObject(formStateRef.current.errors) &&
+                Object.keys(formStateRef.current.errors).every((name) => get(fieldValues, name))) {
+                formStateSubjectRef.current.next({
+                    errors: {},
+                    isSubmitting: true,
+                });
+                await onValid(fieldValues, e);
+            }
+            else {
+                onInvalid && (await onInvalid(formStateRef.current.errors, e));
+                shouldFocusError &&
+                    focusFieldBy(fieldsRef.current, (key) => get(formStateRef.current.errors, key), fieldsNamesRef.current);
+            }
+        }
+        catch (_a) {
+            hasNoPromiseError = false;
+        }
+        finally {
+            formStateRef.current.isSubmitted = true;
+            formStateSubjectRef.current.next({
+                isSubmitted: true,
+                isSubmitting: false,
+                isSubmitSuccessful: isEmptyObject(formStateRef.current.errors) && hasNoPromiseError,
+                submitCount: formStateRef.current.submitCount + 1,
+                errors: formStateRef.current.errors,
+            });
+        }
+    }, [shouldFocusError, isValidateAllFieldCriteria, criteriaMode]);
+    const resetFromState = react__WEBPACK_IMPORTED_MODULE_0__.useCallback(({ keepErrors, keepDirty, keepIsSubmitted, keepTouched, keepDefaultValues, keepIsValid, keepSubmitCount, }, values) => {
+        if (!keepIsValid) {
+            validFieldsRef.current = {};
+            fieldsWithValidationRef.current = {};
+        }
+        watchFieldsRef.current = new Set();
+        isWatchAllRef.current = false;
+        formStateSubjectRef.current.next({
+            submitCount: keepSubmitCount ? formStateRef.current.submitCount : 0,
+            isDirty: keepDirty
+                ? formStateRef.current.isDirty
+                : keepDefaultValues
+                    ? deepEqual(values, defaultValuesRef.current)
+                    : false,
+            isSubmitted: keepIsSubmitted ? formStateRef.current.isSubmitted : false,
+            isValid: keepIsValid
+                ? formStateRef.current.isValid
+                : !!updateIsValid(values),
+            dirtyFields: keepDirty ? formStateRef.current.dirtyFields : {},
+            touchedFields: keepTouched ? formStateRef.current.touchedFields : {},
+            errors: keepErrors ? formStateRef.current.errors : {},
+            isSubmitting: false,
+            isSubmitSuccessful: false,
+        });
+    }, []);
+    const registerAbsentFields = (value, name = '') => {
+        !get(fieldsRef.current, name) &&
+            (isPrimitive(value) ||
+                (isWeb && (value instanceof File || value instanceof Date))) &&
+            set(fieldsRef.current, name, {
+                _f: {
+                    ref: { name, value },
+                    value,
+                    name,
+                },
+            });
+        if (Array.isArray(value) || isObject(value)) {
+            if (name && !get(fieldsRef.current, name)) {
+                set(fieldsRef.current, name, Array.isArray(value) ? [] : {});
+            }
+            for (const key in value) {
+                registerAbsentFields(value[key], name + (name ? '.' : '') + key);
+            }
+        }
+    };
+    const reset = (values, keepStateOptions = {}) => {
+        const updatedValues = values || defaultValuesRef.current;
+        if (isWeb && !keepStateOptions.keepValues) {
+            for (const name of fieldsNamesRef.current) {
+                const field = get(fieldsRef.current, name);
+                if (field && field._f) {
+                    const inputRef = Array.isArray(field._f.refs)
+                        ? field._f.refs[0]
+                        : field._f.ref;
+                    try {
+                        isHTMLElement(inputRef) && inputRef.closest('form').reset();
+                        break;
+                    }
+                    catch (_a) { }
+                }
+            }
+        }
+        !keepStateOptions.keepDefaultValues &&
+            (defaultValuesRef.current = Object.assign({}, updatedValues));
+        if (!keepStateOptions.keepValues) {
+            fieldsRef.current = {};
+            controllerSubjectRef.current.next({
+                values: Object.assign({}, updatedValues),
+            });
+            watchSubjectRef.current.next({
+                value: Object.assign({}, updatedValues),
+            });
+            fieldArraySubjectRef.current.next({
+                fields: Object.assign({}, updatedValues),
+                isReset: true,
+            });
+        }
+        !keepStateOptions.keepDefaultValues &&
+            registerAbsentFields(Object.assign({}, updatedValues));
+        resetFromState(keepStateOptions, values);
+    };
+    const setFocus = (name) => get(fieldsRef.current, name)._f.ref.focus();
+    react__WEBPACK_IMPORTED_MODULE_0__.useEffect(() => {
+        registerAbsentFields(defaultValuesRef.current);
+        const formStateSubscription = formStateSubjectRef.current.subscribe({
+            next(formState) {
+                if (shouldRenderFormState(formState, readFormStateRef.current, true)) {
+                    formStateRef.current = Object.assign(Object.assign({}, formStateRef.current), formState);
+                    updateFormState(formStateRef.current);
+                }
+            },
+        });
+        const useFieldArraySubscription = fieldArraySubjectRef.current.subscribe({
+            next(state) {
+                if (state.fields && state.name && readFormStateRef.current.isValid) {
+                    const values = getFieldsValues(fieldsRef);
+                    set(values, state.name, state.fields);
+                    updateIsValid(values);
+                }
+            },
+        });
+        resolverRef.current && readFormStateRef.current.isValid && updateIsValid();
+        return () => {
+            watchSubjectRef.current.unsubscribe();
+            formStateSubscription.unsubscribe();
+            useFieldArraySubscription.unsubscribe();
+        };
+    }, []);
+    react__WEBPACK_IMPORTED_MODULE_0__.useEffect(() => {
+        const isLiveInDom = (ref) => !isHTMLElement(ref) || !document.contains(ref);
+        isMountedRef.current = true;
+        for (const name of unregisterFieldsNamesRef.current) {
+            const field = get(fieldsRef.current, name);
+            field &&
+                (field._f.refs
+                    ? field._f.refs.every(isLiveInDom)
+                    : isLiveInDom(field._f.ref)) &&
+                unregister(name);
+        }
+        unregisterFieldsNamesRef.current = new Set();
+    });
+    return {
+        control: react__WEBPACK_IMPORTED_MODULE_0__.useMemo(() => ({
+            register,
+            isWatchAllRef,
+            inFieldArrayActionRef,
+            watchFieldsRef,
+            getIsDirty,
+            formStateSubjectRef,
+            fieldArraySubjectRef,
+            controllerSubjectRef,
+            watchSubjectRef,
+            watchInternal,
+            fieldsRef,
+            validFieldsRef,
+            fieldsWithValidationRef,
+            fieldArrayNamesRef,
+            readFormStateRef,
+            formStateRef,
+            defaultValuesRef,
+            fieldArrayDefaultValuesRef,
+            unregister,
+            shouldUnmount: shouldUnregister,
+        }), []),
+        formState: getProxyFormState(isProxyEnabled, formState, readFormStateRef),
+        trigger,
+        register,
+        handleSubmit,
+        watch: react__WEBPACK_IMPORTED_MODULE_0__.useCallback(watch, []),
+        setValue: react__WEBPACK_IMPORTED_MODULE_0__.useCallback(setValue, [setInternalValues]),
+        getValues: react__WEBPACK_IMPORTED_MODULE_0__.useCallback(getValues, []),
+        reset: react__WEBPACK_IMPORTED_MODULE_0__.useCallback(reset, []),
+        clearErrors: react__WEBPACK_IMPORTED_MODULE_0__.useCallback(clearErrors, []),
+        unregister: react__WEBPACK_IMPORTED_MODULE_0__.useCallback(unregister, []),
+        setError: react__WEBPACK_IMPORTED_MODULE_0__.useCallback(setError, []),
+        setFocus: react__WEBPACK_IMPORTED_MODULE_0__.useCallback(setFocus, []),
+    };
+}
+
+function useWatch(props) {
+    const { control, name, defaultValue } = props || {};
+    const methods = useFormContext();
+    const nameRef = react__WEBPACK_IMPORTED_MODULE_0__.useRef(name);
+    nameRef.current = name;
+    const { watchInternal, watchSubjectRef } = control || methods.control;
+    const [value, updateValue] = react__WEBPACK_IMPORTED_MODULE_0__.useState(isUndefined(defaultValue)
+        ? watchInternal(name)
+        : defaultValue);
+    react__WEBPACK_IMPORTED_MODULE_0__.useEffect(() => {
+        watchInternal(name);
+        const watchSubscription = watchSubjectRef.current.subscribe({
+            next: ({ name: inputName, value }) => (!nameRef.current ||
+                !inputName ||
+                convertToArrayPayload(nameRef.current).some((fieldName) => inputName &&
+                    fieldName &&
+                    (fieldName.startsWith(inputName) ||
+                        inputName.startsWith(fieldName)))) &&
+                updateValue(isString(inputName) &&
+                    nameRef.current === inputName &&
+                    !isUndefined(value)
+                    ? value
+                    : watchInternal(nameRef.current, defaultValue)),
+        });
+        return () => watchSubscription.unsubscribe();
+    }, []);
+    return value;
+}
+
+
+//# sourceMappingURL=index.esm.js.map
+
+
+/***/ }),
+
 /***/ "./node_modules/react-is/cjs/react-is.development.js":
 /*!***********************************************************!*\
   !*** ./node_modules/react-is/cjs/react-is.development.js ***!
@@ -72824,315 +74737,6 @@ if (false) {} else {
   module.exports = __webpack_require__(/*! ./cjs/scheduler-tracing.development.js */ "./node_modules/scheduler/cjs/scheduler-tracing.development.js");
 }
 
-
-/***/ }),
-
-/***/ "./node_modules/bootstrap-icons/font/bootstrap-icons.css":
-/*!***************************************************************!*\
-  !*** ./node_modules/bootstrap-icons/font/bootstrap-icons.css ***!
-  \***************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
-/* harmony import */ var _style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_bootstrap_icons_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./bootstrap-icons.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./node_modules/bootstrap-icons/font/bootstrap-icons.css");
-
-            
-
-var options = {};
-
-options.insert = "head";
-options.singleton = false;
-
-var update = _style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_bootstrap_icons_css__WEBPACK_IMPORTED_MODULE_1__.default, options);
-
-
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_bootstrap_icons_css__WEBPACK_IMPORTED_MODULE_1__.default.locals || {});
-
-/***/ }),
-
-/***/ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js":
-/*!****************************************************************************!*\
-  !*** ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js ***!
-  \****************************************************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-"use strict";
-
-
-var isOldIE = function isOldIE() {
-  var memo;
-  return function memorize() {
-    if (typeof memo === 'undefined') {
-      // Test for IE <= 9 as proposed by Browserhacks
-      // @see http://browserhacks.com/#hack-e71d8692f65334173fee715c222cb805
-      // Tests for existence of standard globals is to allow style-loader
-      // to operate correctly into non-standard environments
-      // @see https://github.com/webpack-contrib/style-loader/issues/177
-      memo = Boolean(window && document && document.all && !window.atob);
-    }
-
-    return memo;
-  };
-}();
-
-var getTarget = function getTarget() {
-  var memo = {};
-  return function memorize(target) {
-    if (typeof memo[target] === 'undefined') {
-      var styleTarget = document.querySelector(target); // Special case to return head of iframe instead of iframe itself
-
-      if (window.HTMLIFrameElement && styleTarget instanceof window.HTMLIFrameElement) {
-        try {
-          // This will throw an exception if access to iframe is blocked
-          // due to cross-origin restrictions
-          styleTarget = styleTarget.contentDocument.head;
-        } catch (e) {
-          // istanbul ignore next
-          styleTarget = null;
-        }
-      }
-
-      memo[target] = styleTarget;
-    }
-
-    return memo[target];
-  };
-}();
-
-var stylesInDom = [];
-
-function getIndexByIdentifier(identifier) {
-  var result = -1;
-
-  for (var i = 0; i < stylesInDom.length; i++) {
-    if (stylesInDom[i].identifier === identifier) {
-      result = i;
-      break;
-    }
-  }
-
-  return result;
-}
-
-function modulesToDom(list, options) {
-  var idCountMap = {};
-  var identifiers = [];
-
-  for (var i = 0; i < list.length; i++) {
-    var item = list[i];
-    var id = options.base ? item[0] + options.base : item[0];
-    var count = idCountMap[id] || 0;
-    var identifier = "".concat(id, " ").concat(count);
-    idCountMap[id] = count + 1;
-    var index = getIndexByIdentifier(identifier);
-    var obj = {
-      css: item[1],
-      media: item[2],
-      sourceMap: item[3]
-    };
-
-    if (index !== -1) {
-      stylesInDom[index].references++;
-      stylesInDom[index].updater(obj);
-    } else {
-      stylesInDom.push({
-        identifier: identifier,
-        updater: addStyle(obj, options),
-        references: 1
-      });
-    }
-
-    identifiers.push(identifier);
-  }
-
-  return identifiers;
-}
-
-function insertStyleElement(options) {
-  var style = document.createElement('style');
-  var attributes = options.attributes || {};
-
-  if (typeof attributes.nonce === 'undefined') {
-    var nonce =  true ? __webpack_require__.nc : 0;
-
-    if (nonce) {
-      attributes.nonce = nonce;
-    }
-  }
-
-  Object.keys(attributes).forEach(function (key) {
-    style.setAttribute(key, attributes[key]);
-  });
-
-  if (typeof options.insert === 'function') {
-    options.insert(style);
-  } else {
-    var target = getTarget(options.insert || 'head');
-
-    if (!target) {
-      throw new Error("Couldn't find a style target. This probably means that the value for the 'insert' parameter is invalid.");
-    }
-
-    target.appendChild(style);
-  }
-
-  return style;
-}
-
-function removeStyleElement(style) {
-  // istanbul ignore if
-  if (style.parentNode === null) {
-    return false;
-  }
-
-  style.parentNode.removeChild(style);
-}
-/* istanbul ignore next  */
-
-
-var replaceText = function replaceText() {
-  var textStore = [];
-  return function replace(index, replacement) {
-    textStore[index] = replacement;
-    return textStore.filter(Boolean).join('\n');
-  };
-}();
-
-function applyToSingletonTag(style, index, remove, obj) {
-  var css = remove ? '' : obj.media ? "@media ".concat(obj.media, " {").concat(obj.css, "}") : obj.css; // For old IE
-
-  /* istanbul ignore if  */
-
-  if (style.styleSheet) {
-    style.styleSheet.cssText = replaceText(index, css);
-  } else {
-    var cssNode = document.createTextNode(css);
-    var childNodes = style.childNodes;
-
-    if (childNodes[index]) {
-      style.removeChild(childNodes[index]);
-    }
-
-    if (childNodes.length) {
-      style.insertBefore(cssNode, childNodes[index]);
-    } else {
-      style.appendChild(cssNode);
-    }
-  }
-}
-
-function applyToTag(style, options, obj) {
-  var css = obj.css;
-  var media = obj.media;
-  var sourceMap = obj.sourceMap;
-
-  if (media) {
-    style.setAttribute('media', media);
-  } else {
-    style.removeAttribute('media');
-  }
-
-  if (sourceMap && typeof btoa !== 'undefined') {
-    css += "\n/*# sourceMappingURL=data:application/json;base64,".concat(btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))), " */");
-  } // For old IE
-
-  /* istanbul ignore if  */
-
-
-  if (style.styleSheet) {
-    style.styleSheet.cssText = css;
-  } else {
-    while (style.firstChild) {
-      style.removeChild(style.firstChild);
-    }
-
-    style.appendChild(document.createTextNode(css));
-  }
-}
-
-var singleton = null;
-var singletonCounter = 0;
-
-function addStyle(obj, options) {
-  var style;
-  var update;
-  var remove;
-
-  if (options.singleton) {
-    var styleIndex = singletonCounter++;
-    style = singleton || (singleton = insertStyleElement(options));
-    update = applyToSingletonTag.bind(null, style, styleIndex, false);
-    remove = applyToSingletonTag.bind(null, style, styleIndex, true);
-  } else {
-    style = insertStyleElement(options);
-    update = applyToTag.bind(null, style, options);
-
-    remove = function remove() {
-      removeStyleElement(style);
-    };
-  }
-
-  update(obj);
-  return function updateStyle(newObj) {
-    if (newObj) {
-      if (newObj.css === obj.css && newObj.media === obj.media && newObj.sourceMap === obj.sourceMap) {
-        return;
-      }
-
-      update(obj = newObj);
-    } else {
-      remove();
-    }
-  };
-}
-
-module.exports = function (list, options) {
-  options = options || {}; // Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
-  // tags it will allow on a page
-
-  if (!options.singleton && typeof options.singleton !== 'boolean') {
-    options.singleton = isOldIE();
-  }
-
-  list = list || [];
-  var lastIdentifiers = modulesToDom(list, options);
-  return function update(newList) {
-    newList = newList || [];
-
-    if (Object.prototype.toString.call(newList) !== '[object Array]') {
-      return;
-    }
-
-    for (var i = 0; i < lastIdentifiers.length; i++) {
-      var identifier = lastIdentifiers[i];
-      var index = getIndexByIdentifier(identifier);
-      stylesInDom[index].references--;
-    }
-
-    var newLastIdentifiers = modulesToDom(newList, options);
-
-    for (var _i = 0; _i < lastIdentifiers.length; _i++) {
-      var _identifier = lastIdentifiers[_i];
-
-      var _index = getIndexByIdentifier(_identifier);
-
-      if (stylesInDom[_index].references === 0) {
-        stylesInDom[_index].updater();
-
-        stylesInDom.splice(_index, 1);
-      }
-    }
-
-    lastIdentifiers = newLastIdentifiers;
-  };
-};
 
 /***/ }),
 
