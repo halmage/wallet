@@ -5,15 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Transition extends Model
+class Transaction extends Model
 {
     use HasFactory;
 
-    protected $table = 'transitions';
+    protected $table = 'transactions';
 
     protected $fillable = [
-    	'type_transition',
-        'transition',
+    	'type_transaction',
+        'transaction',
         'user_id',
     ];
 

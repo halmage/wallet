@@ -39,11 +39,11 @@ const LoadWalletForm = ({onAddSubmit}) => {
 				    <label>Cantidad de Deseas Recargar</label>
 				    <input type="number" 
 				    	   className="form-control" 
-				    	   id="transition"
-				    	   {...register("transition",{required: true, pattern: /^[0-9]+$/i})}/>
+				    	   id="transaction"
+				    	   {...register("transaction",{required: true, pattern: /^[0-9]+$/i})}/>
 				    <small className="form-text text-muted">
-				    	{errors.transition?.type === 'required' && "El documento es requerido"}
-				    	{errors.transition?.type === 'pattern' && "El telefono tiene que ser numerico"}
+				    	{errors.transaction?.type === 'required' && "El documento es requerido"}
+				    	{errors.transaction?.type === 'pattern' && "El telefono tiene que ser numerico"}
 				    </small>
 				  </div>
 

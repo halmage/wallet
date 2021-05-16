@@ -45,8 +45,8 @@ class User extends Authenticatable
     ];
     
 
-    public function transitions()
+    public function transactions()
     {
-        return $this->hasMany('App\Models\Transition');
+        return $this->hasMany('App\Models\Transaction');
     }
 }
