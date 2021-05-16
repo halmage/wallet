@@ -14,10 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::group(['prefix' => 'transaction'], function() 
+{
+	/* ruta index llamando toda la informacion del index */
+	Route::post('load-wallet', [App\Http\Controllers\User\TransactionController::class, 'loadWallet']);
 });
-
-/* Api de la sessión admin */
-include __DIR__ . '/api/user/transaction.php';
-
