@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import 'bootstrap-icons/font/bootstrap-icons.css';
 
 /* Importando componentes */
 import Router from './Router'
