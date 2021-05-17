@@ -42,7 +42,7 @@ const LoadWalletForm = ({onAddSubmit}) => {
 						</Link>
 						<button type="submit" 
 						        className="btn btn-primary col-4"> 
-						        Recargar 
+						        Consultar 
 						</button>
 				  </div>				  
 			</form>
