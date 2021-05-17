@@ -49,4 +49,9 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Models\Transaction');
     }
+
+    public function balance()
+    {
+        return $this->hasOne('App\Models\Balance');
+    }
 }

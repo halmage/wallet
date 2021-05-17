@@ -21,13 +21,14 @@ class TransactionController extends Controller
     public function loadWallet(Request $request)
     {
     	$request = Helper::apiRequest($request);
-    	$user = $this->transaction->findUserForLoadWallet($request);
+    	$user = $this->transaction->findUserWallet($request);
     	if(!$user){
     		return response()->json([
                 'status' => 'Ocurrio un error!',
                 'message' => 'El documento o telefono no coincide con del usuario'], 401);
     	}
     	
+        $this->transaction->transactionWallet($request,$user);
 		$this->transaction->loadWallet($request,$user);
 		return response()->json([
             'status' => 'Muy bien!',

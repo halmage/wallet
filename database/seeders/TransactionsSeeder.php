@@ -6,6 +6,10 @@ use Illuminate\Database\Seeder;
 
 use App\Models\Transaction;
 
+use App\Models\Balance;
+
+use App\Models\User;
+
 class TransactionsSeeder extends Seeder
 {
     /**
@@ -16,7 +20,7 @@ class TransactionsSeeder extends Seeder
     public function run()
     {
         Transaction::create([
-        	'type_transaction' => 'pago',
+        	'type_transaction' => 'recarga',
 	        'transaction' => 7000,
 	        'user_id' => 1,
         ]);
@@ -31,6 +35,11 @@ class TransactionsSeeder extends Seeder
         	'type_transaction' => 'recarga',
 	        'transaction' => 5000,
 	        'user_id' => 1,
+        ]);
+
+        Balance::create([
+            'balance' => User::find(1)->transactions->where('type_transaction','recarga')->sum('transaction'),
+            'user_id' => 1,
         ]);
     }
 }

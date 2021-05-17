@@ -3,7 +3,9 @@
 namespace App\Repositories\User\Transaction;
 
 interface TransactionInterface{
-	public function findUserForLoadWallet($request);
+	public function findUserWallet($request);
 	
-	public function loadWallet($request,$user);	
+	public function transactionWallet($request,$user);	
+
+	public function loadWallet($request,$user);
 }
