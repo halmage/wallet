@@ -18,8 +18,11 @@ class TransactionController extends Controller
         $this->transaction = $transaction;
     }
 
+    /*
+    | Funciones para recargar billetera
+     */
     public function loadWallet(Request $request)
-    {
+    {        
     	$request = Helper::apiRequest($request);
     	$user = $this->transaction->findUserWallet($request);
     	if(!$user){
@@ -35,6 +38,18 @@ class TransactionController extends Controller
             'message' => 'La recarga de la billetera fue exitosa'],200);  
     }
 
+    /*
+    | Funciones para pagar billetera
+     */
+    
+    public function pay(Request $request){
+       $request = Helper::apiRequest($request);
+       dd($request->all());
+    }
+
+    /*
+    | Funciones para consultar billetera
+     */
     public function checkBalance(Request $request)
     {
         $request = Helper::apiRequest($request);

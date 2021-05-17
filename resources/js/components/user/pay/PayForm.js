@@ -2,7 +2,7 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 import {useForm} from 'react-hook-form'
 
-const LoadWalletForm = ({onAddSubmit}) => {
+const PayForm = ({onAddSubmit}) => {
 	const {register, formState: { errors }, handleSubmit} = useForm()
 	return(
 		<>
@@ -35,6 +35,18 @@ const LoadWalletForm = ({onAddSubmit}) => {
 				    </small>
 				  </div>
 
+				  <div className="form-group">
+				    <label>Cantidad de Deseas Recargar</label>
+				    <input type="number" 
+				    	   className="form-control" 
+				    	   id="transaction"
+				    	   {...register("transaction",{required: true, pattern: /^[0-9]+$/i})}/>
+				    <small className="form-text text-muted">
+				    	{errors.transaction?.type === 'required' && "El documento es requerido"}
+				    	{errors.transaction?.type === 'pattern' && "El telefono tiene que ser numerico"}
+				    </small>
+				  </div>
+
 				  <div className="text-center">
 						<Link to="/home" 
 							  className="btn btn-dark mx-2 col-4">
@@ -42,11 +54,11 @@ const LoadWalletForm = ({onAddSubmit}) => {
 						</Link>
 						<button type="submit" 
 						        className="btn btn-primary col-4"> 
-						        Consultar 
+						        Pagar 
 						</button>
 				  </div>				  
 			</form>
-		</>
+		</>		
 	)
 }
-export default LoadWalletForm
+export default PayForm
