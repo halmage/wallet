@@ -29,9 +29,8 @@ Class TransactionRepositories implements TransactionInterface
 	}
 
 	public function loadWallet($request,$user)
-	{
+	{		
 		$load_balance = $user->balance->balance + $request->transaction;
-
 		$user->balance->update([
 			"balance" => $load_balance
 		]);

@@ -18,7 +18,7 @@ const LoadWalletContainer = () => {
 				type_transaction:"recarga"			
 		 	}
 		}).then(result => {		 
-			alert("Su recarga fu exitosa")			
+			alert("Su recarga fue exitosa")			
 		 	/* Redireccionando a la pagina user */
 		 	history.push("/home");		 	
         }).catch(e => {

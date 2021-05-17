@@ -9,6 +9,9 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
+/* Importando modelo */
+use App\Models\Balance;
+
 class RegisterController extends Controller
 {
     /*
@@ -67,7 +70,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        $user = User::create([
             'document' => $data['document'],
             'name' => $data['name'],
             'last_name' => $data['last_name'],
@@ -75,6 +78,12 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+
+        Balance::create([
+            'user_id' => $user->id
+        ]);
+
+        return $user;
     }
 }
 
