@@ -10,6 +10,7 @@ class Helper
 	 */
 	static public function apiRequest($request)
 	{
+		//dd($_COOKIE["laravel_session"]);
 		$request = new Request($request->data);
 		return $request;
 	}

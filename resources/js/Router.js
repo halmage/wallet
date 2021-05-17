@@ -10,6 +10,9 @@ import LoadWalletContainer from './pages/container/user/load-wallet/LoadWalletCo
 /* Importando pages User para consultar billetera */
 import CheckBalanceContainer from './pages/container/user/check-balance/CheckBalanceContainer'
 
+/* Importando pages User para pagar */
+import PayContainer from './pages/container/user/pay/PayContainer'
+
 const Router = () => {
 	return(
 		<BrowserRouter>
@@ -22,6 +25,10 @@ const Router = () => {
 
 				// Ruta de User para consultar billetera
 				<Route path="/check-balance" component={CheckBalanceContainer}/>
+
+				// Ruta de User para consultar billetera
+				<Route path="/pay" component={PayContainer}/>
+
 			</Switch>
 		</BrowserRouter>
 	)
