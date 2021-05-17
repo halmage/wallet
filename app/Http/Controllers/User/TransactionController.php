@@ -9,8 +9,6 @@ use App\Http\Controllers\Controller;
 /* Importando repositories */
 use App\Repositories\User\Transaction\TransactionRepositories;
 
-use App\Models\User;
-
 class TransactionController extends Controller
 {
 	public function __construct(TransactionRepositories $transaction)
@@ -43,8 +41,73 @@ class TransactionController extends Controller
      */
     
     public function pay(Request $request){
+
        $request = Helper::apiRequest($request);
-       dd($request->all());
+       $user = $this->transaction->findUserWallet($request);
+       if(!$user){
+            return response()->json([
+                'status' => 'Ocurrio un error!',
+                'message' => 'El documento o telefono no coincide con del usuario'], 401);
+        }
+
+        /* 
+         * Consultando el saldo del usuario entes de continuar la operacion 
+         * */
+        $balance = $this->transaction->checkBalanceBeforePay($user);
+
+        /* 
+         * Verificando si el usuario tiene saldo suficiente para el pago 
+         * */
+        if($balance < $request->transaction){
+            return response()->json([
+                'status' => 'Ocurrio un error!',
+                'message' => 'Su saldo es insuficiente para realizar este pago'], 401);
+        }
+
+        /* 
+         * Guardano transaccion hecha por el usuario 
+         * */
+        $transaction = $this->transaction->transactionWallet($request,$user);
+        
+        /* 
+         * Guardano cookie y token de la transaccion 
+         * */
+        $this->transaction->storePaymerConfirmation($transaction);        
+
+        return response()->json([
+            'status' => 'Muy bien!',
+            'message' => 'Porfavor revise su correo, que le hemos enviado un token para verificar pago'],200);
+    }
+
+    public function paymerConfirmation(Request $request)
+    {
+        $request = Helper::apiRequest($request);
+        $token = $this->transaction->findToken($request);                 
+
+        // Verificando si es el token
+        if(!$token)
+        { 
+            return response()->json([
+                'status' => 'Ocurrio un error!',
+                'message' => 'El token ingresado no coincide con la transaccion porfavor revise su correo'], 401);
+        }
+
+        // tomado el valor de la session donde inicio el usuario        
+        $session_id = $this->transaction->checkSession($token); 
+
+        // Verificando si es la sesión donde se realizo el pago
+        if(!password_verify($_COOKIE["laravel_session"],$session_id))
+        { 
+            return response()->json([
+                'status' => 'Ocurrio un error!',
+                'message' => 'El token ingresado no coincide con la transaccion porfavor revise su correo'], 401);
+        }        
+        
+        /* Realizando pago */
+        $this->transaction->pay($token);
+        return response()->json([
+        'status' => 'Muy bien!',
+        'message' => 'El pago se hizo exitosamente'],200);
     }
 
     /*

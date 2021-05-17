@@ -2,13 +2,18 @@
 
 namespace Database\Seeders;
 
+use App\Http\Helper;
 use Illuminate\Database\Seeder;
 
-use App\Models\Transaction;
+use Illuminate\Support\Facades\Hash;
+
+use App\Models\User;
 
 use App\Models\Balance;
 
-use App\Models\User;
+use App\Models\Transaction;
+
+use App\Models\PaymentConfirmation;
 
 class TransactionsSeeder extends Seeder
 {
@@ -40,6 +45,24 @@ class TransactionsSeeder extends Seeder
         Balance::create([
             'balance' => User::find(1)->transactions->where('type_transaction','recarga')->sum('transaction'),
             'user_id' => 1,
+        ]);
+
+        PaymentConfirmation:: create([
+            'token' => Helper::token(),
+            'session_id' => Hash::make(Helper::token()),
+            'transaction_id' => '1'
+        ]);
+
+        PaymentConfirmation:: create([
+            'token' => Helper::token(),
+            'session_id' => Hash::make(Helper::token()),
+            'transaction_id' => '2'
+        ]);
+
+        PaymentConfirmation:: create([
+            'token' => Helper::token(),
+            'session_id' => Hash::make(Helper::token()),
+            'transaction_id' => '3'
         ]);
     }
 }

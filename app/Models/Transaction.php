@@ -21,4 +21,9 @@ class Transaction extends Model
     {
         return $this->belongsTo('App\Models\User');
     }
+
+    public function paymentConfirmation()
+    {
+        return $this->hasOne('App\Models\PaymentConfirmation');
+    }
 }
