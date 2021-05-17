@@ -16,8 +16,8 @@ const LoadWalletForm = ({onAddSubmit}) => {
 				    <small className="form-text text-muted">
 				    	{errors.document?.type === 'required' && "El documento es requerido"}
 				    	{errors.document?.type === 'pattern' && "El documento tiene que ser numerico"}
-				    	{errors.document?.type === 'minLength' && "El documento que tener 5 o 8 caracteres"}
-				    	{errors.document?.type === 'maxLength' && "El documento que tener 5 o 8 caracteres"}
+				    	{errors.document?.type === 'minLength' && "El documento tiene que tener 5 o 8 caracteres"}
+				    	{errors.document?.type === 'maxLength' && "El documento tiene que tener 5 o 8 caracteres"}
 				    </small>
 				  </div>
 
@@ -28,10 +28,10 @@ const LoadWalletForm = ({onAddSubmit}) => {
 				    	   id="telephone"
 				    	   {...register("telephone",{required: true, pattern: /^[0-9]+$/i, minLength:11, maxLength:11})}/>
 				    <small className="form-text text-muted">
-				    	{errors.telephone?.type === 'required' && "El documento es requerido"}
+				    	{errors.telephone?.type === 'required' && "El telefono es requerido"}
 				    	{errors.telephone?.type === 'pattern' && "El telefono tiene que ser numerico"}
-				    	{errors.telephone?.type === 'minLength' && "El telefono que tener 11 caracteres"}
-				    	{errors.telephone?.type === 'maxLength' && "El telefono que tener 11 caracteres"}
+				    	{errors.telephone?.type === 'minLength' && "El telefono tiene que tener 11 caracteres"}
+				    	{errors.telephone?.type === 'maxLength' && "El telefono tiene que tener 11 caracteres"}
 				    </small>
 				  </div>
 

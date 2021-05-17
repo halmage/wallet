@@ -2,11 +2,11 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 import {useForm} from 'react-hook-form'
 
-const PayForm = ({onAddSubmit}) => {
+const PayForm = ({onAddSubmitPay}) => {
 	const {register, formState: { errors }, handleSubmit} = useForm()
 	return(
 		<>
-			<form className="col-md-8 offset-2" onSubmit={handleSubmit(onAddSubmit)}>
+			<form className="col-md-8 offset-2" onSubmit={handleSubmit(onAddSubmitPay)}>
 				  <div className="form-group">
 				    <label>Documento</label>
 				    <input type="text" 
@@ -36,7 +36,7 @@ const PayForm = ({onAddSubmit}) => {
 				  </div>
 
 				  <div className="form-group">
-				    <label>Cantidad de Deseas Recargar</label>
+				    <label>Cantidad de Deseas Pagar</label>
 				    <input type="number" 
 				    	   className="form-control" 
 				    	   id="transaction"

@@ -23,4 +23,6 @@ Route::group(['prefix' => 'transaction'], function()
 	Route::get('/your-balance/{id}', [App\Http\Controllers\User\TransactionController::class, 'yourBalance']);
 
 	Route::post('pay', [App\Http\Controllers\User\TransactionController::class, 'pay']);
+
+	Route::post('paymer-confirmation', [App\Http\Controllers\User\TransactionController::class, 'paymerConfirmation']);
 });

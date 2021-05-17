@@ -3,11 +3,13 @@ import React from 'react'
 /* Importando componentes */
 import Index from '../../../../components/user/pay/Index'
 
-const PayPresenter = ({onAddSubmit}) => {
+const PayPresenter = ({onAddSubmitPay,onAddSubmitConfirmation,state}) => {
 
 	return(
 		<>
-			<Index onAddSubmit = {onAddSubmit}/>
+			<Index onAddSubmitPay = {onAddSubmitPay}
+			       onAddSubmitConfirmation = {onAddSubmitConfirmation}
+			       state = {state}/>
 		</>		
 	)
 }
