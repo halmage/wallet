@@ -8,4 +8,6 @@ interface TransactionInterface{
 	public function transactionWallet($request,$user);	
 
 	public function loadWallet($request,$user);
+
+	public function checkBalance($id);
 }

@@ -33,4 +33,9 @@ Class TransactionRepositories implements TransactionInterface
 			"balance" => $load_balance
 		]);
 	}
+
+	public function checkBalance($id)
+	{
+		return User::find($id)->balance->balance;
+	}
 }

@@ -5,7 +5,9 @@ import Index from '../../../../components/user/load-wallet/Index'
 
 const LoadWalletPresenter = ({onAddSubmit}) => {
 	return(
-		<Index onAddSubmit={onAddSubmit}/>
+		<>
+			<Index onAddSubmit={onAddSubmit}/>
+		</>
 	)
 }
 export default LoadWalletPresenter

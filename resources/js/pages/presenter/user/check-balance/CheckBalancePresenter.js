@@ -3,10 +3,12 @@ import React from 'react'
 /* Importando componentes */
 import Index from '../../../../components/user/check-balance/Index'
 
-const CheckBalancePresenter = ({onAddSubmit}) => {
+const CheckBalancePresenter = ({onAddSubmit,state,balance}) => {
 	return(
 		<>
-			<Index onAddSubmit = {onAddSubmit}/>
+			<Index onAddSubmit = {onAddSubmit}
+			       state = {state}
+			       balance = {balance}/>
 		</>
 	)
 }

@@ -15,7 +15,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::group(['prefix' => 'transaction'], function() 
-{
-	/* ruta index llamando toda la informacion del index */
-	Route::post('load-wallet', [App\Http\Controllers\User\TransactionController::class, 'loadWallet']);
+{	
+	Route::post('/load-wallet', [App\Http\Controllers\User\TransactionController::class, 'loadWallet']);
+
+	Route::post('/check-balance', [App\Http\Controllers\User\TransactionController::class, 'checkBalance']);
+
+	Route::get('/your-balance/{id}', [App\Http\Controllers\User\TransactionController::class, 'yourBalance']);
 });

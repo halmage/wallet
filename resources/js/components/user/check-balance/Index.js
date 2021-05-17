@@ -1,9 +1,10 @@
 import React from 'react'
 
 /* Importando componentes */
-import CheckBalanceForm from './CheckBalanceForm.js'
+import CheckBalanceForm from './CheckBalanceForm'
+import YourBalance from './YourBalance';
 
-const Index = ({onAddSubmit}) => {	
+const Index = ({onAddSubmit,state,balance}) => {	
 	return(
 		<>
 			<div className="container">
@@ -12,7 +13,17 @@ const Index = ({onAddSubmit}) => {
 			            <div className="card">
 			                <div className="card-header">Consultar saldo</div>
 			                <div className="card-body">			                
-			                    <CheckBalanceForm onAddSubmit = {onAddSubmit}/>
+			                    {
+			                        state ? (
+			                            <>
+			                                <YourBalance balance = {balance}/>
+			                            </>
+			                        ):(
+			                            <>
+			    				            <CheckBalanceForm onAddSubmit={onAddSubmit}/>
+			                            </>
+			                        )
+			                    }
 			                </div>
 			            </div>
 			        </div>

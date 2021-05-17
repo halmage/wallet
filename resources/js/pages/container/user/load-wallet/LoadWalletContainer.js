@@ -3,7 +3,6 @@ import {useHistory} from 'react-router-dom'
 
 /* Importando componentes */
 import LoadWalletPresenter from '../../../presenter/user/load-wallet/LoadWalletPresenter'
-import LoadWalletConformationPresenter from '../../../presenter/user/load-wallet/LoadWalletConfirmationPresenter'
 
 const LoadWalletContainer = () => {
 
